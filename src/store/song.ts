@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 
 import { List, Track } from '@/generated/graphql';
 
@@ -62,13 +62,13 @@ export const useSongStore = create<PlayerState>((set, get) => ({
     set((state) => {
       const currentList = get().currentList as List;
       const index = currentList.tracks.findIndex(
-        (song) => song.id === state.currentSong?.id
+        (song) => song.id === state.currentSong?.id,
       );
 
       const isShuffle = state.isShuffle;
       if (isShuffle) {
         const nextIndex = Math.floor(
-          Math.random() * currentList?.tracks.length
+          Math.random() * currentList?.tracks.length,
         );
 
         if (nextIndex === index) {
@@ -94,7 +94,7 @@ export const useSongStore = create<PlayerState>((set, get) => ({
     set((state) => {
       const currentList = get().currentList as List;
       const index = currentList.tracks.findIndex(
-        (song) => song.id === state.currentSong?.id
+        (song) => song.id === state.currentSong?.id,
       );
 
       return {

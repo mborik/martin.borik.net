@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 
 type Position = 'topCenter' | 'bottomCenter' | 'topRight' | 'bottomRight';
 
@@ -13,7 +13,7 @@ type ToastState = {
   toast: (
     _message: string,
     _position?: Position,
-    _direction?: Direction
+    _direction?: Direction,
   ) => void;
 };
 

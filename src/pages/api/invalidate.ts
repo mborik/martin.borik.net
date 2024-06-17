@@ -3,9 +3,9 @@ import { verifyWebhookSignature } from '@graphcms/utils';
 import { NextApiHandler } from 'next';
 
 const handler: NextApiHandler = async (req, res) => {
-  const secret = process.env.INVALIDATE_TOKEN;
+  const secret = process.env.INVALIDATE_TOKEN as string;
   const body = req.body; // Typically req.body
-  const signature = req.headers['gcms-signature']; // Typically req.headers['gcms-signature']
+  const signature = req.headers['gcms-signature'] as string;
 
   const isValid = verifyWebhookSignature({ body, signature, secret });
 
