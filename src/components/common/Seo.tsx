@@ -1,17 +1,14 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { openGraph } from '@/lib/helper';
-import { siteInfo } from '@/lib/site.info';
-
 const defaultMeta = {
-  title: siteInfo.title,
-  siteName: siteInfo.title,
-  description: 'Music player built with Next.JS, Tailwind CSS.',
-  url: 'https://px-groove.vercel.app',
+  title: 'Martin Bórik: music',
+  siteName: 'Martin Bórik: music',
+  description: 'composer and music producer from Slovakia',
+  url: 'https://martin.borik.com',
   type: 'website',
   robots: 'follow, index',
-  image: '',
+  image: 'https://borik.net/icons/icon-512x512.png',
 };
 
 type SeoProps = {
@@ -29,14 +26,6 @@ export function Seo(props: SeoProps) {
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
 
-  // Use siteName if there is templateTitle
-  // but show full title if there is none
-  meta['image'] = openGraph({
-    description: meta.description,
-    siteName: props.templateTitle ? meta.siteName : meta.title,
-    templateTitle: props.templateTitle,
-  });
-
   return (
     <Head>
       <title>{meta.title}</title>
@@ -52,7 +41,7 @@ export function Seo(props: SeoProps) {
       <meta name='image' property='og:image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@th_clarence' />
+      <meta name='twitter:site' content='@mborik128' />
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
@@ -67,7 +56,7 @@ export function Seo(props: SeoProps) {
           <meta
             name='author'
             property='article:author'
-            content='Theodorus Clarence'
+            content='Martin Bórik'
           />
         </>
       )}
@@ -76,12 +65,12 @@ export function Seo(props: SeoProps) {
       {favicons.map((linkProps) => (
         <link key={linkProps.href} {...linkProps} />
       ))}
-      <meta name='msapplication-TileColor' content='#ffffff' />
+      <meta name='msapplication-TileColor' content='#1d2124' />
       <meta
         name='msapplication-TileImage'
         content='/favicon/ms-icon-144x144.png'
       />
-      <meta name='theme-color' content='#ffffff' />
+      <meta name='theme-color' content='#1d2124' />
     </Head>
   );
 }

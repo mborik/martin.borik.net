@@ -3,9 +3,8 @@
  * @see https://github.com/iamvishnusankar/next-sitemap#readme
  */
 module.exports = {
-  // !STARTERCONF Change the siteUrl
-  /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  siteUrl: 'https://nextjs-music-player-delta.vercel.app',
+  /** Without additional '/' on the end, e.g. https://site.com */
+  siteUrl: 'https://martin.borik.net',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],

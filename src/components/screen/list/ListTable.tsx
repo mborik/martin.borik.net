@@ -116,10 +116,7 @@ const TableRow = ({ track, index, list }: TableRowProps) => {
             <div className='relative ml-4 h-4 w-4'>
               {isPlaying &&
                 (isLoaded === HOWLER_STATE.LOADED && currentSong?.id) ===
-                  track.id &&
-                Array.from(Array(4).keys()).map((item, index) => (
-                  <span className='bar' key={index} />
-                ))}
+                  track.id && <span className='playing' key={index} />}
             </div>
           </div>
         </div>

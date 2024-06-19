@@ -20,13 +20,10 @@
     "format:check": "prettier -c .",
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
-    "postbuild": "next-sitemap",
-    "prepare": "husky install",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
-    "@fontsource/poppins": "^5.0.14",
     "@graphcms/rich-text-react-renderer": "^0.6.1",
     "@graphcms/utils": "^1.1.0",
     "@headlessui/react": "^2.0.4",
@@ -48,7 +45,6 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@fontsource/anton": "^5.0.20",
     "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/typescript": "4.0.7",
     "@graphql-codegen/typescript-operations": "4.2.1",
@@ -71,10 +67,11 @@
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint-plugin-unused-imports": "^4.0.0",
     "format-duration": "^3.0.2",
-    "husky": "^9.0.11",
+    "globals": "^15.6.0",
     "lint-staged": "^15.2.7",
     "next-sitemap": "^4.2.3",
     "postcss": "^8.4.16",
+    "postcss-replace": "^2.0.1",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.4",
     "react-responsive": "^10.0.0",
