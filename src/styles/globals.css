@@ -75,6 +75,16 @@
   * {
     @apply box-border font-sans;
   }
+  body,
+  html {
+    @apply h-full p-0 m-0 scroll-smooth;
+  }
+
+  a:focus,
+  button:focus {
+    @apply outline-0;
+  }
+
   h1,
   h2,
   h3,
@@ -83,16 +93,94 @@
   h6 {
     @apply font-primary font-semibold;
   }
-  body,
-  html {
-    @apply h-full p-0 m-0;
-  }
 
   .LayoutWrapper {
-    @apply h-full bg-transparent scroll-smooth min-h-screen overflow-auto;
+    @apply h-full min-h-screen overflow-auto;
+    background: linear-gradient(
+      to bottom,
+      var(--background-gradient-start) 0%,
+      var(--background-gradient-end) 100%
+    );
 
     * {
       @apply touch-auto;
+    }
+  }
+
+  .CommonHeader {
+    @apply border-none bg-header-fill backdrop-blur-xl fixed top-0 left-0 right-0 h-25 z-10;
+
+    > nav {
+      @apply flex justify-between items-center px-20 mx-auto max-w-7xl h-full;
+    }
+  }
+  .CommonHeader__logo {
+    @apply hidden lg:flex flex-initial lg:justify-start;
+  }
+  .CommonHeader__rightNav {
+    @apply flex-1 flex justify-end;
+  }
+
+  .ButtonOutlined {
+    @apply flex justify-center items-center px-2 py-1 m-0 gap-2;
+    @apply text-white-600 hover:text-white focus:text-white text-base font-primary font-semibold select-none;
+  }
+  .ButtonSecondary {
+    @apply block pl-6 pr-3 py-0 mt-0 z-0;
+    @apply relative h-12 rounded-3xl text-white-100 bg-secondary-600 shadow-secondary-button;
+    @apply hover:shadow-secondary-button-hover focus:shadow-secondary-button;
+
+    &::before {
+      @apply absolute inset-0 size-12 left-auto right-0 -z-1 rounded-3xl;
+      @apply bg-secondary-glow hover:bg-secondary-700 focus:bg-secondary-700;
+      content: '';
+    }
+    .anchor {
+      @apply flex justify-center items-center gap-5 select-none;
+      @apply text-white-100 hover:text-black text-base font-primary font-semibold;
+    }
+  }
+
+  .MainMenu {
+    @apply absolute left-auto right-0 m-0 w-52 overflow-hidden bg-background border border-secondary-glow rounded-s shadow-md;
+    top: 150%;
+  }
+  .MenuItem {
+    @apply relative flex items-center gap-x-4 px-5 py-2;
+    background: transparent;
+    transition: background 0.2s ease-in;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      left: -1px;
+      top: 0;
+      bottom: 0;
+      height: 0;
+      transition: height 0.05s ease-in;
+      background: linear-gradient(180deg, #74bbf1 0%, #f5a3b5 100%);
+      border-radius: 3px;
+      z-index: 2;
+    }
+  }
+  .MenuItem:hover {
+    background: var(--background-gradient-end);
+    &::before {
+      height: 100%;
+    }
+  }
+  .MenuItem__icon {
+    @apply flex size-4 flex-none items-center justify-center;
+  }
+  .MenuItem__texts {
+    @apply flex-auto flex flex-col gap-0 w-full;
+
+    a {
+      @apply block font-primary font-semibold text-sm text-white;
+    }
+    p {
+      @apply text-xs text-white-600;
     }
   }
 }

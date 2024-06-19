@@ -34,7 +34,8 @@ const variants = {
     },
   },
 };
-const Toast = () => {
+
+export const Toast = () => {
   const { isToastOpen, message, direction, closeToast } = useToastStore();
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -62,5 +63,3 @@ const Toast = () => {
     </AnimatePresence>
   );
 };
-
-export default Toast;
