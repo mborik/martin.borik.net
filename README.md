@@ -2,11 +2,9 @@
 
 - Mobile friendly
 - Global state managemant with Zustand
-- Audio api with React Holwer
-- Custom hooks `useHolwer`, `useAnimationFrame`
 - TypeScript
 
-Starter template using [**ts-nextjs-tailwind-starter**](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter).
+Used repository as template [**nextjs-music-player**](https://github.com/patrick-xin/nextjs-music-player).
 
 ## Getting Started
 

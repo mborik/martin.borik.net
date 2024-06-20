@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import * as React from 'react';
 
-import { BlurImage } from '@/components/common';
-import { RampGradient } from '@/components/common/RampGradient';
+import { RampGradient } from '@/components/common';
+
+import {
+  bio_me_png_blurred,
+  bio_studio_png_blurred,
+} from '@/generated/blurred';
 
 export const Bio = () => {
   return (
@@ -17,12 +21,14 @@ export const Bio = () => {
               of&nbsp;MIDI protocol and started composing my first songs.
             </p>
           </aside>
-          <BlurImage
+          <Image
             src='/images/bio_me.png'
             alt='profile photo'
             width={428}
             height={212}
-            quality={80}
+            quality={82}
+            placeholder='blur'
+            blurDataURL={bio_me_png_blurred}
           />
           <Image
             src='/images/bio_exp.svg'
@@ -48,12 +54,14 @@ export const Bio = () => {
             height={212}
             className='frame order-2 lg:-order-none'
           />
-          <BlurImage
+          <Image
             src='/images/bio_studio.png'
             alt='studio workspace'
             width={428}
             height={212}
-            quality={80}
+            quality={82}
+            placeholder='blur'
+            blurDataURL={bio_studio_png_blurred}
           />
         </div>
       </div>

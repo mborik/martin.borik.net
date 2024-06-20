@@ -1,8 +1,8 @@
 import { Button } from '@headlessui/react';
 import * as React from 'react';
 
-import { ArrowRight } from '@/components/common/icons/ArrowRight';
-import { RampGradient } from '@/components/common/RampGradient';
+import { RampGradient } from '@/components/common';
+import { ArrowRight } from '@/components/common/icons';
 
 export const Hero = () => {
   return (
