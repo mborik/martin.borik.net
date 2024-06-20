@@ -47,8 +47,19 @@ module.exports = {
       },
       spacing: {
         25: '6.25rem', // 100px
+        150: '37.5rem', // 600px
+        160: '40rem', // 640px
+        '4xl': '56rem', // 896px
+        '5xl': '64rem', // 1024px
+      },
+      fontSize: {
+        heading: '2.5rem', // 40px
       },
       boxShadow: {
+        'primary-button':
+          '0 0 0 3px var(--accent-glow), 0 0 32px var(--primary-glow)',
+        'primary-button-hover':
+          '0 0 0 3px var(--accent-glow), 0 0 48px var(--primary-glow)',
         'secondary-button':
           '0 0 1px 2px var(--secondary-glow), 0 0 1px 4px var(--secondary-glow)',
         'secondary-button-hover':

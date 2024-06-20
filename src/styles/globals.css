@@ -68,16 +68,16 @@
     --accent-900: #fad1da;
     --accent-950: #fce8ec;
     --accent-glow: #f075901a;
-    --button-gradient-end: #f5a3b5;
     --button-gradient-start: #74bbf1;
+    --button-gradient-end: #f5a3b5;
   }
 
   * {
-    @apply box-border font-sans;
+    @apply box-border;
   }
   body,
   html {
-    @apply h-full p-0 m-0 scroll-smooth;
+    @apply h-full p-0 m-0 font-sans scroll-smooth;
   }
 
   a:focus,
@@ -91,7 +91,29 @@
   h4,
   h5,
   h6 {
-    @apply font-primary font-semibold;
+    @apply font-primary font-semibold text-white;
+  }
+  h1,
+  h2 {
+    @apply text-heading;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+
+  mark {
+    color: inherit;
+    background: linear-gradient(
+      90deg,
+      var(--secondary-600) 0%,
+      var(--accent-800) 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
   }
 
   .LayoutWrapper {
@@ -121,13 +143,41 @@
     @apply flex-1 flex justify-end;
   }
 
-  .ButtonOutlined {
-    @apply flex justify-center items-center px-2 py-1 m-0 gap-2;
-    @apply text-white-600 hover:text-white focus:text-white text-base font-primary font-semibold select-none;
+  .ButtonPrimary {
+    @apply block px-8 py-0 m-0 z-0;
+    @apply relative h-12 rounded-3xl text-white-100 hover:text-black shadow-primary-button;
+    background: linear-gradient(
+      96deg,
+      var(--button-gradient-start) 0%,
+      var(--button-gradient-end) 100%
+    );
+
+    &::before {
+      @apply absolute inset-0 rounded-3xl -z-1;
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease-in;
+      background: linear-gradient(
+        -96deg,
+        var(--button-gradient-start) 0%,
+        var(--button-gradient-end) 100%
+      );
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    .anchor {
+      @apply flex justify-center items-center gap-4 select-none;
+      @apply text-xl leading-none font-primary font-semibold;
+    }
   }
   .ButtonSecondary {
     @apply block pl-6 pr-3 py-0 mt-0 z-0;
-    @apply relative h-12 rounded-3xl text-white-100 bg-secondary-600 shadow-secondary-button;
+    @apply relative h-12 rounded-3xl text-white-100 hover:text-black bg-secondary-600 shadow-secondary-button;
     @apply hover:shadow-secondary-button-hover focus:shadow-secondary-button;
 
     &::before {
@@ -137,12 +187,16 @@
     }
     .anchor {
       @apply flex justify-center items-center gap-5 select-none;
-      @apply text-white-100 hover:text-black text-base font-primary font-semibold;
+      @apply text-base font-primary font-semibold;
     }
+  }
+  .ButtonOutlined {
+    @apply flex justify-center items-center px-2 py-1 m-0 gap-2;
+    @apply text-white-600 hover:text-white focus:text-white text-base font-primary font-semibold select-none;
   }
 
   .MainMenu {
-    @apply absolute left-auto right-0 m-0 w-52 overflow-hidden bg-background border border-secondary-glow rounded-s shadow-md;
+    @apply absolute left-auto right-0 m-0 w-52 overflow-hidden bg-background border border-secondary-glow rounded-md shadow-md;
     top: 150%;
   }
   .MenuItem {
@@ -159,7 +213,11 @@
       bottom: 0;
       height: 0;
       transition: height 0.05s ease-in;
-      background: linear-gradient(180deg, #74bbf1 0%, #f5a3b5 100%);
+      background: linear-gradient(
+        180deg,
+        var(--button-gradient-start) 0%,
+        var(--button-gradient-end) 100%
+      );
       border-radius: 3px;
       z-index: 2;
     }
@@ -181,6 +239,36 @@
     }
     p {
       @apply text-xs text-white-600;
+    }
+  }
+
+  .RampGradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  section#hero {
+    @apply relative w-full min-h-150;
+    background: radial-gradient(
+      ellipse at center bottom,
+      var(--background-gradient-end) 0%,
+      var(--background-gradient-start) 125%
+    );
+  }
+  .SectionHeroCopy {
+    @apply flex flex-col gap-8 p-0 m-0 items-center justify-start;
+    @apply mx-auto pt-40 pb-32 w-4xl;
+
+    p,
+    h1 {
+      @apply text-center w-full;
+    }
+    p {
+      @apply text-2xl leading-normal text-white-600;
     }
   }
 }
