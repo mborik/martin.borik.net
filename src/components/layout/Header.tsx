@@ -18,9 +18,9 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className='CommonHeader'>
+    <header className='Header'>
       <nav aria-label='Global'>
-        <div className='CommonHeader__logo'>
+        <div className='Header__logo'>
           <Link href='/'>
             <span className='sr-only'>Martin Bórik</span>
             <Image
@@ -31,7 +31,7 @@ export const Header = () => {
             />
           </Link>
         </div>
-        <div className='CommonHeader__rightNav'>
+        <div className='Header__rightNav'>
           <div className='flex lg:hidden'>
             <button
               type='button'

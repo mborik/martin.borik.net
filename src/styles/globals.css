@@ -151,17 +151,22 @@
     }
   }
 
-  .CommonHeader {
+  .Header {
     @apply border-none bg-header-fill backdrop-blur-xl fixed top-0 left-0 right-0 h-25 z-10;
 
     > nav {
-      @apply flex justify-between items-center px-20 mx-auto max-w-7xl h-full;
+      @apply flex justify-between items-center px-6 lg:px-20 pt-1 lg:p-0 mx-auto max-w-7xl h-full w-full;
     }
   }
-  .CommonHeader__logo {
-    @apply hidden lg:flex flex-initial lg:justify-start;
+  .Header__logo {
+    @apply flex-initial lg:justify-start;
+
+    img {
+      @apply lg:w-auto;
+      width: 265px;
+    }
   }
-  .CommonHeader__rightNav {
+  .Header__rightNav {
     @apply flex-1 flex justify-end;
   }
 
@@ -257,7 +262,7 @@
     @apply flex-auto flex flex-col gap-0 w-full;
 
     a {
-      @apply block font-primary font-semibold text-sm text-white;
+      @apply block font-primary font-semibold text-base text-white;
     }
     p {
       @apply text-xs text-white-600;
@@ -270,7 +275,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1;
     overflow: hidden;
   }
 
@@ -284,7 +289,7 @@
   }
   .SectionHeroCopy {
     @apply flex flex-col gap-8 p-0 m-0 items-center justify-start;
-    @apply mx-auto pt-40 pb-32 w-4xl;
+    @apply mx-auto px-4 pt-32 pb-16 lg:pt-40 lg:pb-32 lg:w-4xl;
 
     p,
     h1 {
@@ -304,10 +309,10 @@
     );
   }
   .SectionBioWrapper {
-    @apply flex flex-col gap-6 p-0 pt-10 pb-32 m-0 mx-auto w-5xl;
+    @apply flex flex-col gap-6 pt-10 pb-16 lg:pb-32 px-4 lg:px-0 m-0 mx-auto lg:w-5xl;
 
     aside {
-      @apply flex flex-col gap-6 items-start justify-start;
+      @apply flex flex-col gap-6 items-start self-center lg:self-start;
       max-width: 19.5rem;
 
       > h1,
@@ -319,12 +324,16 @@
         font-size: 1.44rem;
       }
     }
+
+    .frame {
+      @apply -mt-20 mx-4 z-1 lg:m-0 lg:z-auto;
+    }
   }
   .SectionBioLine1 {
-    @apply flex flex-row gap-8 p-0 m-0 justify-evenly items-start;
+    @apply flex flex-col lg:flex-row gap-8 p-0 m-0 justify-evenly items-start;
   }
   .SectionBioLine2 {
-    @apply flex flex-row gap-8 p-0 m-0 justify-evenly items-end;
+    @apply flex flex-col lg:flex-row gap-8 p-0 m-0 justify-evenly items-end;
   }
 }
 

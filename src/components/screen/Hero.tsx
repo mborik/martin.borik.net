@@ -15,10 +15,10 @@ export const Hero = () => {
         <p>
           <b>Martin&nbsp;Bórik</b> is a&nbsp;cinematic music composer
           and&nbsp;electronic music producer who aims to&nbsp;cover a&nbsp;broad
-          range of musical genres, making him a&nbsp;versatile composer you can
-          choose to&nbsp;score an&nbsp;epic video-game soundtrack,
+          range of&nbsp;musical genres, making him a&nbsp;versatile composer you
+          can choose to&nbsp;score an&nbsp;epic video-game soundtrack,
           a&nbsp;commercial background music, a&nbsp;film sequence,
-          or&nbsp;a&nbsp;TV show.
+          or&nbsp;a&nbsp;TV&nbsp;show.
         </p>
         <Button className='ButtonPrimary'>
           <div className='anchor'>

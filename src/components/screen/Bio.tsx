@@ -29,6 +29,7 @@ export const Bio = () => {
             alt='20+ years of experience'
             width={212}
             height={212}
+            className='frame'
           />
         </div>
         <div className='SectionBioLine2'>
@@ -45,6 +46,7 @@ export const Bio = () => {
             alt='creativity and heart'
             width={212}
             height={212}
+            className='frame order-2 lg:-order-none'
           />
           <BlurImage
             src='/images/bio_studio.png'
