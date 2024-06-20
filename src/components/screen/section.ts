@@ -1,4 +1,4 @@
-import { Bio } from './Bio';
-import { Hero } from './Hero';
+import { Bio } from './sections/Bio';
+import { Hero } from './sections/Hero';
 
 export const Section = { Hero, Bio };

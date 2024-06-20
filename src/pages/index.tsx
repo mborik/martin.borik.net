@@ -6,9 +6,9 @@ import { Section } from '@/components/screen/Section';
 export default function HomePage() {
   return (
     <>
+      <Seo />
       <Section.Hero />
       <Section.Bio />
-      <Seo />
     </>
   );
 }
