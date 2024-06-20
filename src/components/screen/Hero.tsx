@@ -13,14 +13,12 @@ export const Hero = () => {
           from&nbsp;Slovakia
         </h1>
         <p>
-          <b>Martin Bórik</b> is a cinematic music composer and electronic music
-          producer
-          <br />
-          who aims to cover a broad range of musical genres, making him a
-          versatile
-          <br />
-          composer you can choose to score an epic video-game soundtrack,
-          <br />a commercial background music, a film sequence, or a TV show.
+          <b>Martin&nbsp;Bórik</b> is a&nbsp;cinematic music composer
+          and&nbsp;electronic music producer who aims to&nbsp;cover a&nbsp;broad
+          range of musical genres, making him a&nbsp;versatile composer you can
+          choose to&nbsp;score an&nbsp;epic video-game soundtrack,
+          a&nbsp;commercial background music, a&nbsp;film sequence,
+          or&nbsp;a&nbsp;TV show.
         </p>
         <Button className='ButtonPrimary'>
           <div className='anchor'>

@@ -99,9 +99,31 @@
   }
   h3 {
     @apply text-3xl;
+
+    &.gradient {
+      background: linear-gradient(
+        -90deg,
+        var(--button-gradient-start) 0%,
+        var(--button-gradient-end) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+    }
   }
   h4 {
     @apply text-2xl;
+
+    &.gradient {
+      background: linear-gradient(
+        90deg,
+        var(--button-gradient-start) 0%,
+        var(--button-gradient-end) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+    }
   }
 
   mark {
@@ -117,7 +139,7 @@
   }
 
   .LayoutWrapper {
-    @apply h-full min-h-screen overflow-auto;
+    @apply h-full min-h-screen overflow-visible;
     background: linear-gradient(
       to bottom,
       var(--background-gradient-start) 0%,
@@ -244,10 +266,11 @@
 
   .RampGradient {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     right: 0;
-    width: 100vw;
+    width: 100%;
+    z-index: 10;
     overflow: hidden;
   }
 
@@ -270,6 +293,38 @@
     p {
       @apply text-2xl leading-normal text-white-600;
     }
+  }
+
+  section#bio {
+    @apply relative w-full min-h-160;
+    background: radial-gradient(
+      ellipse at center top,
+      var(--secondary-gradient-start) 0%,
+      var(--secondary-gradient-end) 150%
+    );
+  }
+  .SectionBioWrapper {
+    @apply flex flex-col gap-6 p-0 pt-10 pb-32 m-0 mx-auto w-5xl;
+
+    aside {
+      @apply flex flex-col gap-6 items-start justify-start;
+      max-width: 19.5rem;
+
+      > h1,
+      > h2 {
+        @apply leading-none;
+      }
+      > p {
+        @apply font-sans font-light leading-normal text-white-600 align-top;
+        font-size: 1.44rem;
+      }
+    }
+  }
+  .SectionBioLine1 {
+    @apply flex flex-row gap-8 p-0 m-0 justify-evenly items-start;
+  }
+  .SectionBioLine2 {
+    @apply flex flex-row gap-8 p-0 m-0 justify-evenly items-end;
   }
 }
 

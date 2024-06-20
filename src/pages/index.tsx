@@ -7,6 +7,7 @@ export default function HomePage() {
   return (
     <>
       <Section.Hero />
+      <Section.Bio />
       <Seo />
     </>
   );

@@ -15,14 +15,23 @@ export const RampGradient: React.FC<React.SVGAttributes<SVGElement>> = ({
         <defs>
           <radialGradient
             id='to-light'
-            cx='0'
-            cy='0'
-            r='1.25'
+            cx='50%'
+            cy='100%'
+            r='150%'
             gradientUnits='userSpaceOnUse'
-            gradientTransform='translate(50vw 200)'
           >
-            <stop offset='0' stop-color='#41484e' />
-            <stop offset='1' stop-color='#33363a' />
+            <stop offset='0%' stop-color='#33363a' />
+            <stop offset='100%' stop-color='#41484e' />
+          </radialGradient>
+          <radialGradient
+            id='to-dark'
+            cx='50%'
+            cy='100%'
+            r='150%'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop offset='0%' stop-color='#1d2124' />
+            <stop offset='100%' stop-color='#171a1d' />
           </radialGradient>
         </defs>
       </svg>
