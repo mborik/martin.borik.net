@@ -3,10 +3,7 @@ import * as React from 'react';
 
 import { RampGradient } from '@/components/common';
 
-import {
-  bio_me_png_blurred,
-  bio_studio_png_blurred,
-} from '@/generated/blurred';
+import { bio_me_png_blurred, bio_studio_png_blurred } from '@/content';
 
 export const Bio = () => {
   return (

@@ -56,6 +56,7 @@ module.exports = {
         heading: '2.5rem', // 40px
       },
       boxShadow: {
+        'inset-border': 'inset 0 0 0 1px var(--header-fill)',
         'primary-button':
           '0 0 0 3px var(--accent-glow), 0 0 32px var(--primary-glow)',
         'primary-button-hover':
