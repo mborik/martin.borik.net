@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
-import { MdClose } from 'react-icons/md';
+
+import { Close } from '@/components/common/icons';
 
 import { useToastStore } from '@/store/toast';
 
@@ -56,7 +57,7 @@ export const Toast = () => {
         >
           {message}
           <button className='px-1 py-2' onClick={closeToast}>
-            <MdClose className='h-4 w-4 text-white' />
+            <Close className='size-4 text-white' />
           </button>
         </motion.div>
       )}

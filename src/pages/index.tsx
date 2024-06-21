@@ -10,6 +10,7 @@ export default function HomePage() {
       <Section.Hero />
       <Section.Bio />
       <Section.Music />
+      <Section.Contact />
     </>
   );
 }

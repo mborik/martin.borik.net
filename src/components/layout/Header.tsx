@@ -11,7 +11,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 
-import { Bars3Icon } from '@/components/common/icons';
+import { Bars3Icon, Close } from '@/components/common/icons';
 import { MainMenu } from '@/components/layout/MainMenu';
 
 export const Header = () => {
@@ -101,9 +101,7 @@ export const Header = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className='sr-only'>Close menu</span>
-              <span className='text-2xl' aria-hidden='true'>
-                &times;
-              </span>
+              <Close className='size-8' aria-hidden='true' />
             </button>
           </div>
           <div className='flex flex-col gap-2 mt-6 py-4'>

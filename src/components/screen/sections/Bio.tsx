@@ -7,7 +7,7 @@ import { bio_me_png_blurred, bio_studio_png_blurred } from '@/content';
 
 export const Bio = () => {
   return (
-    <section id='bio'>
+    <section id='bio' className='min-h-160'>
       <a id='bio' aria-hidden='true' />
       <div className='SectionBioWrapper'>
         <div className='SectionBioLine1'>
