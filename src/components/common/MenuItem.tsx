@@ -8,6 +8,7 @@ interface IconBaseProps extends React.HTMLAttributes<HTMLDivElement> {
   href: string;
   external?: boolean;
   description?: string;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 export const MenuItem: React.FC<IconBaseProps> = ({
@@ -17,6 +18,7 @@ export const MenuItem: React.FC<IconBaseProps> = ({
   href,
   external,
   description,
+  onClick,
   ...props
 }) => {
   return (
@@ -24,16 +26,13 @@ export const MenuItem: React.FC<IconBaseProps> = ({
       {children ? <div className='MenuItem__icon'>{children}</div> : null}
       <div className='MenuItem__texts'>
         {external ? (
-          <a
-            href={href}
-            target='_blank'
-            rel='noreferrer'
-            onClick={(e) => e.currentTarget.blur()}
-          >
+          <a href={href} target='_blank' rel='noreferrer' onClick={onClick}>
             {title}
           </a>
         ) : (
-          <Link href={href}>{title}</Link>
+          <Link href={href} onClick={onClick}>
+            {title}
+          </Link>
         )}
         {description ? <p>{description}</p> : null}
       </div>

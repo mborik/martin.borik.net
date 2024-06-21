@@ -43,11 +43,11 @@ export const Header = () => {
             </button>
           </div>
           <PopoverGroup className='hidden lg:flex lg:gap-x-4'>
-            <Link href='/#music' className='ButtonOutlined uppercase'>
-              Music
-            </Link>
             <Link href='/#bio' className='ButtonOutlined uppercase'>
               Bio
+            </Link>
+            <Link href='/#music' className='ButtonOutlined uppercase'>
+              Music
             </Link>
             <Link href='/#contact' className='ButtonOutlined uppercase'>
               Contact
@@ -70,9 +70,11 @@ export const Header = () => {
                 leaveTo='opacity-0 translate-y-2'
               >
                 <PopoverPanel className='MainMenu'>
-                  <div className='py-2'>
-                    <MainMenu />
-                  </div>
+                  {({ close }) => (
+                    <div className='py-2'>
+                      <MainMenu onClick={() => close()} />
+                    </div>
+                  )}
                 </PopoverPanel>
               </Transition>
             </Popover>
@@ -104,10 +106,8 @@ export const Header = () => {
               </span>
             </button>
           </div>
-          <div className='mt-6 flow-root'>
-            <div className='space-y-1 py-4'>
-              <MainMenu isMobile />
-            </div>
+          <div className='flex flex-col gap-2 mt-6 py-4'>
+            <MainMenu isMobile onClick={() => setMobileMenuOpen(false)} />
           </div>
         </DialogPanel>
       </Dialog>
