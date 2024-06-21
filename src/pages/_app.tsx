@@ -4,10 +4,10 @@ import '@/styles/globals.css';
 
 import { Layout } from '@/components/layout/Layout';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <Component key={router.asPath} {...pageProps} />
     </Layout>
   );
 }

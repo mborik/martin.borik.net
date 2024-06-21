@@ -51,6 +51,7 @@ module.exports = {
         160: '40rem', // 640px
         '4xl': '56rem', // 896px
         '5xl': '64rem', // 1024px
+        youtube: '56.25%', // 16:9
       },
       fontSize: {
         heading: '2.5rem', // 40px
