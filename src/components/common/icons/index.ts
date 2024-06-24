@@ -1,3 +1,4 @@
+export * from './ArrowLeft';
 export * from './ArrowRight';
 export * from './Bars3Icon';
 export * from './Close';

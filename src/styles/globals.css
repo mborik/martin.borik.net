@@ -280,7 +280,18 @@
     overflow: hidden;
   }
 
-  section#hero {
+  .BackButton {
+    @apply absolute top-25 left-8 lg:left-20 z-50;
+
+    > button {
+      @apply block p-4 pt-2 m-0 gap-2 bg-header-fill shadow-lg;
+      @apply text-secondary-800 hover:text-white focus:text-white select-none;
+      @apply rounded-3xl rounded-se-none rounded-ss-none;
+    }
+  }
+
+  section#hero,
+  section#album {
     @apply relative w-full min-h-150;
     background: radial-gradient(
       ellipse at center bottom,
@@ -438,6 +449,103 @@
         &::after,
         &::before {
           content: none;
+        }
+      }
+    }
+  }
+
+  section#album > article {
+    @apply flex flex-col md:flex-row gap-8 p-0 m-0 items-center justify-start;
+    @apply mx-auto px-8 pt-32 pb-16 md:pt-40 md:pb-32 lg:px-32 md:gap-16 md:items-start;
+  }
+
+  .AlbumContainer {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 900px;
+
+    &:hover .AlbumCover,
+    &:focus .AlbumCover {
+      transform: rotateY(0deg);
+
+      > img {
+        border-radius: 0.5rem;
+        border: 1px solid var(--background-50);
+        transform: translateZ(100px);
+      }
+    }
+  }
+
+  .AlbumCover {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-25deg);
+    transition: 0.5s ease;
+    animation: 0.5s ease 0s 1 albumCover;
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 310px;
+      height: 300px;
+      transform: translateZ(25px);
+      transition: 0.5s ease;
+      border: 1px solid var(--background-100);
+      border-left-width: 10px;
+      background-color: var(--background-50);
+      border-radius: 2px;
+      box-shadow: 5px 5px 10px var(--background-100);
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 2px;
+      width: 48px;
+      height: 296px;
+      transform: translateX(273px) rotateY(90deg);
+      background: linear-gradient(
+        90deg,
+        var(--background-50) 0%,
+        var(--background-200) 100%
+      );
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 300px;
+      height: 300px;
+      transform: translateZ(-25px);
+      background-color: var(--background-50);
+      border-radius: 2px;
+      box-shadow: -5px 0 15px 10px var(--background-50);
+    }
+  }
+
+  .AlbumCopy {
+    @apply flex flex-col gap-8 p-0 m-0;
+
+    p {
+      @apply text-lg leading-normal text-white-800;
+    }
+    ul {
+      @apply text-base leading-normal text-white-600;
+      > li {
+        @apply pb-4;
+      }
+      time {
+        @apply tabular-nums;
+        ~ b {
+          @apply font-primary font-semibold text-lg;
         }
       }
     }

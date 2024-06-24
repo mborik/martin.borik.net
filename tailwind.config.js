@@ -67,7 +67,12 @@ module.exports = {
         'secondary-button-hover':
           '0 0 1px 2px var(--secondary-glow), 0 0 1px 4px var(--secondary-glow), 0 0 1px 6px var(--secondary-glow)',
       },
-      keyframes: {},
+      keyframes: {
+        albumCover: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(-25deg)' },
+        },
+      },
       animation: {},
       zIndex: { 1: '1' },
     },

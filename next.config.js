@@ -10,6 +10,10 @@ module.exports = {
     domains: ['borik.net'],
   },
 
+  experimental: {
+    scrollRestoration: true,
+  },
+
   // SVGR
   webpack(config) {
     config.module.rules.push({
