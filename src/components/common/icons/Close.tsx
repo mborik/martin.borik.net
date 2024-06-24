@@ -13,9 +13,9 @@ export const Close: React.FC<React.SVGAttributes<SVGElement>> = ({
     >
       <path
         d='M17 7 7 17M7 7l10 10'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );

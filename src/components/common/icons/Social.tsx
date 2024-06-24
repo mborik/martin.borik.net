@@ -12,7 +12,7 @@ export const SocialBandcamp: React.FC<React.SVGAttributes<SVGElement>> = ({
       xmlns='http://www.w3.org/2000/svg'
       {...props}
     >
-      <g clip-path='url(#clip0_62_626)'>
+      <g clipPath='url(#clip0_62_626)'>
         <mask
           id='mask0_62_626'
           style={{ maskType: 'luminance' }}
@@ -163,8 +163,8 @@ export const SocialSpotify: React.FC<React.SVGAttributes<SVGElement>> = ({
       {...props}
     >
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M0 16a16 16 0 1 1 32 0 16 16 0 0 1-32 0Zm25.08-2.03c-5.08-3.02-13.46-3.3-18.3-1.82a1.47 1.47 0 1 1-.86-2.82c5.56-1.7 14.82-1.37 20.67 2.1a1.47 1.47 0 0 1-1.5 2.54Zm-1.86 4.87a1.23 1.23 0 0 0 1.29-2.09c-4.86-2.99-11.98-3.83-17.7-2.1a1.23 1.23 0 0 0 .71 2.36c5.01-1.52 11.47-.77 15.7 1.83Zm-1.58 4.22a.98.98 0 1 0 1.02-1.68c-4.15-2.54-9.3-3.13-15.3-1.76a.98.98 0 1 0 .43 1.92c5.49-1.26 10.14-.75 13.85 1.52Z'
         fill='#1ED760'
       />
@@ -182,7 +182,7 @@ export const SocialSoundCloud: React.FC<React.SVGAttributes<SVGElement>> = ({
       viewBox='0 0 32 32'
       {...props}
     >
-      <g clip-path='url(#a)'>
+      <g clipPath='url(#a)'>
         <path
           d='M16 31.87c8.84 0 16-7.14 16-15.94S24.84 0 16 0 0 7.13 0 15.93s7.16 15.94 16 15.94Z'
           fill='#F50'
@@ -211,7 +211,7 @@ export const SocialYouTubeMusic: React.FC<React.SVGAttributes<SVGElement>> = ({
       viewBox='0 0 32 32'
       {...props}
     >
-      <g clip-path='url(#a)'>
+      <g clipPath='url(#a)'>
         <path
           d='M16 32c8.837 0 16-7.163 16-16S24.837 0 16 0 0 7.163 0 16s7.163 16 16 16Z'
           fill='red'
@@ -268,8 +268,8 @@ export const SocialAppleMusic: React.FC<React.SVGAttributes<SVGElement>> = ({
         fill='#fff'
       />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M19.511 5.333c.168 1.138-.295 2.253-.906 3.041-.654.846-1.78 1.5-2.872 1.466-.2-1.09.311-2.211.932-2.966.68-.833 1.848-1.471 2.846-1.54Zm3.28 16.015c.562-.863.772-1.298 1.209-2.271-3.177-1.209-3.686-5.726-.542-7.46-.959-1.202-2.307-1.9-3.579-1.9-.917 0-1.545.24-2.116.458-.475.18-.912.347-1.442.347-.573 0-1.08-.182-1.613-.373-.584-.21-1.197-.429-1.957-.429-1.428 0-2.947.872-3.91 2.364-1.355 2.1-1.124 6.049 1.072 9.412.785 1.204 1.834 2.557 3.206 2.569.569.005.948-.164 1.358-.348.469-.21.979-.44 1.861-.444.889-.005 1.39.226 1.853.44.4.184.77.355 1.335.348 1.372-.01 2.48-1.51 3.264-2.713Z'
         fill='#272727'
       />
@@ -289,8 +289,8 @@ export const SocialTidal: React.FC<React.SVGAttributes<SVGElement>> = ({
     >
       <path d='M16 32a16 16 0 1 0 0-32 16 16 0 0 0 0 32Z' fill='#fff' />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M9.57 11.2h.04c.2.22.4.43.61.63l.35.36 2.2 2.18v.04L11.17 16l-1.6 1.6a984.49 984.49 0 0 1-3.17-3.2c.04-.07.1-.12.16-.18l.08-.07 1.17-1.18 1.76-1.77Zm10.54 2.22.64-.64.56-.56c.34-.34.68-.67 1.01-1.02h.04a5.81 5.81 0 0 0 .64.66l2.4 2.4.04.04c.04.03.07.07.08.11-.52.5-1.03 1.02-1.54 1.54l-1.65 1.64-3.05-3.05a.77.77 0 0 0-.04-.04l-.05-.05-.04.04-.03.03-1.53 1.53-1.54 1.54-1.42-1.42-1.78-1.76 1.68-1.7 1.5-1.51h.04l.1.12 1.23 1.23c.6.6 1.19 1.2 1.8 1.78l.9-.9Zm-6.18 6.33-1.05 1.04a.5.5 0 0 0-.01.04l-.02.03 1.62 1.6.52.54.44.43.6.6a8.45 8.45 0 0 0 .74-.73l1.15-1.15a486.61 486.61 0 0 1 1.2-1.2.3.3 0 0 0 .1-.12l-3.15-3.16-.05-.02-2.1 2.1Z'
         fill='#000'
       />
@@ -308,62 +308,62 @@ export const SocialDeezer: React.FC<React.SVGAttributes<SVGElement>> = ({
       viewBox='0 0 32 32'
       {...props}
     >
-      <g clip-path='url(#a)'>
+      <g clipPath='url(#a)'>
         <path
           d='M0 16C0 7.163 7.163 0 16 0s16 7.163 16 16-7.163 16-16 16S0 24.837 0 16Z'
           fill='#fff'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M8.875 15.688h-4v-1.25h4v1.25Zm0 1.624h-4v-1.25h4v1.25Z'
           fill='#F1796E'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M8.875 18.938h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Z'
           fill='#EC2529'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M13.25 18.938h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Z'
           fill='#F6DD05'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M17.625 12.438h-4v-1.25h4v1.25Zm0 1.624h-4v-1.25h4v1.25Zm0 1.626h-4v-1.25h4v1.25Zm0 1.624h-4v-1.25h4v1.25Z'
           fill='#E78DCC'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M17.625 18.938h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Z'
           fill='#D81996'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M22 15.688h-4v-1.25h4v1.25Zm0 1.624h-4v-1.25h4v1.25Z'
           fill='#D6E465'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M22 18.938h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Z'
           fill='#ADDA1A'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M26.375 10.813h-4v-1.25h4v1.25Zm0 1.624h-4v-1.25h4v1.25Zm0 1.626h-4v-1.25h4v1.25Zm0 1.624h-4v-1.25h4v1.25Zm0 1.626h-4v-1.25h4v1.25Z'
           fill='#B0D8E6'
         />
         <path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M26.375 18.938h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Zm0 1.625h-4v-1.25h4v1.25Z'
           fill='#56BBE9'
         />
@@ -398,8 +398,8 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
         fill='url(#paint1_radial_59_554)'
       />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M15.9668 7.74403C11.429 7.74403 7.75001 11.423 7.75001 15.9607C7.75001 20.4984 11.429 24.1757 15.9668 24.1757C20.5045 24.1757 24.1825 20.4984 24.1825 15.9607C24.1825 11.423 20.5045 7.74403 15.9668 7.74403ZM16 21.25C18.8995 21.25 21.25 18.8995 21.25 16C21.25 13.1005 18.8995 10.75 16 10.75C13.1005 10.75 10.75 13.1005 10.75 16C10.75 18.8995 13.1005 21.25 16 21.25Z'
         fill='url(#paint2_radial_59_554)'
       />
@@ -412,8 +412,8 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
         fill='url(#paint4_radial_59_554)'
       />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M15.9668 7.74403C11.429 7.74403 7.75001 11.423 7.75001 15.9607C7.75001 20.4984 11.429 24.1757 15.9668 24.1757C20.5045 24.1757 24.1825 20.4984 24.1825 15.9607C24.1825 11.423 20.5045 7.74403 15.9668 7.74403ZM16 21.25C18.8995 21.25 21.25 18.8995 21.25 16C21.25 13.1005 18.8995 10.75 16 10.75C13.1005 10.75 10.75 13.1005 10.75 16C10.75 18.8995 13.1005 21.25 16 21.25Z'
         fill='url(#paint5_radial_59_554)'
       />
@@ -426,10 +426,10 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
           gradientUnits='userSpaceOnUse'
           gradientTransform='translate(8.50004 34.4647) rotate(-90) scale(31.7144 29.4969)'
         >
-          <stop stop-color='#FFDD55' />
-          <stop offset='0.1' stop-color='#FFDD55' />
-          <stop offset='0.5' stop-color='#FF543E' />
-          <stop offset='1' stop-color='#C837AB' />
+          <stop stopColor='#FFDD55' />
+          <stop offset='0.1' stopColor='#FFDD55' />
+          <stop offset='0.5' stopColor='#FF543E' />
+          <stop offset='1' stopColor='#C837AB' />
         </radialGradient>
         <radialGradient
           id='paint1_radial_59_554'
@@ -439,10 +439,10 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
           gradientUnits='userSpaceOnUse'
           gradientTransform='translate(8.50004 34.4647) rotate(-90) scale(31.7144 29.4969)'
         >
-          <stop stop-color='#FFDD55' />
-          <stop offset='0.1' stop-color='#FFDD55' />
-          <stop offset='0.5' stop-color='#FF543E' />
-          <stop offset='1' stop-color='#C837AB' />
+          <stop stopColor='#FFDD55' />
+          <stop offset='0.1' stopColor='#FFDD55' />
+          <stop offset='0.5' stopColor='#FF543E' />
+          <stop offset='1' stopColor='#C837AB' />
         </radialGradient>
         <radialGradient
           id='paint2_radial_59_554'
@@ -452,10 +452,10 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
           gradientUnits='userSpaceOnUse'
           gradientTransform='translate(8.50004 34.4647) rotate(-90) scale(31.7144 29.4969)'
         >
-          <stop stop-color='#FFDD55' />
-          <stop offset='0.1' stop-color='#FFDD55' />
-          <stop offset='0.5' stop-color='#FF543E' />
-          <stop offset='1' stop-color='#C837AB' />
+          <stop stopColor='#FFDD55' />
+          <stop offset='0.1' stopColor='#FFDD55' />
+          <stop offset='0.5' stopColor='#FF543E' />
+          <stop offset='1' stopColor='#C837AB' />
         </radialGradient>
         <radialGradient
           id='paint3_radial_59_554'
@@ -465,9 +465,9 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
           gradientUnits='userSpaceOnUse'
           gradientTransform='translate(-5.36017 2.30523) rotate(78.6806) scale(14.1765 58.4359)'
         >
-          <stop stop-color='#3771C8' />
-          <stop offset='0.128' stop-color='#3771C8' />
-          <stop offset='1' stop-color='#6600FF' stop-opacity='0' />
+          <stop stopColor='#3771C8' />
+          <stop offset='0.128' stopColor='#3771C8' />
+          <stop offset='1' stopColor='#6600FF' stopOpacity='0' />
         </radialGradient>
         <radialGradient
           id='paint4_radial_59_554'
@@ -477,9 +477,9 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
           gradientUnits='userSpaceOnUse'
           gradientTransform='translate(-5.36017 2.30523) rotate(78.6806) scale(14.1765 58.4359)'
         >
-          <stop stop-color='#3771C8' />
-          <stop offset='0.128' stop-color='#3771C8' />
-          <stop offset='1' stop-color='#6600FF' stop-opacity='0' />
+          <stop stopColor='#3771C8' />
+          <stop offset='0.128' stopColor='#3771C8' />
+          <stop offset='1' stopColor='#6600FF' stopOpacity='0' />
         </radialGradient>
         <radialGradient
           id='paint5_radial_59_554'
@@ -489,9 +489,9 @@ export const SocialInstagram: React.FC<React.SVGAttributes<SVGElement>> = ({
           gradientUnits='userSpaceOnUse'
           gradientTransform='translate(-5.36017 2.30523) rotate(78.6806) scale(14.1765 58.4359)'
         >
-          <stop stop-color='#3771C8' />
-          <stop offset='0.128' stop-color='#3771C8' />
-          <stop offset='1' stop-color='#6600FF' stop-opacity='0' />
+          <stop stopColor='#3771C8' />
+          <stop offset='0.128' stopColor='#3771C8' />
+          <stop offset='1' stopColor='#6600FF' stopOpacity='0' />
         </radialGradient>
       </defs>
     </svg>
@@ -508,7 +508,7 @@ export const SocialX: React.FC<React.SVGAttributes<SVGElement>> = ({
       viewBox='0 0 32 32'
       {...props}
     >
-      <g clip-path='url(#a)'>
+      <g clipPath='url(#a)'>
         <path
           d='M28.238 31.946H3.756a3.722 3.722 0 0 1-3.722-3.722V3.743A3.722 3.722 0 0 1 3.756.02h24.481a3.722 3.722 0 0 1 3.722 3.722v24.48a3.722 3.722 0 0 1-3.721 3.723Z'
           fill='#000'
