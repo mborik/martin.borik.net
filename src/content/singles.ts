@@ -9,6 +9,18 @@ export const singles: Release[] = [
     badges: ['cinematic', 'ambient', 'alternative rock'],
     ...toReleaseDate('2024-01-01'),
     duration: '05:58',
+    youtubeEmbed: 'CirRHJcMHkI?si=4MGdCqfiXQ-LmxkB',
+    bandcampEmbed: 'track=2265910886',
+    link: {
+      bandcamp: 'https://mborik.bandcamp.com/track/not-great-not-terrible',
+      spotify: 'https://open.spotify.com/track/3hBxrjfoZnZXcT5zfGstdl',
+      appleMusic:
+        'https://music.apple.com/us/album/not-great-not-terrible/1726770109?i=1726770110',
+      deezer: 'https://www.deezer.com/sk/album/536585452',
+      youtube: 'https://youtu.be/CirRHJcMHkI?feature=shared',
+      youtubeMusic:
+        'https://music.youtube.com/playlist?list=OLAK5uy_lHHI6rTjnVgTIC9tHLpfrekzWGeb4wJd8',
+    },
   },
   {
     id: 'tearing-apart',
@@ -38,3 +50,6 @@ export const singles: Release[] = [
     duration: '04:05',
   },
 ];
+
+export const getSingle = (id: string): Release | undefined =>
+  singles.find((single) => single.id === id);

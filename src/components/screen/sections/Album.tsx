@@ -20,10 +20,12 @@ import { Release } from '@/store';
 
 interface AlbumProps extends Release {
   children?: React.ReactNode;
+  isSingle?: boolean;
 }
 
 export const Album: React.FC<AlbumProps> = ({
   children,
+  isSingle,
   imagePath,
   title,
   badges,
@@ -41,6 +43,132 @@ export const Album: React.FC<AlbumProps> = ({
   const isPortraitKind = useMediaQuery({ query: '(min-height: 767px)' });
   const [stickyPlayerOpen, setStickyPlayerOpen] =
     React.useState(isPortraitKind);
+  const sideInfoSection = () => (
+    <>
+      <ul className='AlbumSummary'>
+        {link && (
+          <li key='links' className='AlbumLinks'>
+            <ul>
+              {link.bandcamp && (
+                <li key='bandcamp'>
+                  <a
+                    href={link.bandcamp}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='Bandcamp'
+                  >
+                    <SocialBandcamp />
+                    <span>Bandcamp</span>
+                  </a>
+                </li>
+              )}
+              {link.spotify && (
+                <li key='spotify'>
+                  <a
+                    href={link.spotify}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='Spotify'
+                  >
+                    <SocialSpotify />
+                    <span>Spotify</span>
+                  </a>
+                </li>
+              )}
+              {link.appleMusic && (
+                <li key='apple'>
+                  <a
+                    href={link.appleMusic}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='Apple Music'
+                  >
+                    <SocialAppleMusic />
+                    <span>Apple Music</span>
+                  </a>
+                </li>
+              )}
+              {link.tidal && (
+                <li key='tidal'>
+                  <a
+                    href={link.tidal}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='Tidal'
+                  >
+                    <SocialTidal />
+                    <span>Tidal</span>
+                  </a>
+                </li>
+              )}
+              {link.deezer && (
+                <li key='deezer'>
+                  <a
+                    href={link.deezer}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='Deezer'
+                  >
+                    <SocialDeezer />
+                    <span>Deezer</span>
+                  </a>
+                </li>
+              )}
+              {link.youtube && (
+                <li key='youtube'>
+                  <a
+                    href={link.youtube}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='YouTube'
+                  >
+                    <SocialYouTube />
+                    <span>YouTube</span>
+                  </a>
+                </li>
+              )}
+              {link.youtubeMusic && (
+                <li key='youtubeMusic'>
+                  <a
+                    href={link.youtubeMusic}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='YouTube Music'
+                  >
+                    <SocialYouTubeMusic />
+                    <span>YouTube Music</span>
+                  </a>
+                </li>
+              )}
+            </ul>
+          </li>
+        )}
+        {releaseDate && (
+          <li key='released'>
+            <b>Released:</b>{' '}
+            <time dateTime={releaseDateISO.toISOString()}>{releaseDate}</time>
+          </li>
+        )}
+        {numberOfTracks && (
+          <li key='tracks'>
+            <b>Number of tracks:</b> <span>{numberOfTracks}</span>
+          </li>
+        )}
+        {duration && (
+          <li key='duration'>
+            <b>Duration:</b> <span>{duration}</span>
+          </li>
+        )}
+        {mastering && (
+          <li key='mastering' className='mt-3'>
+            <b>Mastering:</b>
+            <br />
+            {mastering}
+          </li>
+        )}
+      </ul>
+    </>
+  );
   return (
     <>
       <section id='album'>
@@ -75,139 +203,21 @@ export const Album: React.FC<AlbumProps> = ({
                   </div>
                 )}
             </div>
-            <div className='mt-24 -mb-24 PortfolioCard__badges'>
+            <div className='PortfolioCard__badges -mb-24'>
               {badges.map((badge) => (
                 <span key={badge}>
                   <mark>#{badge}</mark>
                 </span>
               ))}
             </div>
-            <ul className='AlbumSummary'>
-              {link && (
-                <li key='links' className='AlbumLinks'>
-                  <ul>
-                    {link.bandcamp && (
-                      <li key='bandcamp'>
-                        <a
-                          href={link.bandcamp}
-                          target='_blank'
-                          rel='noreferrer'
-                          title='Bandcamp'
-                        >
-                          <SocialBandcamp />
-                          <span>Bandcamp</span>
-                        </a>
-                      </li>
-                    )}
-                    {link.spotify && (
-                      <li key='spotify'>
-                        <a
-                          href={link.spotify}
-                          target='_blank'
-                          rel='noreferrer'
-                          title='Spotify'
-                        >
-                          <SocialSpotify />
-                          <span>Spotify</span>
-                        </a>
-                      </li>
-                    )}
-                    {link.appleMusic && (
-                      <li key='apple'>
-                        <a
-                          href={link.appleMusic}
-                          target='_blank'
-                          rel='noreferrer'
-                          title='Apple Music'
-                        >
-                          <SocialAppleMusic />
-                          <span>Apple Music</span>
-                        </a>
-                      </li>
-                    )}
-                    {link.tidal && (
-                      <li key='tidal'>
-                        <a
-                          href={link.tidal}
-                          target='_blank'
-                          rel='noreferrer'
-                          title='Tidal'
-                        >
-                          <SocialTidal />
-                          <span>Tidal</span>
-                        </a>
-                      </li>
-                    )}
-                    {link.deezer && (
-                      <li key='deezer'>
-                        <a
-                          href={link.deezer}
-                          target='_blank'
-                          rel='noreferrer'
-                          title='Deezer'
-                        >
-                          <SocialDeezer />
-                          <span>Deezer</span>
-                        </a>
-                      </li>
-                    )}
-                    {link.youtube && (
-                      <li key='youtube'>
-                        <a
-                          href={link.youtube}
-                          target='_blank'
-                          rel='noreferrer'
-                          title='YouTube'
-                        >
-                          <SocialYouTube />
-                          <span>YouTube</span>
-                        </a>
-                      </li>
-                    )}
-                    {link.youtubeMusic && (
-                      <li key='youtubeMusic'>
-                        <a
-                          href={link.youtubeMusic}
-                          target='_blank'
-                          rel='noreferrer'
-                          title='YouTube Music'
-                        >
-                          <SocialYouTubeMusic />
-                          <span>YouTube Music</span>
-                        </a>
-                      </li>
-                    )}
-                  </ul>
-                </li>
-              )}
-              {releaseDate && (
-                <li key='released'>
-                  <b>Released:</b>{' '}
-                  <time dateTime={releaseDateISO.toISOString()}>
-                    {releaseDate}
-                  </time>
-                </li>
-              )}
-              {numberOfTracks && (
-                <li key='tracks'>
-                  <b>Number of tracks:</b> <span>{numberOfTracks}</span>
-                </li>
-              )}
-              {duration && (
-                <li key='duration'>
-                  <b>Duration:</b> <span>{duration}</span>
-                </li>
-              )}
-              {mastering && (
-                <li key='mastering' className='mt-3'>
-                  <b>Mastering:</b>
-                  <br />
-                  {mastering}
-                </li>
-              )}
-            </ul>
+            {!isSingle && sideInfoSection()}
           </aside>
-          <div className='AlbumCopy'>{children}</div>
+          <div className='AlbumCopy'>
+            {children}
+            {isSingle && (
+              <div className='leading-none'>{sideInfoSection()}</div>
+            )}
+          </div>
         </article>
         {youtubeEmbed ? (
           <RampGradient fill='url(#to-dark)' transform='scale(-1,-1)' />
