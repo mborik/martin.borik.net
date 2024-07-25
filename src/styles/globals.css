@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .mark {
+    color: inherit;
+    background: linear-gradient(
+      90deg,
+      var(--secondary-600) 0%,
+      var(--accent-800) 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+}
+
 @layer base {
   :root {
     --background-50: #0b0d0e;
@@ -128,15 +142,7 @@
   }
 
   mark {
-    color: inherit;
-    background: linear-gradient(
-      90deg,
-      var(--secondary-600) 0%,
-      var(--accent-800) 100%
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    @apply mark;
   }
 
   .LayoutWrapper {
@@ -578,6 +584,10 @@
 
     p {
       @apply text-lg leading-normal text-white-800;
+
+      a {
+        @apply mark;
+      }
     }
     ul {
       @apply text-base leading-normal text-white-600;
@@ -591,8 +601,34 @@
         }
       }
     }
-  }
-}
+    blockquote {
+      @apply block relative px-4 text-white-700;
+      @apply italic font-primary font-light md:text-lg leading-normal tracking-wide;
 
-@layer utilities {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        left: -1px;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          var(--button-gradient-start) 0%,
+          var(--button-gradient-end) 100%
+        );
+        border-radius: 3px;
+        z-index: 2;
+      }
+    }
+  }
+
+  section#youtube {
+    @apply relative w-full items-center bg-header-fill;
+    margin-top: -4.25vw;
+  }
+  .SectionYoutube {
+    @apply relative w-full h-0 pb-youtube;
+  }
 }

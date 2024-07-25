@@ -32,4 +32,5 @@ export interface Release {
     tidal?: string;
   };
   bandcampEmbed?: string;
+  youtubeEmbed?: string;
 }

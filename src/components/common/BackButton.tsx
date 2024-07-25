@@ -19,7 +19,14 @@ export const BackButon: React.FC = () => {
         hidden: { opacity: 0, y: -100 },
       }}
     >
-      <button type='button' onClick={() => router.back()}>
+      <button
+        type='button'
+        onClick={() =>
+          window?.history?.length
+            ? router.back()
+            : router.push(`${router.basePath}/`)
+        }
+      >
         <span className='sr-only'>Go back</span>
         <ArrowLeft className='size-8 flex-none' aria-hidden='true' />
       </button>

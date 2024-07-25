@@ -27,6 +27,16 @@ export const albums: Release[] = [
     badges: ['newage', 'orchestral', 'alternative rock'],
     ...toReleaseDate('2013-07-09'),
     duration: '15:05',
+    bandcampEmbed: 'album=1797552204',
+    youtubeEmbed: '9GgrisJSkas?si=rE1rtmXy1vjwwNiS',
+    link: {
+      bandcamp: 'https://mborik.bandcamp.com/album/umbra-linea',
+      spotify: 'https://open.spotify.com/album/6Mzt27Y1kFnbmaZ8JFp1pd',
+      appleMusic: 'https://music.apple.com/us/album/umbra-linea-ep/1023319315',
+      tidal: 'https://tidal.com/browse/track/49499237',
+      deezer: 'https://www.deezer.com/sk/album/10906922',
+      youtube: 'https://youtu.be/9GgrisJSkas?feature=shared',
+    },
   },
   {
     id: 'chilled',
