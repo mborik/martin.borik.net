@@ -17,7 +17,7 @@ export default function UmbraLinea() {
       <Seo templateTitle='Umbra Linea' />
       <Section.Album {...album}>
         <h2>Umbra Linea</h2>
-        <p className='!leading-8'>
+        <p>
           This experimental piece was created as a&nbsp;side-product of work on
           my second, conceptual, thematic, long-playing{' '}
           <Link href={neobiosHref}>
@@ -32,7 +32,7 @@ export default function UmbraLinea() {
           a&nbsp;suspenseful motif that gradually shifts and the piece climaxes
           with a&nbsp;harder rock section.
         </p>
-        <p className='!leading-8'>
+        <p>
           The title <b>Umbra Linea</b> could be loosely translated as &quot;the
           edge of darkness&quot;. I&apos;m trying to raise questions in the
           listener&apos;s mind as to where is the boundary of what he or she
@@ -50,7 +50,7 @@ export default function UmbraLinea() {
           snippets of various motifs so that none could be cut into a&nbsp;promo
           single. The album was eventually released in a&nbsp;smaller number of
           copies and with almost zero commercial acclaim, but for orthodox fans
-          and devotees of alternative music it remains an idol to this day.
+          and devotees of alternative music it remains TOP up today.
         </blockquote>
       </Section.Album>
       <Section.Contact showSocials={false} />

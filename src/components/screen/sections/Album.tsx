@@ -1,9 +1,12 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import * as React from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import { RampGradient } from '@/components/common';
 import { BackButon } from '@/components/common/BackButton';
 import {
+  Bars3Icon,
   SocialAppleMusic,
   SocialBandcamp,
   SocialDeezer,
@@ -28,10 +31,16 @@ export const Album: React.FC<AlbumProps> = ({
   releaseDate,
   releaseDateISO,
   numberOfTracks,
+  mastering,
+  stickyPlayer,
   bandcampEmbed,
   youtubeEmbed,
   link,
 }) => {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isPortraitKind = useMediaQuery({ query: '(min-height: 767px)' });
+  const [stickyPlayerOpen, setStickyPlayerOpen] =
+    React.useState(isPortraitKind);
   return (
     <>
       <section id='album'>
@@ -47,23 +56,24 @@ export const Album: React.FC<AlbumProps> = ({
                   height={300}
                 />
               </div>
-              {bandcampEmbed && (
-                <div className='AlbumPlayer'>
-                  <iframe
-                    title={`${title} album on Bandcamp`}
-                    src={`https://martin.borik.net/wp-bandcamp.php?q=small&${bandcampEmbed}`}
-                    width={250}
-                    height={78}
-                    seamless
-                    allow='autoplay'
-                    {...{
-                      /* avoid React warnings */
-                      allowtransparency: 'allowtransparency',
-                      frameborder: '0',
-                    }}
-                  />
-                </div>
-              )}
+              {bandcampEmbed &&
+                (!stickyPlayer || (isMobile && stickyPlayer)) && (
+                  <div className='AlbumPlayer'>
+                    <iframe
+                      title={`${title} album on Bandcamp`}
+                      src={`https://martin.borik.net/wp-bandcamp.php?q=small&${bandcampEmbed}`}
+                      width={250}
+                      height={78}
+                      seamless
+                      allow='autoplay'
+                      {...{
+                        /* avoid React warnings */
+                        allowtransparency: 'allowtransparency',
+                        frameborder: '0',
+                      }}
+                    />
+                  </div>
+                )}
             </div>
             <div className='mt-24 -mb-24 PortfolioCard__badges'>
               {badges.map((badge) => (
@@ -188,6 +198,13 @@ export const Album: React.FC<AlbumProps> = ({
                   <b>Duration:</b> <span>{duration}</span>
                 </li>
               )}
+              {mastering && (
+                <li key='mastering' className='mt-3'>
+                  <b>Mastering:</b>
+                  <br />
+                  {mastering}
+                </li>
+              )}
             </ul>
           </aside>
           <div className='AlbumCopy'>{children}</div>
@@ -212,12 +229,47 @@ export const Album: React.FC<AlbumProps> = ({
               {...{
                 /* avoid React warnings */
                 allowfullscreen: 'allowfullscreen',
-                frameborder: '0',
+                frameBorder: '0',
               }}
             ></iframe>
           </div>
           <RampGradient fill='url(#to-light)' />
         </section>
+      )}
+      {bandcampEmbed && stickyPlayer && !isMobile && (
+        <motion.div
+          key='sticky'
+          className='StickyPlayer'
+          initial='hidden'
+          exit='hidden'
+          animate={stickyPlayerOpen ? 'visible' : 'hidden'}
+          viewport={{ once: true }}
+          transition={{ duration: 0.25 }}
+          variants={{
+            visible: { y: 0 },
+            hidden: { y: 128 },
+          }}
+        >
+          <button
+            type='button'
+            onClick={() => setStickyPlayerOpen(!stickyPlayerOpen)}
+          >
+            <Bars3Icon className='size-4 flex-none' aria-hidden='true' />
+          </button>
+          <iframe
+            title='Neobios album on Bandcamp'
+            src={`https://martin.borik.net/wp-bandcamp.php?q=large&${bandcampEmbed}`}
+            width={908}
+            height={100}
+            seamless
+            allow='autoplay'
+            {...{
+              /* avoid React warnings */
+              allowtransparency: 'allowtransparency',
+              frameBorder: '0',
+            }}
+          />
+        </motion.div>
       )}
     </>
   );

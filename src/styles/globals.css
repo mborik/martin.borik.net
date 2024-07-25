@@ -583,7 +583,7 @@
     @apply flex flex-col gap-8 p-0 m-0;
 
     p {
-      @apply text-lg leading-normal text-white-800;
+      @apply text-lg leading-8 text-white-800;
 
       a {
         @apply mark;
@@ -600,10 +600,13 @@
           @apply font-primary font-semibold text-lg;
         }
       }
+      strong {
+        @apply text-white-800 font-semibold tabular-nums;
+      }
     }
     blockquote {
       @apply block relative px-4 text-white-700;
-      @apply italic font-primary font-light md:text-lg leading-normal tracking-wide;
+      @apply font-primary font-light md:text-lg leading-normal tracking-wide;
 
       &::before {
         content: '';
@@ -630,5 +633,18 @@
   }
   .SectionYoutube {
     @apply relative w-full h-0 pb-youtube;
+  }
+  .StickyPlayer {
+    @apply fixed bottom-0 left-0 right-0 w-full z-10;
+    @apply p-4 border-none bg-header-fill backdrop-blur-xl;
+    > button {
+      @apply absolute -top-8 right-8 lg:right-20;
+      @apply block p-2 m-0 gap-2 bg-header-fill backdrop-blur-xl shadow-lg;
+      @apply text-secondary-800 hover:text-white focus:text-white select-none;
+      @apply rounded-3xl rounded-ee-none rounded-es-none;
+    }
+    > iframe {
+      margin: 0 auto;
+    }
   }
 }

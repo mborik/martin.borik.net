@@ -20,6 +20,7 @@ export interface Release {
   releaseDateISO: Date;
   numberOfTracks?: number;
   duration?: string;
+  mastering?: string;
   link?: {
     bandcamp?: string;
     soundcloud?: string;
@@ -31,6 +32,7 @@ export interface Release {
     deezer?: string;
     tidal?: string;
   };
+  stickyPlayer?: boolean;
   bandcampEmbed?: string;
   youtubeEmbed?: string;
 }

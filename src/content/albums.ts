@@ -18,6 +18,17 @@ export const albums: Release[] = [
     ...toReleaseDate('2014-08-14'),
     duration: '56:43',
     numberOfTracks: 11,
+    mastering: 'Radoslav Košvanec @ TC Lemons',
+    stickyPlayer: true,
+    bandcampEmbed: 'album=3514002307/package=3543520305',
+    link: {
+      bandcamp: 'https://mborik.bandcamp.com/album/neobios',
+      spotify: 'https://open.spotify.com/album/3ETcubNAShAZxDUNxNLPAl',
+      appleMusic: 'https://music.apple.com/us/album/neobios/948721396',
+      deezer: 'https://www.deezer.com/sk/album/9341842',
+      youtubeMusic:
+        'https://music.youtube.com/playlist?list=OLAK5uy_nweTMEcQpBt0f916TRAEZ_9JzCYweTJHA',
+    },
   },
   {
     id: 'umbra-linea',
