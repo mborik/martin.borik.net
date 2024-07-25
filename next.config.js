@@ -7,7 +7,11 @@ module.exports = {
   reactStrictMode: true,
 
   images: {
-    domains: ['borik.net'],
+    remotePatterns: [
+      {
+        hostname: '*.borik.net',
+      },
+    ],
   },
 
   experimental: {

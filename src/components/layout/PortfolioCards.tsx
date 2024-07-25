@@ -2,16 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 
-export interface Card {
-  id: string;
-  title: string;
-  href: string;
-  imagePath: string;
-  badges: string[];
-}
+import { Release } from '@/store';
 
 type Props = {
-  list: Card[];
+  list: Release[];
 };
 export const PortfolioCards: React.FC<Props> = ({ list }) => {
   return (

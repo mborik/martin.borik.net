@@ -281,10 +281,10 @@
   }
 
   .BackButton {
-    @apply absolute top-25 left-8 lg:left-20 z-50;
+    @apply fixed top-25 left-8 lg:left-20 z-10;
 
     > button {
-      @apply block p-4 pt-2 m-0 gap-2 bg-header-fill shadow-lg;
+      @apply block p-4 pt-2 m-0 gap-2 bg-header-fill backdrop-blur-xl shadow-lg;
       @apply text-secondary-800 hover:text-white focus:text-white select-none;
       @apply rounded-3xl rounded-se-none rounded-ss-none;
     }
@@ -460,6 +460,7 @@
   }
 
   .AlbumContainer {
+    position: relative;
     margin-top: 2.5rem;
     display: flex;
     align-items: center;
@@ -528,6 +529,47 @@
       background-color: var(--background-50);
       border-radius: 2px;
       box-shadow: -5px 0 15px 10px var(--background-50);
+    }
+  }
+
+  .AlbumPlayer {
+    position: absolute;
+    bottom: -64px;
+    left: 25px;
+    width: 100%;
+    height: 78px;
+  }
+
+  .AlbumSummary {
+    @apply flex flex-col gap-1 p-0 m-0 list-none mt-32 text-white-600;
+    b {
+      @apply font-primary font-semibold text-white-800;
+    }
+
+    li.AlbumLinks {
+      @apply mt-4 mb-8 self-center md:self-start;
+
+      > ul {
+        @apply flex flex-row md:flex-col gap-4 p-0 m-0 list-none;
+
+        li {
+          @apply flex-auto gap-0 w-full;
+
+          a {
+            @apply flex items-center gap-0 md:gap-3 font-primary font-semibold text-base text-white;
+
+            svg {
+              @apply size-10 md:size-8;
+            }
+            span {
+              @apply hidden md:block;
+            }
+          }
+        }
+      }
+      a {
+        @apply text-white-800;
+      }
     }
   }
 
