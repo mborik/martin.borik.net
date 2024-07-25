@@ -13,7 +13,6 @@ interface IconBaseProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const MenuItem: React.FC<IconBaseProps> = ({
   children,
-  key,
   title,
   href,
   external,
@@ -22,7 +21,7 @@ export const MenuItem: React.FC<IconBaseProps> = ({
   ...props
 }) => {
   return (
-    <div key={key} className='MenuItem' {...props}>
+    <div className='MenuItem' {...props}>
       {children ? <div className='MenuItem__icon'>{children}</div> : null}
       <div className='MenuItem__texts'>
         {external ? (

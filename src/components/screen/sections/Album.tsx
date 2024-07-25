@@ -55,9 +55,12 @@ export const Album: React.FC<AlbumProps> = ({
                     width={250}
                     height={78}
                     seamless
-                    allowTransparency
-                    frameBorder='0'
                     allow='autoplay'
+                    {...{
+                      /* avoid React warnings */
+                      allowtransparency: 'allowtransparency',
+                      frameborder: '0',
+                    }}
                   />
                 </div>
               )}
@@ -203,11 +206,14 @@ export const Album: React.FC<AlbumProps> = ({
               height='630'
               src={`https://www.youtube-nocookie.com/embed/${youtubeEmbed}&amp;controls=0&amp;hd=1`}
               title={title}
-              frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
               referrerPolicy='strict-origin-when-cross-origin'
-              allowFullScreen
               className='w-full h-full absolute top-0 left-0'
+              {...{
+                /* avoid React warnings */
+                allowfullscreen: 'allowfullscreen',
+                frameborder: '0',
+              }}
             ></iframe>
           </div>
           <RampGradient fill='url(#to-light)' />
