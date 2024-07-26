@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  distDir: 'build',
+  output: 'export',
+  cleanDistDir: true,
+  trailingSlash: true,
+
   eslint: {
     dirs: ['src'],
   },
@@ -7,11 +12,7 @@ module.exports = {
   reactStrictMode: true,
 
   images: {
-    remotePatterns: [
-      {
-        hostname: '*.borik.net',
-      },
-    ],
+    unoptimized: true,
   },
 
   experimental: {
