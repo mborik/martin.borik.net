@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@types/node": "20.14.6",
+    "@types/node": "20.14.12",
     "@types/react": "^18.0.18",
     "@types/react-lazy-load-image-component": "^1.5.2",
     "@types/sharp": "^0.32.0",
