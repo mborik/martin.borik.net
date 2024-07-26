@@ -30,6 +30,19 @@ export const singles: Release[] = [
     badges: ['glitch', 'ambient', 'alternative rock'],
     ...toReleaseDate('2023-09-22'),
     duration: '03:45',
+    youtubeEmbed: 'BJFsFx44vrw?si=0a80Fyo8aHTofI-y',
+    bandcampEmbed: 'track=46923748',
+    link: {
+      bandcamp: 'https://mborik.bandcamp.com/track/tearing-apart',
+      spotify: 'https://open.spotify.com/track/4VAGbNl8efEeVdoa49eeKX',
+      appleMusic:
+        'https://music.apple.com/us/album/tearing-apart/1716020898?i=1716020899',
+      deezer: 'https://www.deezer.com/sk/album/511204381',
+      tidal: 'https://tidal.com/browse/track/328198240',
+      youtube: 'https://youtu.be/BJFsFx44vrw?feature=shared',
+      youtubeMusic:
+        'https://music.youtube.com/playlist?list=OLAK5uy_lWy9lcr5BeY6J0vlZm9abCnYe9dCwSsc8',
+    },
   },
   {
     id: 'underscored',
