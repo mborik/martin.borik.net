@@ -298,7 +298,7 @@
 
   section#hero,
   section#album {
-    @apply relative w-full min-h-150;
+    @apply relative w-full min-h-128;
     background: radial-gradient(
       ellipse at center bottom,
       var(--background-gradient-end) 0%,

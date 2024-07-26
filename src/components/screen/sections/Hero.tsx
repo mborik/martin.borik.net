@@ -1,8 +1,6 @@
-import { Button } from '@headlessui/react';
 import * as React from 'react';
 
 import { RampGradient } from '@/components/common';
-import { ArrowRight } from '@/components/common/icons';
 
 export const Hero = () => {
   return (
@@ -20,12 +18,13 @@ export const Hero = () => {
           a&nbsp;commercial background music, a&nbsp;film sequence,
           or&nbsp;a&nbsp;TV&nbsp;show.
         </p>
+        {/* TODO
         <Button className='ButtonPrimary'>
           <div className='anchor'>
             Check out my Portfolio
             <ArrowRight className='size-6 flex-none' aria-hidden='true' />
           </div>
-        </Button>
+        </Button> */}
       </div>
       <RampGradient fill='url(#to-light)' />
     </section>
