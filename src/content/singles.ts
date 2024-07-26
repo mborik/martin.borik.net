@@ -72,8 +72,19 @@ export const singles: Release[] = [
     href: '/bitcrush-on-you',
     imagePath: '/images/covers/bitcrush_on_you.jpg',
     badges: ['synthwave', 'vocal'],
-    ...toReleaseDate('2023-02-01'),
+    ...toReleaseDate('2023-03-01'),
     duration: '04:05',
+    bandcampEmbed: 'album=2115013479',
+    link: {
+      bandcamp: 'https://mborik.bandcamp.com/album/bitcrush-on-you',
+      spotify: 'https://open.spotify.com/album/2jiMcogPHzFfj5HhoHy6nK',
+      appleMusic:
+        'https://music.apple.com/us/album/bitcrush-on-you-single/1675333067',
+      deezer: 'https://www.deezer.com/sk/album/413355717',
+      tidal: 'https://tidal.com/browse/track/279859111',
+      youtubeMusic:
+        'https://music.youtube.com/playlist?list=OLAK5uy_mbsyJZfKQXQzvFwascyhgrpIIlMnOrJ14',
+    },
   },
 ];
 
