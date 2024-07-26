@@ -229,7 +229,7 @@ export const Album: React.FC<AlbumProps> = ({
             <iframe
               width='1120'
               height='630'
-              src={`https://www.youtube-nocookie.com/embed/${youtubeEmbed}&amp;controls=0&amp;hd=1`}
+              src={`https://www.youtube-nocookie.com/embed/${youtubeEmbed}&amp;controls=1&amp;hd=1`}
               title={title}
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
               referrerPolicy='strict-origin-when-cross-origin'

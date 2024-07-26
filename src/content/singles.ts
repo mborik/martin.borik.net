@@ -50,8 +50,21 @@ export const singles: Release[] = [
     href: '/underscored',
     imagePath: '/images/covers/underscored.jpg',
     badges: ['liquid', `drum'n'bass`, 'cinematic'],
-    ...toReleaseDate('2023-09-01'),
+    ...toReleaseDate('2023-04-09'),
     duration: '05:18',
+    youtubeEmbed: 'U6mJdDwy5PA?si=54357Xd6KzBZ7KW5',
+    bandcampEmbed: 'track=1991604424',
+    link: {
+      bandcamp: 'https://mborik.bandcamp.com/album/underscored',
+      spotify: 'https://open.spotify.com/album/17rGJGuEe0LUFFLJoqIRJi',
+      appleMusic:
+        'https://music.apple.com/us/album/underscored-single/1717586862',
+      deezer: 'https://www.deezer.com/sk/album/515121402',
+      tidal: 'https://tidal.com/browse/album/330672372',
+      youtube: 'https://youtu.be/U6mJdDwy5PA?feature=shared',
+      youtubeMusic:
+        'https://music.youtube.com/playlist?list=OLAK5uy_nRKGvE9ju5xskTpexgqpNhwCTF_3lZEPU',
+    },
   },
   {
     id: 'bitcrush-on-you',
