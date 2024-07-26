@@ -484,6 +484,10 @@
         transform: translateZ(100px);
       }
     }
+
+    section#album:not([class*='single']) & + div {
+      margin-bottom: -6rem;
+    }
   }
 
   .AlbumCover {
@@ -560,7 +564,7 @@
         @apply flex flex-row md:flex-col gap-4 p-0 m-0 list-none;
 
         li {
-          @apply flex-auto gap-0 w-full;
+          @apply flex-auto gap-0;
 
           a {
             @apply flex items-center gap-0 md:gap-3 font-primary font-semibold text-base text-white;
@@ -583,8 +587,15 @@
   .AlbumCopy {
     @apply flex flex-col gap-8 p-0 m-0;
 
+    section#album.single & {
+      @apply mt-24 md:mt-0;
+    }
+
     .AlbumSummary {
       @apply !mt-0;
+    }
+    li.AlbumLinks > ul {
+      @apply flex-row flex-wrap;
     }
 
     > p {

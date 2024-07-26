@@ -88,6 +88,19 @@ export const Album: React.FC<AlbumProps> = ({
                   </a>
                 </li>
               )}
+              {link.youtubeMusic && (
+                <li key='youtubeMusic'>
+                  <a
+                    href={link.youtubeMusic}
+                    target='_blank'
+                    rel='noreferrer'
+                    title='YouTube Music'
+                  >
+                    <SocialYouTubeMusic />
+                    <span>YouTube Music</span>
+                  </a>
+                </li>
+              )}
               {link.tidal && (
                 <li key='tidal'>
                   <a
@@ -127,19 +140,6 @@ export const Album: React.FC<AlbumProps> = ({
                   </a>
                 </li>
               )}
-              {link.youtubeMusic && (
-                <li key='youtubeMusic'>
-                  <a
-                    href={link.youtubeMusic}
-                    target='_blank'
-                    rel='noreferrer'
-                    title='YouTube Music'
-                  >
-                    <SocialYouTubeMusic />
-                    <span>YouTube Music</span>
-                  </a>
-                </li>
-              )}
             </ul>
           </li>
         )}
@@ -171,7 +171,7 @@ export const Album: React.FC<AlbumProps> = ({
   );
   return (
     <>
-      <section id='album'>
+      <section id='album' className={isSingle ? 'single' : ''}>
         <BackButon />
         <article>
           <aside>
@@ -203,7 +203,7 @@ export const Album: React.FC<AlbumProps> = ({
                   </div>
                 )}
             </div>
-            <div className='PortfolioCard__badges -mb-24'>
+            <div className='PortfolioCard__badges'>
               {badges.map((badge) => (
                 <span key={badge}>
                   <mark>#{badge}</mark>
@@ -214,9 +214,7 @@ export const Album: React.FC<AlbumProps> = ({
           </aside>
           <div className='AlbumCopy'>
             {children}
-            {isSingle && (
-              <div className='leading-none'>{sideInfoSection()}</div>
-            )}
+            {isSingle && <div>{sideInfoSection()}</div>}
           </div>
         </article>
         {youtubeEmbed ? (

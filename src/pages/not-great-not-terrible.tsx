@@ -15,6 +15,9 @@ export default function NGNT() {
       <Seo templateTitle='Not Great Not Terrible' />
       <Section.Album {...single} isSingle>
         <h2>Not Great Not Terrible</h2>
+        <h4 className='-mt-8'>
+          <mark>1986-04-26</mark>
+        </h4>
         <p>
           In memory of all the victims, and all who suffered and sacrificed
           during Chernobyl disaster.
