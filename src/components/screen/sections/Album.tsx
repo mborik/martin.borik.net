@@ -218,7 +218,7 @@ export const Album: React.FC<AlbumProps> = ({
           </div>
         </article>
         {youtubeEmbed ? (
-          <RampGradient fill='url(#to-dark)' transform='scale(-1,-1)' />
+          <RampGradient fill='url(#to-dark)' flip />
         ) : (
           <RampGradient fill='url(#to-light)' />
         )}

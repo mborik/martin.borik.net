@@ -1,6 +1,11 @@
 import * as React from 'react';
 
-export const RampGradient: React.FC<React.SVGAttributes<SVGElement>> = ({
+interface RampGradientProps extends React.SVGAttributes<SVGElement> {
+  flip?: boolean;
+}
+
+export const RampGradient: React.FC<RampGradientProps> = ({
+  flip = false,
   ...props
 }) => {
   return (
@@ -11,7 +16,7 @@ export const RampGradient: React.FC<React.SVGAttributes<SVGElement>> = ({
         viewBox='0 0 4000 200'
         {...props}
       >
-        <path d='M4000 0v200H0L4000 0Z' />
+        <path d={flip ? 'M0 200V0H4000L0 200Z' : 'M4000 0v200H0L4000 0Z'} />
         <defs>
           <radialGradient
             id='to-light'
