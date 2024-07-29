@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 const defaultMeta = {
   title: 'Martin Bórik: music',
   siteName: 'Martin Bórik: music',
-  description: 'composer and music producer from Slovakia',
+  description:
+    'cinematic music composer and electronic music producer who aims to cover a broad range of musical genres',
   url: 'https://martin.borik.net',
   type: 'website',
   robots: 'follow, index',
@@ -12,8 +13,9 @@ const defaultMeta = {
 };
 
 type SeoProps = {
-  date?: string;
+  date?: Date;
   image?: string;
+  single?: boolean;
   templateTitle?: string;
 } & Partial<typeof defaultMeta>;
 
@@ -27,6 +29,13 @@ export function Seo(props: SeoProps) {
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
   meta['image'] = props.image ? `${meta.url}${props.image}` : meta.image;
+  if (props.date || props.single) {
+    meta['type'] = props.single ? 'music.song' : 'music.album';
+  }
+
+  const getMetaDateContent = (date: Date) => ({
+    content: `${date.toISOString().slice(0, 23)}${date.toTimeString().slice(12, 17)}`,
+  });
 
   return (
     <Head>
@@ -39,7 +48,10 @@ export function Seo(props: SeoProps) {
       <meta property='og:type' content={meta.type} />
       <meta property='og:site_name' content={meta.siteName} />
       <meta property='og:description' content={meta.description} />
-      <meta property='og:title' content={meta.title} />
+      <meta
+        property='og:title'
+        content={props.date || props.single ? props.templateTitle : meta.title}
+      />
       <meta property='og:image' name='image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
@@ -47,13 +59,22 @@ export function Seo(props: SeoProps) {
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
+      {/* Open Graph Music & Article */}
       {meta.date && (
         <>
-          <meta property='article:published_time' content={meta.date} />
+          <meta property='music:musician' content={meta.url} />
+          <meta
+            property='music:release_date'
+            {...getMetaDateContent(meta.date)}
+          />
           <meta
             name='publish_date'
             property='og:publish_date'
-            content={meta.date}
+            {...getMetaDateContent(meta.date)}
+          />
+          <meta
+            property='article:published_time'
+            {...getMetaDateContent(meta.date)}
           />
           <meta
             name='author'

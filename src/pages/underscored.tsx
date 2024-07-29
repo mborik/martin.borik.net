@@ -12,7 +12,12 @@ export default function Underscored() {
   }
   return (
     <>
-      <Seo templateTitle='Underscored' />
+      <Seo
+        templateTitle='Underscored'
+        date={single.releaseDateISO}
+        image={single.imagePath}
+        single
+      />
       <Section.Album {...single} isSingle>
         <h2>Underscored</h2>
         <h4 className='-mt-8'>

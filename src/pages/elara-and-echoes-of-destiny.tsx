@@ -12,7 +12,11 @@ export default function Elara() {
   }
   return (
     <>
-      <Seo templateTitle='Elara and Echoes of Destiny' />
+      <Seo
+        templateTitle='Elara and Echoes of Destiny'
+        date={album.releaseDateISO}
+        image={album.imagePath}
+      />
       <Section.Album {...album}>
         <h2>Elara and Echoes of Destiny</h2>
         <p>
@@ -52,7 +56,7 @@ export default function Elara() {
             <br />
             The game section is opening up. The heroine&apos;s first steps take
             her through the nearby forest, overcoming the first obstacles and
-            meeting the early enemies.
+            meeting an early enemies.
           </li>
           <li>
             <b>

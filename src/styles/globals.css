@@ -596,6 +596,9 @@
     }
     li.AlbumLinks > ul {
       @apply flex-row flex-wrap;
+      > li {
+        @apply flex-initial;
+      }
     }
 
     > p {

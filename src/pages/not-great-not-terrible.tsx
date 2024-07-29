@@ -12,7 +12,12 @@ export default function NGNT() {
   }
   return (
     <>
-      <Seo templateTitle='Not Great Not Terrible' />
+      <Seo
+        templateTitle='Not Great Not Terrible'
+        date={single.releaseDateISO}
+        image={single.imagePath}
+        single
+      />
       <Section.Album {...single} isSingle>
         <h2>Not Great Not Terrible</h2>
         <h4 className='-mt-8'>

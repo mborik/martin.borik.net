@@ -12,7 +12,12 @@ export default function BitcrushOnYou() {
   }
   return (
     <>
-      <Seo templateTitle='Bitcrush on you' />
+      <Seo
+        templateTitle='Bitcrush on you'
+        date={single.releaseDateISO}
+        image={single.imagePath}
+        single
+      />
       <Section.Album {...single} isSingle>
         <h2>Bitcrush on you</h2>
         <p>

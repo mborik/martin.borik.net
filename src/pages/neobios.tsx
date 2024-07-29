@@ -14,7 +14,11 @@ export default function Neobios() {
   }
   return (
     <>
-      <Seo templateTitle='Neobios' />
+      <Seo
+        templateTitle='Neobios'
+        date={album.releaseDateISO}
+        image={album.imagePath}
+      />
       <Section.Album {...album}>
         <h2>Neobios</h2>
         <p>

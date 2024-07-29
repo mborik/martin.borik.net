@@ -14,7 +14,11 @@ export default function UmbraLinea() {
   }
   return (
     <>
-      <Seo templateTitle='Umbra Linea' />
+      <Seo
+        templateTitle='Umbra Linea'
+        date={album.releaseDateISO}
+        image={album.imagePath}
+      />
       <Section.Album {...album}>
         <h2>Umbra Linea</h2>
         <p>

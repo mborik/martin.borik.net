@@ -197,7 +197,7 @@ export const Album: React.FC<AlbumProps> = ({
                       {...{
                         /* avoid React warnings */
                         allowtransparency: 'allowtransparency',
-                        frameborder: '0',
+                        frameBorder: '0',
                       }}
                     />
                   </div>
@@ -236,7 +236,7 @@ export const Album: React.FC<AlbumProps> = ({
               className='w-full h-full absolute top-0 left-0'
               {...{
                 /* avoid React warnings */
-                allowfullscreen: 'allowfullscreen',
+                allowFullscreen: 'allowFullscreen',
                 frameBorder: '0',
               }}
             ></iframe>

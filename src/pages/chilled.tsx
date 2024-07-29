@@ -12,7 +12,11 @@ export default function Chilled() {
   }
   return (
     <>
-      <Seo templateTitle='Chilled' />
+      <Seo
+        templateTitle='Chilled'
+        date={album.releaseDateISO}
+        image={album.imagePath}
+      />
       <Section.Album {...album}>
         <h2>Chilled</h2>
         <p>

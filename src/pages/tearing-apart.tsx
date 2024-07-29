@@ -12,7 +12,12 @@ export default function TearingApart() {
   }
   return (
     <>
-      <Seo templateTitle='Tearing Apart' />
+      <Seo
+        templateTitle='Tearing Apart'
+        date={single.releaseDateISO}
+        image={single.imagePath}
+        single
+      />
       <Section.Album {...single} isSingle>
         <h2>Tearing Apart</h2>
         <p>
