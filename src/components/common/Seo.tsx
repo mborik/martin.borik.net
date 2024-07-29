@@ -5,14 +5,15 @@ const defaultMeta = {
   title: 'Martin Bórik: music',
   siteName: 'Martin Bórik: music',
   description: 'composer and music producer from Slovakia',
-  url: 'https://martin.borik.com',
+  url: 'https://martin.borik.net',
   type: 'website',
   robots: 'follow, index',
-  image: 'https://borik.net/icons/icon-512x512.png',
+  image: 'https://martin.borik.net/images/screenshot.jpg',
 };
 
 type SeoProps = {
   date?: string;
+  image?: string;
   templateTitle?: string;
 } & Partial<typeof defaultMeta>;
 
@@ -25,12 +26,13 @@ export function Seo(props: SeoProps) {
   meta['title'] = props.templateTitle
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
+  meta['image'] = props.image ? `${meta.url}${props.image}` : meta.image;
 
   return (
     <Head>
       <title>{meta.title}</title>
       <meta name='robots' content={meta.robots} />
-      <meta content={meta.description} name='description' />
+      <meta name='description' content={meta.description} />
       <meta property='og:url' content={`${meta.url}${router.asPath}`} />
       <link rel='canonical' href={`${meta.url}${router.asPath}`} />
       {/* Open Graph */}
@@ -38,7 +40,7 @@ export function Seo(props: SeoProps) {
       <meta property='og:site_name' content={meta.siteName} />
       <meta property='og:description' content={meta.description} />
       <meta property='og:title' content={meta.title} />
-      <meta name='image' property='og:image' content={meta.image} />
+      <meta property='og:image' name='image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:site' content='@mborik128' />
@@ -110,14 +112,14 @@ const favicons: Array<Favicons> = [
   {
     rel: 'icon',
     type: 'image/png',
-    sizes: '192x192',
-    href: '/favicon/icon-192x192.png',
+    sizes: '96x96',
+    href: '/favicon/icon-96x96.png',
   },
   {
     rel: 'icon',
     type: 'image/png',
-    sizes: '96x96',
-    href: '/favicon/icon-96x96.png',
+    sizes: '192x192',
+    href: '/favicon/icon-192x192.png',
   },
   {
     rel: 'manifest',
