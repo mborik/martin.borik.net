@@ -1,10 +1,9 @@
 # Martin Bórik: music homepage
 
 - Mobile friendly
-- Global state managemant with Zustand
 - TypeScript
 
-Used repository as template [**nextjs-music-player**](https://github.com/patrick-xin/nextjs-music-player).
+Used repository [**nextjs-music-player**](https://github.com/patrick-xin/nextjs-music-player) as template.
 
 ## Getting Started
 
@@ -25,3 +24,15 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+## Deployment
+
+### 1. Build
+
+```bash
+yarn build
+```
+
+### 2. Copy `build` folder content to development server
+
