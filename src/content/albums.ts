@@ -8,6 +8,13 @@ export const albums: Release[] = [
     imagePath: '/images/covers/elara.jpg',
     badges: ['cinematic', 'orchestral', 'epic'],
     ...toReleaseDate('2024-08-14'),
+    duration: '19:23',
+    numberOfTracks: 8,
+    stickyPlayer: true,
+    bandcampEmbed: 'album=1405519782',
+    link: {
+      bandcamp: 'https://mborik.bandcamp.com/album/elara-and-echoes-of-destiny',
+    },
   },
   {
     id: 'neobios',
