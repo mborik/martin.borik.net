@@ -49,7 +49,7 @@ export const Header = () => {
             <Link href='/#music' className='ButtonOutlined uppercase'>
               Music
             </Link>
-            <Link href='/#contact' className='ButtonOutlined uppercase'>
+            <Link href='#contact' className='ButtonOutlined uppercase'>
               Contact
             </Link>
 

@@ -1,13 +1,19 @@
 import { motion } from 'framer-motion';
-import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import * as React from 'react';
 
 import { ArrowLeft } from '@/components/common/icons';
 
-export const BackButon: React.FC = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const previousPathname = pathname.slice(0, pathname.lastIndexOf('/') + 1);
+interface BackButonProps {
+  href?: string;
+  section?: string;
+}
+
+export const BackButon: React.FC<BackButonProps> = ({ href, section }) => {
+  const hrefData = {
+    pathname: href ?? '/',
+    ...(section && { hash: `#${section}` }),
+  };
   return (
     <motion.div
       className='BackButton'
@@ -21,16 +27,11 @@ export const BackButon: React.FC = () => {
         hidden: { opacity: 0, y: -100 },
       }}
     >
-      <button
-        type='button'
-        onClick={() =>
-          window?.history?.length > 2
-            ? router.back()
-            : router.push(previousPathname)
-        }
-      >
-        <span className='sr-only'>Go back</span>
-        <ArrowLeft className='size-8 flex-none' aria-hidden='true' />
+      <button type='button'>
+        <Link href={hrefData}>
+          <span className='sr-only'>Go back</span>
+          <ArrowLeft className='size-8 flex-none' aria-hidden='true' />
+        </Link>
       </button>
     </motion.div>
   );

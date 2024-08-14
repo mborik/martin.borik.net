@@ -21,11 +21,13 @@ import { Release } from '@/store';
 interface AlbumProps extends Release {
   children?: React.ReactNode;
   isSingle?: boolean;
+  backref?: string;
 }
 
 export const Album: React.FC<AlbumProps> = ({
   children,
   isSingle,
+  backref,
   imagePath,
   title,
   badges,
@@ -172,7 +174,12 @@ export const Album: React.FC<AlbumProps> = ({
   return (
     <>
       <section id='album' className={isSingle ? 'single' : ''}>
-        <BackButon />
+        <BackButon
+          href={backref}
+          section={
+            backref ? undefined : `music-${isSingle ? 'single' : 'album'}s`
+          }
+        />
         <article>
           <aside>
             <div className='AlbumContainer'>

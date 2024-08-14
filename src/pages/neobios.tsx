@@ -1,3 +1,4 @@
+import { NextPageContext } from 'next';
 import Link from 'next/link';
 import * as React from 'react';
 
@@ -6,12 +7,23 @@ import { Section } from '@/components/screen/Section';
 
 import { getAlbum } from '@/content';
 
-export default function Neobios() {
+interface AlbumBackrefProps {
+  from?: string;
+}
+
+export default function Neobios({ from }: AlbumBackrefProps) {
   const album = getAlbum('neobios');
-  const { href: ulHref } = getAlbum('umbra-linea') ?? { href: '/umbra-linea' };
   if (!album) {
     return null;
   }
+  const umbraLinea = getAlbum('umbra-linea');
+  const ulHref = {
+    as: umbraLinea?.href ?? '/umbra-linea',
+    href: {
+      pathname: umbraLinea?.href ?? '/umbra-linea',
+      query: { from: album.href },
+    },
+  };
   return (
     <>
       <Seo
@@ -19,7 +31,7 @@ export default function Neobios() {
         date={album.releaseDateISO}
         image={album.imagePath}
       />
-      <Section.Album {...album}>
+      <Section.Album {...album} backref={from}>
         <h2>Neobios</h2>
         <p>
           Neobios is the title of my second full-length album, which is designed
@@ -32,7 +44,7 @@ export default function Neobios() {
           2&nbsp;times, change jobs, get happily married and have a&nbsp;child
           during its creation. It&apos;s clear that over so many years one
           can&apos;t always stick to a&nbsp;theme and so, as
-          a&nbsp;side-product, the <Link href={ulHref}>Umbra&nbsp;Linea</Link>{' '}
+          a&nbsp;side-product, the <Link {...ulHref}>Umbra&nbsp;Linea</Link>{' '}
           came out. Nevertheless, I&nbsp;feel that I&nbsp;have managed to keep
           the overall theme of the album as I&nbsp;wanted it to be.
         </p>
@@ -229,3 +241,7 @@ export default function Neobios() {
     </>
   );
 }
+
+Neobios.getInitialProps = async ({ query }: NextPageContext) => {
+  return { from: query.from };
+};

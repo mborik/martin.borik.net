@@ -12,10 +12,12 @@ export const Music = () => {
       <div className='SectionMusicWrapper'>
         <h2 className='self-end'>discography</h2>
         <h3 className='lg:-mt-8'>
+          <a id='music-albums' aria-hidden='true' />
           <mark>LPs and EPs</mark>
         </h3>
         <PortfolioCards list={albums.slice(0, 4)} />
         <h3>
+          <a id='music-singles' aria-hidden='true' />
           <mark>singles</mark>
         </h3>
         <PortfolioCards list={singles.slice(0, 4)} />

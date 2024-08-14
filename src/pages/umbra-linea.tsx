@@ -1,3 +1,4 @@
+import { NextPageContext } from 'next';
 import Link from 'next/link';
 import * as React from 'react';
 
@@ -6,12 +7,23 @@ import { Section } from '@/components/screen/Section';
 
 import { getAlbum } from '@/content';
 
-export default function UmbraLinea() {
+interface AlbumBackrefProps {
+  from?: string;
+}
+
+export default function UmbraLinea({ from }: AlbumBackrefProps) {
   const album = getAlbum('umbra-linea');
-  const { href: neobiosHref } = getAlbum('neobios') ?? { href: '/neobios' };
   if (!album) {
     return null;
   }
+  const neobios = getAlbum('neobios');
+  const neobiosHref = {
+    as: neobios?.href ?? '/neobios',
+    href: {
+      pathname: neobios?.href ?? '/neobios',
+      query: { from: album.href },
+    },
+  };
   return (
     <>
       <Seo
@@ -19,12 +31,12 @@ export default function UmbraLinea() {
         date={album.releaseDateISO}
         image={album.imagePath}
       />
-      <Section.Album {...album}>
+      <Section.Album {...album} backref={from}>
         <h2>Umbra Linea</h2>
         <p>
           This experimental piece was created as a&nbsp;side-product of work on
           my second, conceptual, thematic, long-playing{' '}
-          <Link href={neobiosHref}>
+          <Link {...neobiosHref}>
             album&nbsp;<b>Neobios</b>
           </Link>
           .<br />
@@ -61,3 +73,7 @@ export default function UmbraLinea() {
     </>
   );
 }
+
+UmbraLinea.getInitialProps = async ({ query }: NextPageContext) => {
+  return { from: query.from };
+};
