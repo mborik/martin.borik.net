@@ -14,6 +14,13 @@ export const albums: Release[] = [
     bandcampEmbed: 'album=1405519782',
     link: {
       bandcamp: 'https://mborik.bandcamp.com/album/elara-and-echoes-of-destiny',
+      spotify: 'https://open.spotify.com/album/3RgDLf5zLB3YU9QTxzYBXi',
+      appleMusic:
+        'https://music.apple.com/us/album/elara-and-echoes-of-destiny/1763113792',
+      tidal: 'https://tidal.com/browse/album/381471785',
+      deezer: 'https://www.deezer.com/sk/album/629917781',
+      youtubeMusic:
+        'https://music.youtube.com/playlist?list=OLAK5uy_mSLjteBhxIw62eG0UQHfxMAFsdrphc4ik',
     },
   },
   {

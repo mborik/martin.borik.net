@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import * as React from 'react';
 
-import { Toast } from '@/components/common/Toast';
 import { Header } from '@/components/layout/Header';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -18,7 +17,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <Header />
         <main>{children}</main>
       </div>
-      <Toast />
     </>
   );
 };
