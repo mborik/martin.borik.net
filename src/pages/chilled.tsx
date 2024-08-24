@@ -17,7 +17,7 @@ export default function Chilled() {
         date={album.releaseDateISO}
         image={album.imagePath}
       />
-      <Section.Album {...album}>
+      <Section.Release {...album}>
         <h2>Chilled</h2>
         <p>
           I&apos;ve been creating the composition since about the end of 2004.
@@ -124,7 +124,7 @@ export default function Chilled() {
           that gradually breaks and becomes ambient, and the last track is pure
           00&apos;s downtempo.
         </p>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );

@@ -31,7 +31,7 @@ export default function Neobios({ from }: AlbumBackrefProps) {
         date={album.releaseDateISO}
         image={album.imagePath}
       />
-      <Section.Album {...album} backref={from}>
+      <Section.Release {...album} backref={from}>
         <h2>Neobios</h2>
         <p>
           Neobios is the title of my second full-length album, which is designed
@@ -236,7 +236,7 @@ export default function Neobios({ from }: AlbumBackrefProps) {
             </li>
           </ul>
         </blockquote>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );

@@ -18,7 +18,7 @@ export default function NGNT() {
         image={single.imagePath}
         single
       />
-      <Section.Album {...single} isSingle>
+      <Section.Release {...single} isSingle>
         <h2>Not Great Not Terrible</h2>
         <h4 className='-mt-8'>
           <mark>1986-04-26</mark>
@@ -27,7 +27,7 @@ export default function NGNT() {
           In memory of all the victims, and all who suffered and sacrificed
           during Chernobyl disaster.
         </p>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );

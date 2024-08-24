@@ -17,7 +17,7 @@ export default function Elara() {
         date={album.releaseDateISO}
         image={album.imagePath}
       />
-      <Section.Album {...album}>
+      <Section.Release {...album}>
         <h2>Elara and Echoes of Destiny</h2>
         <p>
           To broaden my portfolio and prove my versatility as a composer, I came
@@ -102,7 +102,7 @@ export default function Elara() {
             The concluding chant that wraps up the plot of our story.
           </li>
         </ul>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );

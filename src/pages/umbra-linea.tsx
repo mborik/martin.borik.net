@@ -31,7 +31,7 @@ export default function UmbraLinea({ from }: AlbumBackrefProps) {
         date={album.releaseDateISO}
         image={album.imagePath}
       />
-      <Section.Album {...album} backref={from}>
+      <Section.Release {...album} backref={from}>
         <h2>Umbra Linea</h2>
         <p>
           This experimental piece was created as a&nbsp;side-product of work on
@@ -68,7 +68,7 @@ export default function UmbraLinea({ from }: AlbumBackrefProps) {
           copies and with almost zero commercial acclaim, but for orthodox fans
           and devotees of alternative music it remains TOP up today.
         </blockquote>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );

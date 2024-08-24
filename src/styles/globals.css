@@ -296,6 +296,13 @@
     }
   }
 
+  .ScrollToTop {
+    @apply fixed bottom-12 right-8 lg:right-16 z-20;
+    @apply block p-4 m-0 gap-2 bg-header-fill backdrop-blur-xl shadow-lg;
+    @apply text-secondary-800 hover:text-white focus:text-white select-none;
+    @apply rounded-full;
+  }
+
   section#hero,
   section#album {
     @apply relative w-full min-h-128;

@@ -18,7 +18,7 @@ export default function BitcrushOnYou() {
         image={single.imagePath}
         single
       />
-      <Section.Album {...single} isSingle>
+      <Section.Release {...single} isSingle>
         <h2>Bitcrush on you</h2>
         <p>
           Commercially tuned track in popular synth-pop / electropop / synthwave
@@ -79,7 +79,7 @@ export default function BitcrushOnYou() {
             Forever.
           </p>
         </blockquote>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );

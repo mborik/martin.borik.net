@@ -3,10 +3,11 @@ import Image from 'next/image';
 import * as React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { RampGradient } from '@/components/common';
-import { BackButon } from '@/components/common/BackButton';
+import { RampGradient, ScrollToTop } from '@/components/common';
+import { BackButon } from '@/components/common';
 import {
   Bars3Icon,
+  ChevronUp,
   SocialAppleMusic,
   SocialBandcamp,
   SocialDeezer,
@@ -16,15 +17,15 @@ import {
   SocialYouTubeMusic,
 } from '@/components/common/icons';
 
-import { Release } from '@/store';
+import { Release as ReleaseStore } from '@/store';
 
-interface AlbumProps extends Release {
+interface ReleaseProps extends ReleaseStore {
   children?: React.ReactNode;
   isSingle?: boolean;
   backref?: string;
 }
 
-export const Album: React.FC<AlbumProps> = ({
+export const Release: React.FC<ReleaseProps> = ({
   children,
   isSingle,
   backref,
@@ -174,6 +175,9 @@ export const Album: React.FC<AlbumProps> = ({
   return (
     <>
       <section id='album' className={isSingle ? 'single' : ''}>
+        <ScrollToTop smooth>
+          <ChevronUp className='size-8 flex-none' />
+        </ScrollToTop>
         <BackButon
           href={backref}
           section={

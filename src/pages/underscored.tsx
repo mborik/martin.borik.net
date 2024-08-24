@@ -18,7 +18,7 @@ export default function Underscored() {
         image={single.imagePath}
         single
       />
-      <Section.Album {...single} isSingle>
+      <Section.Release {...single} isSingle>
         <h2>Underscored</h2>
         <h4 className='-mt-8'>
           <mark>Liquid unhappy</mark>
@@ -44,7 +44,7 @@ export default function Underscored() {
             .
           </p>
         </blockquote>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );

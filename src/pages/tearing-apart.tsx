@@ -18,13 +18,13 @@ export default function TearingApart() {
         image={single.imagePath}
         single
       />
-      <Section.Album {...single} isSingle>
+      <Section.Release {...single} isSingle>
         <h2>Tearing Apart</h2>
         <p>
           Putting the feelings of a divided society and climate crisis denial
           into the mix of ambient and alternative rock.
         </p>
-      </Section.Album>
+      </Section.Release>
       <Section.Contact showSocials={false} />
     </>
   );
