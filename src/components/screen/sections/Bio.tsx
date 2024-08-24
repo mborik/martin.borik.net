@@ -18,15 +18,23 @@ export const Bio = () => {
               of&nbsp;MIDI protocol and started composing my first songs.
             </p>
           </aside>
-          <Image
-            src='/images/bio_me.png'
-            alt='profile photo'
-            width={428}
-            height={212}
-            quality={82}
-            placeholder='blur'
-            blurDataURL={bio_me_png_blurred}
-          />
+          <picture>
+            <source
+              srcSet='/images/bio_me_lo.webp'
+              type='image/webp'
+              media='(max-width: 640px)'
+            />
+            <source srcSet='/images/bio_me.webp' type='image/webp' />
+            <source srcSet='/images/bio_me.png' type='image/png' />
+            <Image
+              src='/images/bio_me.png'
+              alt='profile photo'
+              width={428}
+              height={212}
+              placeholder='blur'
+              blurDataURL={bio_me_png_blurred}
+            />
+          </picture>
           <Image
             src='/images/bio_exp.svg'
             alt='20+ years of experience'
@@ -51,15 +59,23 @@ export const Bio = () => {
             height={212}
             className='frame order-2 lg:-order-none'
           />
-          <Image
-            src='/images/bio_studio.png'
-            alt='studio workspace'
-            width={428}
-            height={212}
-            quality={82}
-            placeholder='blur'
-            blurDataURL={bio_studio_png_blurred}
-          />
+          <picture>
+            <source
+              srcSet='/images/bio_studio_lo.webp'
+              type='image/webp'
+              media='(max-width: 640px)'
+            />
+            <source srcSet='/images/bio_studio.webp' type='image/webp' />
+            <source srcSet='/images/bio_studio.png' type='image/png' />
+            <Image
+              src='/images/bio_studio.png'
+              alt='studio workspace'
+              width={428}
+              height={212}
+              placeholder='blur'
+              blurDataURL={bio_studio_png_blurred}
+            />
+          </picture>
         </div>
       </div>
       <RampGradient fill='url(#to-dark)' />
