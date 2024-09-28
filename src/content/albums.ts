@@ -12,6 +12,7 @@ export const albums: Release[] = [
     numberOfTracks: 8,
     stickyPlayer: true,
     bandcampEmbed: 'album=1405519782',
+    youtubeEmbed: '2BzZym-n2jQ?si=I8BIV3OM61blCuDo',
     link: {
       bandcamp: 'https://mborik.bandcamp.com/album/elara-and-echoes-of-destiny',
       spotify: 'https://open.spotify.com/album/3RgDLf5zLB3YU9QTxzYBXi',

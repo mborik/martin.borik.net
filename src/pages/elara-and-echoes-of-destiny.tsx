@@ -102,6 +102,23 @@ export default function Elara() {
             The concluding chant that wraps up the plot of our story.
           </li>
         </ul>
+        <blockquote className='order-9 !text-white-800'>
+          <p>
+            Following video is my implementation of adaptive music done in{' '}
+            <a
+              href='https://www.fmod.com/studio'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <mark className='font-bold'>FMOD&nbsp;Studio</mark>
+            </a>{' '}
+            based on Track 5: &apos;Quest of Sacrifice&apos; of this album.
+            <br />
+            Contact me if you think you could use my musical skills in
+            combination with my development background in your own video game or
+            project.
+          </p>
+        </blockquote>
       </Section.Release>
       <Section.Contact showSocials={false} />
     </>
