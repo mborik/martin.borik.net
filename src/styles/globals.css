@@ -125,6 +125,16 @@
       -webkit-text-fill-color: transparent;
       text-fill-color: transparent;
     }
+    &.gradient2 {
+      background: linear-gradient(
+        -90deg,
+        var(--secondary-600) 0%,
+        var(--accent-800) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+    }
   }
   h4 {
     @apply text-2xl;
@@ -360,6 +370,9 @@
   }
   .SectionBioLine2 {
     @apply flex flex-col lg:flex-row gap-8 p-0 m-0 justify-evenly items-end md:-mt-32 lg:mt-0;
+  }
+  .SectionBioLine3 {
+    @apply flex flex-col lg:flex-row gap-8 p-0 m-0 justify-evenly items-start;
   }
 
   section#music {

@@ -3,7 +3,11 @@ import * as React from 'react';
 
 import { RampGradient } from '@/components/common';
 
-import { bio_me_png_blurred, bio_studio_png_blurred } from '@/content';
+import {
+  bio_devxp_png_blurred,
+  bio_me_png_blurred,
+  bio_studio_png_blurred,
+} from '@/content';
 
 export const Bio = () => {
   return (
@@ -76,6 +80,39 @@ export const Bio = () => {
               blurDataURL={bio_studio_png_blurred}
             />
           </picture>
+        </div>
+        <div className='SectionBioLine3'>
+          <aside>
+            <h3 className='gradient2'>development skills</h3>
+            <p>
+              Years and years in IT makes me confident to support you with music
+              implementation into your game or project.
+            </p>
+          </aside>
+          <picture>
+            <source
+              srcSet='/images/bio_devxp_lo.webp'
+              type='image/webp'
+              media='(max-width: 640px)'
+            />
+            <source srcSet='/images/bio_devxp.webp' type='image/webp' />
+            <source srcSet='/images/bio_devxp.png' type='image/png' />
+            <Image
+              src='/images/bio_devxp.png'
+              alt='profile photo'
+              width={428}
+              height={212}
+              placeholder='blur'
+              blurDataURL={bio_devxp_png_blurred}
+            />
+          </picture>
+          <Image
+            src='/images/bio_dev.svg'
+            alt='development skills'
+            width={212}
+            height={212}
+            className='frame'
+          />
         </div>
       </div>
       <RampGradient fill='url(#to-dark)' />
