@@ -141,14 +141,25 @@ export const Contact: React.FC<ContactProps> = ({ showSocials = true }) => {
               <q cite='https://borik.net/'>Copyright &copy; Martin Bórik</q>
             </>
           ) : (
-            <Image
-              src='/images/avatar.jpg'
-              alt='Martin Bórik'
-              width={256}
-              height={256}
-              loading='lazy'
-              className='shadow-xl rounded-full'
-            />
+            <>
+              <picture>
+                <source
+                  srcSet='/images/avatar_lo.webp'
+                  type='image/webp'
+                  media='(max-width: 640px)'
+                />
+                <source srcSet='/images/avatar.webp' type='image/webp' />
+                <source srcSet='/images/avatar.png' type='image/png' />
+                <Image
+                  src='/images/avatar.jpg'
+                  alt='Martin Bórik'
+                  width={256}
+                  height={256}
+                  loading='lazy'
+                  className='shadow-xl rounded-full'
+                />
+              </picture>
+            </>
           )}
         </section>
       </div>
