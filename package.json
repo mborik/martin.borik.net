@@ -1,0 +1,71 @@
+{
+  "name": "zapeceny",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "lint:strict": "eslint --max-warnings=0 src",
+    "typecheck": "tsc --noEmit --incremental false",
+    "test": "exit 0",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.0.4",
+    "@tailwindcss/forms": "^0.5.3",
+    "framer-motion": "^11.2.10",
+    "next": "^14.2.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.5.5",
+    "react-responsive": "^10.0.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "20.14.12",
+    "@types/react": "^18.0.18",
+    "@types/react-lazy-load-image-component": "^1.5.2",
+    "@types/sharp": "^0.32.0",
+    "@types/tailwindcss": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "add": "^2.0.6",
+    "autoprefixer": "^10.4.8",
+    "clsx": "^2.1.1",
+    "eslint": "^9.5.0",
+    "eslint-config-next": "^14.2.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "eslint-plugin-unused-imports": "^4.0.0",
+    "globals": "^15.6.0",
+    "lint-staged": "^15.2.7",
+    "next-sitemap": "^4.2.3",
+    "postcss": "^8.4.16",
+    "postcss-replace": "^2.0.1",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.4",
+    "sharp": "^0.33.4",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^5.4.5",
+    "yarn": "^1.22.19"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "src/**/*.{json,css,scss,md}": [
+      "prettier -w"
+    ]
+  }
+}
