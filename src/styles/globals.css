@@ -15,9 +15,8 @@
     --background-800: #c6ccd2;
     --background-900: #e2e6e9;
     --background-950: #f1f2f4;
-    --background-gradient-start: #171a1d;
-    --background-gradient-end: #1d2124;
-    --header-fill: #0b0d0e80;
+    --background-gradient-start: #f1f2f4;
+    --background-gradient-end: #a9b3bc;
     --text-50: #0d0d0d;
     --text-100: #1a1a1a;
     --text-200: #333333;
@@ -29,7 +28,7 @@
     --text-800: #cccccc;
     --text-900: #e6e6e6;
     --text-950: #f2f2f2;
-    --text-base: #ffffff;
+    --text-base: #000000;
     --primary-50: #020e17;
     --primary-100: #051c2e;
     --primary-200: #09395d;
@@ -139,34 +138,19 @@
 
   .LayoutWrapper {
     @apply h-full min-h-screen overflow-visible;
-    background: linear-gradient(
-      to bottom,
+    background: radial-gradient(
+      ellipse at center,
       var(--background-gradient-start) 0%,
       var(--background-gradient-end) 100%
     );
 
     * {
       @apply touch-auto;
-    }
-  }
 
-  .Header {
-    @apply border-none bg-header-fill backdrop-blur-xl fixed top-0 left-0 right-0 h-25 z-10;
-
-    > nav {
-      @apply flex justify-between items-center px-6 lg:px-20 pt-1 lg:p-0 mx-auto max-w-7xl h-full w-full;
+      &[class~='btn-container'] {
+        zoom: 1.26;
+      }
     }
-  }
-  .Header__logo {
-    @apply flex-initial lg:justify-start;
-
-    img {
-      @apply lg:w-auto;
-      width: 265px;
-    }
-  }
-  .Header__rightNav {
-    @apply flex-1 flex justify-end;
   }
 
   .ButtonPrimary {
@@ -238,4 +222,12 @@
     @apply rounded-full;
   }
 
+  section#podcast {
+    @apply h-screen min-h-screen flex flex-col justify-center items-center gap-8;
+
+    .Hero {
+      @apply flex flex-col justify-center items-center gap-4;
+      @apply text-center;
+    }
+  }
 }

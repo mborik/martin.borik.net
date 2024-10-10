@@ -5,7 +5,7 @@ const defaultMeta = {
   title: 'Zapečené procesory',
   siteName: 'Zapečené procesory',
   description:
-    'Populárno-náučný podcast, ktorý vám prináša Martin Bórik, kde budeme hovoriť o histórii výpočtovej techniky a príbehy technológií, ktoré zmenili svet.',
+    'Populárno-náučný podcast, ktorý vám prináša Martin Bórik, kde budeme hovoriť o histórii výpočtovej techniky a príbehoch technológií, ktoré zmenili svet.',
   url: 'https://zapeceny.borik.net',
   type: 'website',
   robots: 'follow, index',
