@@ -32,7 +32,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        'header-fill': 'var(--header-fill)',
+        dark: 'var(--background-100)',
         primary: generateColorPalette('primary', true),
         secondary: generateColorPalette('secondary', true),
         accent: generateColorPalette('accent', true),
@@ -52,27 +52,9 @@ module.exports = {
         160: '40rem', // 640px
         '4xl': '56rem', // 896px
         '5xl': '64rem', // 1024px
-        youtube: '56.25%', // 16:9
       },
       fontSize: {
         heading: '2.5rem', // 40px
-      },
-      boxShadow: {
-        'inset-border': 'inset 0 0 0 1px var(--header-fill)',
-        'primary-button':
-          '0 0 0 3px var(--accent-glow), 0 0 32px var(--primary-glow)',
-        'primary-button-hover':
-          '0 0 0 3px var(--accent-glow), 0 0 48px var(--primary-glow)',
-        'secondary-button':
-          '0 0 1px 2px var(--secondary-glow), 0 0 1px 4px var(--secondary-glow)',
-        'secondary-button-hover':
-          '0 0 1px 2px var(--secondary-glow), 0 0 1px 4px var(--secondary-glow), 0 0 1px 6px var(--secondary-glow)',
-      },
-      keyframes: {
-        albumCover: {
-          '0%': { transform: 'rotateY(0deg)' },
-          '100%': { transform: 'rotateY(-25deg)' },
-        },
       },
       animation: {},
       zIndex: { 1: '1' },

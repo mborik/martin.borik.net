@@ -77,7 +77,13 @@
   body,
   html {
     @apply h-full p-0 m-0 font-sans scroll-smooth scroll-p-25;
-    background: var(--background-gradient-start);
+    @apply min-h-screen overflow-visible bg-background;
+
+    background: radial-gradient(
+      ellipse at center,
+      var(--background-gradient-start) 0%,
+      var(--background-gradient-end) 100%
+    );
   }
 
   a:focus,
@@ -137,97 +143,35 @@
   }
 
   .LayoutWrapper {
-    @apply h-full min-h-screen overflow-visible;
-    background: radial-gradient(
-      ellipse at center,
-      var(--background-gradient-start) 0%,
-      var(--background-gradient-end) 100%
-    );
+    @apply overflow-x-clip;
 
     * {
       @apply touch-auto;
 
       &[class~='btn-container'] {
+        @apply drop-shadow-md;
+
         zoom: 1.26;
+        width: max-content;
       }
     }
   }
 
-  .ButtonPrimary {
-    @apply block px-8 py-0 m-0 z-0;
-    @apply relative h-12 rounded-3xl text-white-100 hover:text-black shadow-primary-button;
-    background: linear-gradient(
-      96deg,
-      var(--button-gradient-start) 0%,
-      var(--button-gradient-end) 100%
-    );
-
-    &::before {
-      @apply absolute inset-0 rounded-3xl -z-1;
-      content: '';
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0;
-      transition: opacity 0.2s ease-in;
-      background: linear-gradient(
-        -96deg,
-        var(--button-gradient-start) 0%,
-        var(--button-gradient-end) 100%
-      );
-    }
-    &:hover::before {
-      opacity: 1;
-    }
-    .anchor {
-      @apply flex justify-center items-center gap-4 select-none;
-      @apply text-xl leading-none font-primary font-semibold;
-    }
-  }
-  .ButtonSecondary {
-    @apply block pl-6 pr-3 py-0 mt-0 z-0 content-center;
-    @apply relative h-12 rounded-3xl text-white-100 hover:text-black bg-secondary-600 shadow-secondary-button;
-    @apply hover:shadow-secondary-button-hover focus:shadow-secondary-button;
-
-    &::before {
-      @apply absolute inset-0 size-12 left-auto right-0 -z-1 rounded-3xl;
-      @apply bg-secondary-glow hover:bg-secondary-700 focus:bg-secondary-700;
-      content: '';
-    }
-    .anchor {
-      @apply flex justify-center items-center gap-5 select-none;
-      @apply text-base font-primary font-semibold;
-    }
-  }
-  .ButtonOutlined {
-    @apply flex justify-center items-center px-2 py-1 m-0 gap-2;
-    @apply text-white-600 hover:text-white focus:text-white text-base font-primary font-semibold select-none;
-  }
-
-  .BackButton {
-    @apply fixed top-25 left-8 lg:left-20 z-10;
-
-    > button {
-      @apply block p-4 pt-2 m-0 gap-2 bg-header-fill backdrop-blur-xl shadow-lg;
-      @apply text-secondary-800 hover:text-white focus:text-white select-none;
-      @apply rounded-3xl rounded-se-none rounded-ss-none;
-    }
-  }
-
-  .ScrollToTop {
-    @apply fixed bottom-12 right-8 lg:right-16 z-20;
-    @apply block p-4 m-0 gap-2 bg-header-fill backdrop-blur-xl shadow-lg;
-    @apply text-secondary-800 hover:text-white focus:text-white select-none;
-    @apply rounded-full;
-  }
-
   section#podcast {
-    @apply h-screen min-h-screen flex flex-col justify-center items-center gap-8;
+    @apply h-full min-h-screen flex flex-col justify-center items-center gap-8 p-8;
 
     .Hero {
       @apply flex flex-col justify-center items-center gap-4;
-      @apply text-center;
+      @apply text-center break-words;
+    }
+
+    .LinkBtn {
+      @apply drop-shadow-md;
+      @apply hover:scale-125 ease-out duration-200;
+
+      > svg {
+        @apply size-12;
+      }
     }
   }
 }

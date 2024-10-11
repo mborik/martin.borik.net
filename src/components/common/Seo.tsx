@@ -5,7 +5,7 @@ const defaultMeta = {
   title: 'Zapečené procesory',
   siteName: 'Zapečené procesory',
   description:
-    'Populárno-náučný podcast, ktorý vám prináša Martin Bórik, kde budeme hovoriť o histórii výpočtovej techniky a príbehoch technológií, ktoré zmenili svet.',
+    'Martin Bórik vytvára populárno-náučný podcast o histórii výpočtovej techniky a rozpráva príbehy technológií, ktoré zmenili svet.',
   url: 'https://zapeceny.borik.net',
   type: 'website',
   robots: 'follow, index',
@@ -141,9 +141,5 @@ const favicons: Array<Favicons> = [
     type: 'image/png',
     sizes: '192x192',
     href: '/favicon/icon-192x192.png',
-  },
-  {
-    rel: 'manifest',
-    href: '/favicon/manifest.json',
   },
 ];
