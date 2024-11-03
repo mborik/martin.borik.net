@@ -3,7 +3,11 @@ import Image from 'next/image';
 import * as React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { SocialAppleMusic, SocialSpotify } from '@/components/common/icons';
+import {
+  SocialAppleMusic,
+  SocialSpotify,
+  SocialYouTube,
+} from '@/components/common/icons';
 
 export const Podcast = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 490px)' });
@@ -34,8 +38,8 @@ export const Podcast = () => {
           )}
         </h3>
         <h4 className='w-80'>
-          Volám sa <b>Martin&nbsp;Bórik</b> a&nbsp;budem Váš sprievodca
-          v&nbsp;tomto stroji času.
+          Som <b>Martin&nbsp;Bórik</b> a&nbsp;budem Váš sprievodca v&nbsp;tomto
+          stroji času.
         </h4>
         <div className='socials my-4 flex flex-row gap-4'>
           <a
@@ -55,6 +59,15 @@ export const Podcast = () => {
             className='LinkBtn'
           >
             <SocialAppleMusic />
+          </a>
+          <a
+            title='YouTube Podcast'
+            href='https://youtube.com/playlist?list=PLx2Nc0zFeia4E4cHihecd5wNhRtw__7wP&feature=shared'
+            target='_blank'
+            rel='noreferrer'
+            className='LinkBtn'
+          >
+            <SocialYouTube />
           </a>
         </div>
         <KofiButton
