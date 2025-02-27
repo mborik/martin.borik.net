@@ -21,7 +21,7 @@ export const Podcast = () => {
           height={283}
           className='mb-4'
         />
-        <h3>
+        <h4>
           {isMobile ? (
             <>
               Populárno-náučný podcast o&nbsp;histórii výpočtovej techniky
@@ -36,11 +36,11 @@ export const Podcast = () => {
               ktoré zmenili svet.
             </>
           )}
-        </h3>
-        <h4 className='w-80'>
+        </h4>
+        <h5 className='w-80'>
           Som <b>Martin&nbsp;Bórik</b> a&nbsp;budem Váš sprievodca v&nbsp;tomto
           stroji času.
-        </h4>
+        </h5>
         <div className='socials my-4 flex flex-row gap-4'>
           <a
             title='Spotify Podcasts'
@@ -75,19 +75,7 @@ export const Podcast = () => {
           title=' Podporte podcast'
           kofiID='J3J714IUF2'
         />
-        <small>
-          Za mesačné predplatné získate
-          <br />
-          novú epizódu vždy týždeň vopred.
-        </small>
       </div>
-      {/* <iframe
-        src='https://podcasters.spotify.com/pod/show/zapeceneprocesory/embed'
-        height='102px'
-        width='500px'
-        frameBorder='0'
-        scrolling='no'
-      ></iframe> */}
     </section>
   );
 };

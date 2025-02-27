@@ -1,28 +1,19 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-const defaultMeta = {
-  title: 'Zapečené procesory',
-  siteName: 'Zapečené procesory',
-  description:
-    'Martin Bórik vytvára populárno-náučný podcast o histórii výpočtovej techniky a rozpráva príbehy technológií, ktoré zmenili svet.',
-  url: 'https://zapeceny.borik.net',
-  type: 'website',
-  robots: 'follow, index',
-  image: 'https://zapeceny.borik.net/images/screenshot.jpg',
-};
+import { config } from '@/lib/config';
 
 type SeoProps = {
   date?: Date;
   image?: string;
   single?: boolean;
   templateTitle?: string;
-} & Partial<typeof defaultMeta>;
+} & Partial<typeof config>;
 
 export function Seo(props: SeoProps) {
   const router = useRouter();
   const meta = {
-    ...defaultMeta,
+    ...config,
     ...props,
   };
   meta['title'] = props.templateTitle
