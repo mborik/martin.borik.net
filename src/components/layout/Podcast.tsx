@@ -2,7 +2,9 @@ import KofiButton from 'kofi-button';
 import Image from 'next/image';
 import * as React from 'react';
 
+import { ScrollToTop } from '@/components/common';
 import {
+  ChevronUp,
   SocialAppleMusic,
   SocialSpotify,
   SocialYouTube,
@@ -12,6 +14,9 @@ import { ListTable } from '@/components/player';
 export const Podcast = () => {
   return (
     <section id='podcast'>
+      <ScrollToTop smooth>
+        <ChevronUp className='size-8 flex-none' />
+      </ScrollToTop>
       <div className='Hero'>
         <Image
           src='/images/logo_transparent.png'
