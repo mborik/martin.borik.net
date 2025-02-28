@@ -1,16 +1,15 @@
 import KofiButton from 'kofi-button';
 import Image from 'next/image';
 import * as React from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 import {
   SocialAppleMusic,
   SocialSpotify,
   SocialYouTube,
 } from '@/components/common/icons';
+import { ListTable } from '@/components/player';
 
 export const Podcast = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 490px)' });
   return (
     <section id='podcast'>
       <div className='Hero'>
@@ -22,20 +21,10 @@ export const Podcast = () => {
           className='mb-4'
         />
         <h4>
-          {isMobile ? (
-            <>
-              Populárno-náučný podcast o&nbsp;histórii výpočtovej techniky
-              a&nbsp;príbehoch technológií, ktoré zmenili svet.
-            </>
-          ) : (
-            <>
-              Populárno-náučný podcast
-              <br />o histórii výpočtovej techniky
-              <br />a príbehoch technológií,
-              <br />
-              ktoré zmenili svet.
-            </>
-          )}
+          Populárno-náučný podcast <br />
+          o&nbsp;histórii výpočtovej techniky <br />
+          a&nbsp;príbehoch technológií, <br />
+          ktoré zmenili svet.
         </h4>
         <h5 className='w-80'>
           Som <b>Martin&nbsp;Bórik</b> a&nbsp;budem Váš sprievodca v&nbsp;tomto
@@ -75,6 +64,7 @@ export const Podcast = () => {
           title=' Podporte podcast'
           kofiID='J3J714IUF2'
         />
+        <ListTable />
       </div>
     </section>
   );

@@ -15,8 +15,8 @@
     --background-800: #c6ccd2;
     --background-900: #e2e6e9;
     --background-950: #f1f2f4;
-    --background-gradient-start: #f1f2f4;
-    --background-gradient-end: #a9b3bc;
+    --background-gradient-start: #f1f2f4ff;
+    --background-gradient-end: #a9b3bcf0;
     --text-50: #0d0d0d;
     --text-100: #1a1a1a;
     --text-200: #333333;
@@ -53,8 +53,8 @@
     --secondary-900: #fbe3d0;
     --secondary-950: #fdf1e8;
     --secondary-glow: #f6c8a240;
-    --secondary-gradient-start: #33363a;
-    --secondary-gradient-end: #41484e;
+    --secondary-gradient-start: #170c02b0;
+    --secondary-gradient-end: #2d333980;
     --accent-50: #170307;
     --accent-100: #2e050e;
     --accent-200: #5c0a1c;
@@ -161,8 +161,14 @@
     @apply h-full min-h-screen flex flex-col justify-center items-center gap-8 p-8;
 
     .Hero {
-      @apply flex flex-col justify-center items-center gap-4;
+      @apply flex flex-col justify-center items-center gap-4 my-16;
       @apply text-center break-words;
+
+      h4>br {
+        @media (max-width: 490px) {
+          display: none;
+        }
+      }
     }
 
     .LinkBtn {
@@ -173,5 +179,56 @@
         @apply size-12;
       }
     }
+
+    .list-table-title-truncate {
+      @apply text-white text-left font-primary font-medium truncate;
+      @apply mr-6 sm:max-w-none md:m-0;
+      max-width: 64vw;
+    }
+  }
+
+  .glow {
+    background-image: linear-gradient(
+      to bottom,
+      var(--background-gradient-start) 70%,
+      rgba(240, 242, 244, 0) 100%
+    );
+  }
+
+  .bar {
+    @apply absolute bottom-[1px] h-[3px] w-[3px] bg-accent-200;
+    animation: sound 0ms -800ms linear infinite alternate;
+  }
+  @keyframes sound {
+    0% {
+      opacity: 0.35;
+      height: 3px;
+    }
+
+    100% {
+      opacity: 1;
+      height: 16px;
+    }
+  }
+
+  .bar:nth-child(1) {
+    left: 1px;
+    animation-duration: 474ms;
+  }
+  .bar:nth-child(2) {
+    left: 5px;
+    animation-duration: 433ms;
+  }
+  .bar:nth-child(3) {
+    left: 9px;
+    animation-duration: 407ms;
+  }
+  .bar:nth-child(4) {
+    left: 13px;
+    animation-duration: 458ms;
+  }
+  .bar:nth-child(5) {
+    left: 17px;
+    animation-duration: 400ms;
   }
 }

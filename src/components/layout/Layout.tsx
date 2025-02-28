@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import * as React from 'react';
 
+import { PlayerHowler } from '@/components/player';
+
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
@@ -14,6 +16,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <div className='LayoutWrapper'>
         <main>{children}</main>
       </div>
+      <PlayerHowler />
     </>
   );
 };

@@ -9,10 +9,8 @@ export default function HomePage() {
   const { init, isInitialized } = usePlayerStore();
 
   React.useEffect(() => {
-    if (isInitialized === null) {
-      init();
-    }
-  }, [init, isInitialized]);
+    isInitialized == null && init();
+  }, [init]);
 
   return (
     <>
