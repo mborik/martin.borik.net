@@ -81,7 +81,7 @@ export const Player = ({
         <button onClick={playFromStart}>
           <AiFillStepBackward className='h-7 w-7' />
         </button>
-        <button onClick={playNextEpisode}>
+        <button onClick={playPrevEpisode}>
           <AiFillBackward className='h-7 w-7' />
         </button>
         {isLoaded !== HOWLER_STATE.LOADED && !isPlaying ? (
@@ -116,7 +116,7 @@ export const Player = ({
             <MdPause className='h-6 w-6 text-primary-light' />
           </motion.button>
         )}
-        <button onClick={playPrevEpisode}>
+        <button onClick={playNextEpisode}>
           <AiOutlineForward className='h-7 w-7' />
         </button>
         <button onClick={stop}>

@@ -62,10 +62,9 @@ export const usePlayerStore = create<PlayerState>((set) => ({
         ({ guid }) => guid === state.currentEpisode?.guid,
       );
       return {
-        currentEpisode:
-          index !== currentList.length - 1
-            ? currentList[index + 1]
-            : currentList[0],
+        currentEpisode: index
+          ? currentList[index - 1]
+          : currentList[currentList.length - 1],
         isPlaying: true,
       };
     });
@@ -78,9 +77,10 @@ export const usePlayerStore = create<PlayerState>((set) => ({
         ({ guid }) => guid === state.currentEpisode?.guid,
       );
       return {
-        currentEpisode: index
-          ? currentList[index - 1]
-          : currentList[currentList.length - 1],
+        currentEpisode:
+          index !== currentList.length - 1
+            ? currentList[index + 1]
+            : currentList[0],
         isPlaying: true,
       };
     });
@@ -103,13 +103,17 @@ export const usePlayerStore = create<PlayerState>((set) => ({
                   localStorage.getItem('number-of-episodes') as string,
                 ) || 0;
               if (episodes.length > 0) {
-                // enforce to play latest episode
-                if (lastNumberOfEpisodes === episodes.length - 1) {
+                // enforce to play latest episode if there are some new ones
+                if (
+                  lastNumberOfEpisodes > 1 &&
+                  lastNumberOfEpisodes < episodes.length
+                ) {
                   propsToSet = {
                     ...propsToSet,
                     currentEpisode: episodes[0],
                     isPlaying: false,
                   };
+                  // else select last played episode
                 } else if (lastPlayedEpisode) {
                   const lastPlayed = episodes.find(
                     (ep) => ep.guid === lastPlayedEpisode,

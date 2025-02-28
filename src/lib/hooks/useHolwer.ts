@@ -8,7 +8,6 @@ export const useHolwer = () => {
   const {
     currentEpisode,
     handleVolumeRange,
-    isRepeating,
     playNextEpisode,
     setLoaded,
     volume,
@@ -16,8 +15,6 @@ export const useHolwer = () => {
 
   const [seek, setSeek] = useState([0]);
   const [duration, setDuration] = useState(0);
-
-  const repeatRef = useRef(isRepeating);
 
   const soundRef = useRef<ReactHowler | null>(null);
   const loading = (soundRef.current?.howlerState() ??
@@ -28,9 +25,6 @@ export const useHolwer = () => {
 
     setLoaded(loading);
   }, [soundRef, currentEpisode, setLoaded, loading]);
-  useEffect(() => {
-    repeatRef.current = isRepeating;
-  }, [isRepeating]);
 
   const onLoad = () => {
     if (!soundRef.current) return;
@@ -40,14 +34,7 @@ export const useHolwer = () => {
   };
   const onEnd = () => {
     if (!soundRef.current) return;
-
-    if (repeatRef.current) {
-      setSeek([0]);
-
-      soundRef.current.seek(0);
-    } else {
-      playNextEpisode();
-    }
+    playNextEpisode();
   };
   const handleTrackRange = (values: number[]) => {
     setSeek(values);
