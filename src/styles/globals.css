@@ -194,12 +194,20 @@
     }
   }
 
-  .glow {
+  .player {
+    @apply fixed top-0 left-0 right-0 mx-auto max-w-full flex-col gap-4 rounded-b-md pb-10 lg:px-12;
     background-image: linear-gradient(
       to bottom,
       var(--background-gradient-start) 70%,
       rgba(240, 242, 244, 0) 100%
     );
+
+    transition: .5s ease;
+    transform: translateY(-100%);
+
+    &.active {
+      transform: translateY(0);
+    }
   }
 
   .bar {

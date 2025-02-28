@@ -46,36 +46,38 @@ export const Player = ({
     togglePlay,
   } = usePlayerStore();
 
-  return episode ? (
-    <div className='glow fixed top-0 left-0 right-0 mx-auto max-w-full flex-col gap-4 rounded-b-md pb-10 lg:px-12'>
+  return (
+    <div className={`player${episode ? ' active' : ''}`}>
       <div className='flex items-start justify-between p-4 pb-1 gap-3'>
         <div className='flex items-center overflow-hidden'>
-          <div>
-            <div className='text-sm line-clamp-1'>{episode.title}</div>
-            <div className='text-xs text-white-400'>
-              {config.siteName} #{episode.episode}
+          {episode && (
+            <div>
+              <div className='text-sm line-clamp-1'>{episode.title}</div>
+              <div className='text-xs text-white-400'>
+                {config.siteName} #{episode.episode}
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <div className='flex w-1/4 md:w-60 min-w-32 items-center justify-around gap-2'>
           {isMute ? (
             <button type='button' onClick={toggleMute}>
-              <MdVolumeOff className='h-5 w-5 text-white/60' />
+              <MdVolumeOff className='h-5 w-5 text-white-100' />
             </button>
           ) : (
             <button type='button' onClick={toggleMute}>
-              <MdVolumeMute className='h-5 w-5 text-white/60' />
+              <MdVolumeMute className='h-5 w-5 text-white-100' />
             </button>
           )}
           <div className='w-full'>
             <SoundRange />
           </div>
           <button type='button' onClick={() => handleVolumeRange([1])}>
-            <MdVolumeUp className='h-5 w-5 text-white/60' />
+            <MdVolumeUp className='h-5 w-5 text-white-100' />
           </button>
         </div>
       </div>
-      <div className='z-50 flex items-center justify-center gap-8'>
+      <div className='flex items-center justify-center gap-8'>
         <button onClick={playFromStart}>
           <AiFillStepBackward className='h-7 w-7' />
         </button>
@@ -122,7 +124,7 @@ export const Player = ({
         </button>
       </div>
       {isLoaded !== HOWLER_STATE.LOADED ? (
-        <div className='h-6' />
+        <div className='h-10' />
       ) : (
         <div className='flex flex-row gap-4 mx-auto w-1/2 min-w-80 py-3 items-center'>
           <div className='text-xs tabular-nums'>{formatTime(values[0])}</div>
@@ -137,5 +139,5 @@ export const Player = ({
         </div>
       )}
     </div>
-  ) : null;
+  );
 };
