@@ -8,4 +8,5 @@ export const config = {
   robots: 'follow, index',
   image: 'https://zapeceny.borik.net/images/screenshot.jpg',
   podcastFeed: 'https://anchor.fm/s/fc16e8b8/podcast/rss',
+  thumbnail: '/images/thumbnail.jpg',
 };

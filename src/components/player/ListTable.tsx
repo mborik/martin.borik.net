@@ -3,6 +3,7 @@ import { Episode } from 'podparse';
 import { useState } from 'react';
 import { MdPause, MdPlayArrow } from 'react-icons/md';
 
+import { config } from '@/lib/config';
 import { formatTime } from '@/lib/formatTime';
 import { HOWLER_STATE, usePlayerStore } from '@/lib/player';
 
@@ -84,16 +85,14 @@ const TableRow = ({ track, index }: TableRowProps) => {
       <td className='whitespace-nowrap p-4 text-sm font-light'>
         <div className='flex items-center gap-5'>
           <div className='relative'>
-            {image?.url && (
-              <Image
-                src={image.url}
-                layout='fixed'
-                width={60}
-                height={60}
-                className='hidden rounded-lg md:block'
-                alt={title}
-              />
-            )}
+            <Image
+              src={config.thumbnail}
+              layout='fixed'
+              width={64}
+              height={64}
+              className='hidden md:block rounded-lg'
+              alt={title}
+            />
 
             <div
               className={`${
