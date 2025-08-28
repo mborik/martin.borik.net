@@ -58,6 +58,10 @@ module.exports = {
       },
       animation: {},
       zIndex: { 1: '1' },
+      screens: {
+        print: { raw: 'print' },
+        screen: { raw: 'screen' },
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

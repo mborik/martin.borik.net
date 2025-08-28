@@ -16,13 +16,11 @@ export function Seo(props: SeoProps) {
     ...config,
     ...props,
   };
-  meta['title'] = props.templateTitle
-    ? `${props.templateTitle} | ${meta.siteName}`
-    : meta.title;
+  meta['title'] =
+    props.templateTitle && !meta.title
+      ? `${props.templateTitle} | ${meta.siteName}`
+      : meta.title;
   meta['image'] = props.image ? `${meta.url}${props.image}` : meta.image;
-  if (props.date || props.single) {
-    meta['type'] = props.single ? 'music.song' : 'music.album';
-  }
 
   const getMetaDateContent = (date: Date) => ({
     content: `${date.toISOString().slice(0, 23)}${date.toTimeString().slice(12, 17)}`,
@@ -41,7 +39,7 @@ export function Seo(props: SeoProps) {
       <meta property='og:description' content={meta.description} />
       <meta
         property='og:title'
-        content={props.date || props.single ? props.templateTitle : meta.title}
+        content={props.date ? props.templateTitle : meta.title}
       />
       <meta property='og:image' name='image' content={meta.image} />
       {/* Twitter */}
@@ -50,14 +48,9 @@ export function Seo(props: SeoProps) {
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
-      {/* Open Graph Music & Article */}
+      {/* Open Graph Article */}
       {meta.date && (
         <>
-          <meta property='music:musician' content={meta.url} />
-          <meta
-            property='music:release_date'
-            {...getMetaDateContent(meta.date)}
-          />
           <meta
             name='publish_date'
             property='og:publish_date'
@@ -71,6 +64,11 @@ export function Seo(props: SeoProps) {
             name='author'
             property='article:author'
             content='Martin Bórik'
+          />
+          <meta
+            name='section'
+            property='article:section'
+            content={meta.siteName}
           />
         </>
       )}

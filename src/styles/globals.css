@@ -77,13 +77,19 @@
   body,
   html {
     @apply h-full p-0 m-0 font-sans scroll-smooth scroll-p-25;
-    @apply min-h-screen overflow-visible bg-background;
-
-    background: radial-gradient(
-      ellipse at center,
-      var(--background-gradient-start) 0%,
-      var(--background-gradient-end) 100%
-    );
+    @apply min-h-screen overflow-visible;
+  }
+  @media screen {
+    html::not(.episode) {
+      @apply bg-background;
+      background: radial-gradient(
+        ellipse at center,
+        var(--background-gradient-start) 0%,
+        var(--background-gradient-end) 100%
+      );
+      background-attachment: fixed;
+      background-size: cover;
+    }
   }
 
   a:focus,
@@ -157,10 +163,20 @@
     }
   }
 
+  .BackButton {
+    @apply fixed print:hidden top-32 left-0 z-20;
+
+    > button {
+      @apply block p-4 pr-5 m-0 gap-2 backdrop-blur-xl shadow-lg;
+      @apply text-white select-none bg-background-900 hover:bg-background-800 focus:bg-background-800;
+      @apply rounded-3xl rounded-tl-none rounded-bl-none;
+    }
+  }
+
   .ScrollToTop {
-    @apply fixed bottom-12 right-8 lg:right-16 z-20;
-    @apply block p-4 m-0 gap-2 bg-background-900 backdrop-blur-xl shadow-lg;
-    @apply text-secondary-50 hover:text-white focus:text-white select-none;
+    @apply fixed print:hidden bottom-12 right-8 lg:right-16 z-20;
+    @apply block p-4 m-0 gap-2 backdrop-blur-xl shadow-lg;
+    @apply text-white select-none bg-background-900 hover:bg-background-800 focus:bg-background-800;
     @apply rounded-full;
   }
 
@@ -194,8 +210,84 @@
     }
   }
 
+  section#article {
+    @apply h-full min-h-screen flex flex-col gap-8 screen:py-20 p-8 md:p-16 lg:p-32;
+
+    article {
+      @apply flex flex-col gap-4 max-w-6xl mx-auto;
+      @apply text-base md:text-lg;
+
+      h1 {
+        @apply text-4xl font-bold pt-12 pb-8 screen:opacity-0 print:pt-0;
+      }
+      h2 {
+        @apply text-3xl font-bold pt-8 pb-6;
+      }
+      h3 {
+        @apply text-2xl font-semibold pt-6 pb-4;
+      }
+      p {
+        @apply leading-8 text-justify indent-8;
+      }
+
+      > figure {
+        @apply relative;
+
+        > p:not(:last-child) {
+          @apply mb-4;
+        }
+
+        &:has(> figcaption) {
+          @apply mb-8;
+        }
+
+        img {
+          background: white;
+
+          &:has(+ figcaption) {
+            padding-bottom: 2rem !important;
+            margin-bottom: -1rem !important;
+          }
+        }
+        img.right-15rem {
+          @apply float-right w-60 h-auto m-4 -mr-1 -mt-1 p-2 border border-gray-300 shadow-2xl;
+        }
+        img.right-20rem {
+          @apply float-right w-80 h-auto m-4 -mr-1 -mt-1 p-2 border border-gray-300 shadow-2xl;
+        }
+        img.left-20rem {
+          @apply float-left w-80 h-auto m-4 -ml-1 -mt-1 p-2 border border-gray-300 shadow-2xl;
+        }
+        img.full {
+          @apply w-full h-auto p-2 border border-gray-300 shadow-2xl;
+        }
+
+        figcaption {
+          @apply text-sm absolute -bottom-2 right-1 w-full px-3 text-right text-gray-900 italic;
+        }
+      }
+    }
+
+    @media screen {
+      &::after {
+        content: '';
+        position: fixed;
+        pointer-events: none;
+        width: 66svw;
+        height: 66svw;
+        top: 20%;
+        left: 20%;
+        opacity: 0.03;
+        filter: blur(3px);
+        background: url('/images/logo_transparent.png') no-repeat;
+        background-size: contain;
+        z-index: -1;
+      }
+    }
+  }
+
   .player {
-    @apply fixed top-0 left-0 right-0 mx-auto max-w-full flex-col gap-4 rounded-b-md pb-10 lg:px-12;
+    @apply fixed print:hidden top-0 left-0 right-0 mx-auto max-w-full flex-col gap-4 rounded-b-md pb-10 lg:px-12 select-none;
     background-image: linear-gradient(
       to bottom,
       var(--background-gradient-start) 70%,
