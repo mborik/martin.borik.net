@@ -19,23 +19,20 @@ export const Podcast = () => {
       </ScrollToTop>
       <div className='Hero'>
         <Image
-          src='/images/logo_transparent.png'
+          src='/res/logo_transparent.png'
           alt='Zapečené procesory'
+          priority
           width={254}
           height={283}
           className='mb-4'
         />
-        <h4>
+        <h4 className='text-xl'>
           Populárno-náučný podcast <br />
           o&nbsp;histórii výpočtovej techniky <br />
           a&nbsp;príbehoch technológií, <br />
           ktoré zmenili svet.
         </h4>
-        <h5 className='w-80'>
-          Som <b>Martin&nbsp;Bórik</b> a&nbsp;budem Váš sprievodca v&nbsp;tomto
-          stroji času.
-        </h5>
-        <div className='socials my-4 flex flex-row gap-4'>
+        <div className='socials'>
           <a
             title='Spotify Podcasts'
             href='https://open.spotify.com/show/521QTtxKzPPP1gWKTtB2gY'
@@ -64,12 +61,15 @@ export const Podcast = () => {
             <SocialYouTube />
           </a>
         </div>
+        <h6 className='text-base'>
+          Tu nájdete textové prepisy a&nbsp;záznamy všetkých epizód:
+        </h6>
+        <ListTable />
         <KofiButton
           color='#e84e57'
           title=' Podporte podcast'
           kofiID='J3J714IUF2'
         />
-        <ListTable />
       </div>
     </section>
   );

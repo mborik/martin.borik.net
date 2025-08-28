@@ -1,16 +1,24 @@
-import { Episode } from 'podparse';
+import { Episode as PodparseEpisode } from 'podparse';
 import getPodcastFromFeed from 'podparse';
 import { create } from 'zustand';
 
-import { config } from '@/lib/config';
+import { config } from './config';
+import { episodeDetailsAndLinks } from './episodeDetailsAndLinks';
 
 export const enum HOWLER_STATE {
   UNLOADED = 'unloaded',
   LOADING = 'loading',
   LOADED = 'loaded',
 }
+export type Episode = PodparseEpisode & {
+  shortId: number;
+  related: number[];
+  baseTitle: string;
+  slug: string;
+};
 type PlayerState = {
   currentEpisode: Episode | null;
+  viewedEpisode: Episode | null;
   currentList: Episode[] | null;
   volume: number[];
   isInitialized: boolean | null;
@@ -20,8 +28,10 @@ type PlayerState = {
   handleVolumeRange: (_values: number[]) => void;
   togglePlay: () => void;
   toggleMute: () => void;
-  setCurrentEpisode: (_song: Episode, _isPlaying: boolean) => void;
-  playFromStart: () => void;
+  setCurrentEpisode: (_ep: Episode, _isPlaying: boolean) => void;
+  setViewedEpisode: (_ep: Episode | null, _force?: boolean) => void;
+  getNextViewEpisode: () => Episode | null;
+  getPrevViewEpisode: () => Episode | null;
   playNextEpisode: () => void;
   playPrevEpisode: () => void;
   setLoaded: (_isLoaded: HOWLER_STATE) => void;
@@ -29,8 +39,9 @@ type PlayerState = {
   init: () => void;
 };
 
-export const usePlayerStore = create<PlayerState>((set) => ({
+export const usePlayerStore = create<PlayerState>((set, get) => ({
   currentEpisode: null,
+  viewedEpisode: null,
   currentList: null,
   isPlaying: false,
   isMute: false,
@@ -43,33 +54,41 @@ export const usePlayerStore = create<PlayerState>((set) => ({
   stop: () => set(() => ({ currentEpisode: null, isPlaying: false })),
   setCurrentEpisode: (currentEpisode, isPlaying) =>
     set(() => ({ currentEpisode, isPlaying })),
-  setLoaded: (isLoaded) => set(() => ({ isLoaded })),
-  playFromStart: () => {
+  setViewedEpisode: (viewedEpisode: Episode | null, force: boolean = false) =>
     set((state) => {
-      const currentList = state.currentList;
-      if (!currentList) return { currentEpisode: null, isPlaying: false };
-      return {
-        currentEpisode: currentList[currentList.length - 1],
-        isPlaying: true,
-      };
-    });
+      const result: Partial<PlayerState> = {};
+      if (state.viewedEpisode?.guid !== viewedEpisode?.guid) {
+        result.viewedEpisode = viewedEpisode;
+        if (!state.isPlaying) {
+          result.currentEpisode = viewedEpisode;
+        }
+      } else if (viewedEpisode == null && force) {
+        result.viewedEpisode = null;
+      }
+      return result;
+    }),
+  setLoaded: (isLoaded) => set(() => ({ isLoaded })),
+  getNextViewEpisode() {
+    const { viewedEpisode, currentList } = get();
+    if (!viewedEpisode || !currentList) return null;
+    const index = currentList.findIndex(
+      ({ guid }) => guid === viewedEpisode.guid,
+    );
+    return index < currentList.length - 1
+      ? currentList[index + 1]
+      : currentList[0];
+  },
+  getPrevViewEpisode() {
+    const { viewedEpisode, currentList } = get();
+    if (!viewedEpisode || !currentList) return null;
+    const index = currentList.findIndex(
+      ({ guid }) => guid === viewedEpisode.guid,
+    );
+    return index > 0
+      ? currentList[index - 1]
+      : currentList[currentList.length - 1];
   },
   playNextEpisode: () => {
-    set((state) => {
-      const currentList = state.currentList;
-      if (!currentList) return { currentEpisode: null, isPlaying: false };
-      const index = currentList.findIndex(
-        ({ guid }) => guid === state.currentEpisode?.guid,
-      );
-      return {
-        currentEpisode: index
-          ? currentList[index - 1]
-          : currentList[currentList.length - 1],
-        isPlaying: true,
-      };
-    });
-  },
-  playPrevEpisode: () => {
     set((state) => {
       const currentList = state.currentList;
       if (!currentList) return { currentEpisode: null, isPlaying: false };
@@ -85,13 +104,45 @@ export const usePlayerStore = create<PlayerState>((set) => ({
       };
     });
   },
+  playPrevEpisode: () => {
+    set((state) => {
+      const currentList = state.currentList;
+      if (!currentList) return { currentEpisode: null, isPlaying: false };
+      const index = currentList.findIndex(
+        ({ guid }) => guid === state.currentEpisode?.guid,
+      );
+      return {
+        currentEpisode: index
+          ? currentList[index - 1]
+          : currentList[currentList.length - 1],
+        isPlaying: true,
+      };
+    });
+  },
   init: () => {
     set((state) => {
       if (state.isInitialized === null) {
         fetch(config.podcastFeed)
           .then((response) => response.text())
           .then((podcastFeed) => {
-            const { episodes } = getPodcastFromFeed(podcastFeed);
+            const { episodes: episodesFromFeed } =
+              getPodcastFromFeed(podcastFeed);
+            const episodes = episodesFromFeed.map((episode) => {
+              const detailsAndLinks = episodeDetailsAndLinks.find(
+                (link) =>
+                  link.episode === episode.episode &&
+                  link.season === episode.season,
+              );
+              return {
+                ...episode,
+                ...detailsAndLinks,
+              } as Episode;
+            });
+            episodes.sort((a, b) => {
+              if (a.shortId > b.shortId) return 1;
+              if (a.shortId < b.shortId) return -1;
+              return 0;
+            });
             let propsToSet: any = {
               currentList: episodes,
               isInitialized: true,

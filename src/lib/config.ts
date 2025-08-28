@@ -6,7 +6,7 @@ export const config = {
   url: 'https://zapeceny.borik.net',
   type: 'website',
   robots: 'follow, index',
-  image: 'https://zapeceny.borik.net/images/screenshot.jpg',
+  image: 'https://zapeceny.borik.net/res/screenshot.jpg',
   podcastFeed: 'https://anchor.fm/s/fc16e8b8/podcast/rss',
-  thumbnail: '/images/thumbnail.jpg',
+  thumbnail: '/res/thumbnail.jpg',
 };

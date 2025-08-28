@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 import React from 'react';
 import {
+  AiFillAudio,
   AiFillBackward,
-  AiFillStepBackward,
   AiOutlineForward,
+  AiOutlineRead,
 } from 'react-icons/ai';
 import { BiLoaderAlt } from 'react-icons/bi';
 import {
@@ -32,15 +34,19 @@ export const Player = ({
   values,
   onTrackRangeChange,
 }: PlayerProps) => {
+  const router = useRouter();
   const {
     currentEpisode: episode,
-    handleVolumeRange,
+    viewedEpisode,
     isLoaded,
     isMute,
     isPlaying,
-    playFromStart,
     playNextEpisode,
     playPrevEpisode,
+    setCurrentEpisode,
+    getNextViewEpisode,
+    getPrevViewEpisode,
+    handleVolumeRange,
     stop,
     toggleMute,
     togglePlay,
@@ -48,8 +54,8 @@ export const Player = ({
 
   return (
     <div className={`player${episode ? ' active' : ''}`}>
-      <div className='flex items-start justify-between p-4 pb-1 gap-3'>
-        <div className='flex items-center overflow-hidden'>
+      <div className='player-header'>
+        <div className='player-header-title'>
           {episode && (
             <div>
               <div className='text-sm line-clamp-1'>{episode.title}</div>
@@ -59,75 +65,118 @@ export const Player = ({
             </div>
           )}
         </div>
-        <div className='flex w-1/4 md:w-60 min-w-32 items-center justify-around gap-2'>
+        <div className='player-header-volumebar'>
           {isMute ? (
             <button type='button' onClick={toggleMute}>
-              <MdVolumeOff className='h-5 w-5 text-white-100' />
+              <MdVolumeOff className='icon' />
             </button>
           ) : (
             <button type='button' onClick={toggleMute}>
-              <MdVolumeMute className='h-5 w-5 text-white-100' />
+              <MdVolumeMute className='icon' />
             </button>
           )}
           <div className='w-full'>
             <SoundRange />
           </div>
           <button type='button' onClick={() => handleVolumeRange([1])}>
-            <MdVolumeUp className='h-5 w-5 text-white-100' />
+            <MdVolumeUp className='icon' />
           </button>
         </div>
       </div>
-      <div className='flex items-center justify-center gap-8'>
-        <button onClick={playFromStart}>
-          <AiFillStepBackward className='h-7 w-7' />
-        </button>
-        <button onClick={playPrevEpisode}>
-          <AiFillBackward className='h-7 w-7' />
-        </button>
+      <div className='player-controls'>
+        {viewedEpisode ? (
+          episode?.guid === viewedEpisode?.guid ? (
+            <button
+              onClick={() => {
+                const nextEp = getPrevViewEpisode();
+                nextEp?.slug && router.push(`/${nextEp.slug}`);
+              }}
+              className='action-button'
+            >
+              <AiFillBackward className='icon' />
+              <span>čítať predošlú</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => setCurrentEpisode(viewedEpisode, true)}
+              className='action-button'
+            >
+              <AiFillAudio className='icon md:hidden' />
+              <span>prehrať túto epizódu</span>
+            </button>
+          )
+        ) : (
+          <>
+            <button
+              onClick={() => episode?.slug && router.push(`/${episode.slug}`)}
+              title='Prejsť na stránku epizódy'
+            >
+              <AiOutlineRead className='bigger-icon' />
+            </button>
+            <button onClick={playPrevEpisode} title='Predošlá epizóda'>
+              <AiFillBackward className='bigger-icon' />
+            </button>
+          </>
+        )}
         {isLoaded !== HOWLER_STATE.LOADED && !isPlaying ? (
           <motion.button
             whileTap={{ scale: 1.1 }}
             onClick={togglePlay}
-            className='rounded-full bg-gradient-to-tr from-secondary-800 to-accent-800 shadow-black/60 shadow-md p-2'
+            className='play-button'
           >
-            <MdPlayArrow className='h-6 w-6 text-primary-light' />
+            <MdPlayArrow className='icon' />
           </motion.button>
         ) : isLoaded !== HOWLER_STATE.LOADED ? (
-          <button
-            disabled
-            className='rounded-full bg-gradient-to-tr from-secondary-800 to-accent-800 shadow-black/60 shadow-md p-2 disabled:bg-opacity-50'
-          >
-            <BiLoaderAlt className='h-6 w-6 animate-spin p-1 text-primary-light/70 duration-500' />
+          <button disabled className='play-button'>
+            <BiLoaderAlt className='spinner' />
           </button>
         ) : !isPlaying ? (
           <motion.button
             whileTap={{ scale: 1.1 }}
             onClick={togglePlay}
-            className='rounded-full bg-gradient-to-tr from-secondary-800 to-accent-800 shadow-black/60 shadow-md p-2'
+            className='play-button'
           >
-            <MdPlayArrow className='h-6 w-6 text-primary-light' />
+            <MdPlayArrow className='icon' />
           </motion.button>
         ) : (
           <motion.button
             onClick={togglePlay}
             whileTap={{ scale: 1.1 }}
-            className='rounded-full bg-gradient-to-tr from-secondary-800 to-accent-800 shadow-black/60 shadow-md p-2'
+            className='play-button'
           >
-            <MdPause className='h-6 w-6 text-primary-light' />
+            <MdPause className='icon' />
           </motion.button>
         )}
-        <button onClick={playNextEpisode}>
-          <AiOutlineForward className='h-7 w-7' />
-        </button>
-        <button onClick={stop}>
-          <MdStop className='h-7 w-7' />
-        </button>
+        {viewedEpisode ? (
+          <button
+            onClick={() => {
+              const nextEp = getNextViewEpisode();
+              nextEp?.slug && router.push(`/${nextEp.slug}`);
+            }}
+            className='action-button'
+          >
+            <span>čítať nasledujúcu</span>
+            <AiOutlineForward className='icon' />
+          </button>
+        ) : (
+          <>
+            <button onClick={playNextEpisode}>
+              <AiOutlineForward
+                className='bigger-icon'
+                title='Nasledujúca epizóda'
+              />
+            </button>
+            <button onClick={stop}>
+              <MdStop className='bigger-icon' title='Zavrieť prehrávač' />
+            </button>
+          </>
+        )}
       </div>
       {isLoaded !== HOWLER_STATE.LOADED ? (
         <div className='h-10' />
       ) : (
-        <div className='flex flex-row gap-4 mx-auto w-1/2 min-w-80 py-3 items-center'>
-          <div className='text-xs tabular-nums'>{formatTime(values[0])}</div>
+        <div className='player-trackbar'>
+          <div className='time'>{formatTime(values[0])}</div>
           <div className='mx-auto w-full'>
             <TrackRange
               duration={duration}
@@ -135,7 +184,7 @@ export const Player = ({
               values={values}
             />
           </div>
-          <div className='text-xs tabular-nums'>{formatTime(duration)}</div>
+          <div className='time'>{formatTime(duration)}</div>
         </div>
       )}
     </div>

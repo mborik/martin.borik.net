@@ -48,7 +48,6 @@ export const ScrollToTop = ({
         <button
           className={`ScrollToTop${className ? ` ${className}` : ''}`}
           onClick={() => scrollToTop(smooth)}
-          aria-hidden='true'
           {...props}
         >
           {children}

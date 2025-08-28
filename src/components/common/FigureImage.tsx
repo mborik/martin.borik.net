@@ -1,0 +1,165 @@
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+
+const MediaSource = ({ mediaSource }: { mediaSource?: string }) =>
+  mediaSource && (
+    <div className='media-source'>
+      <span className='media-source-icon'>i</span>
+      <span className='media-source-text'>zdroj: {mediaSource}</span>
+    </div>
+  );
+
+interface ZoomableImageProps {
+  src: string;
+  width: number;
+  height: number;
+  caption: string | React.ReactNode;
+  mediaSource?: string;
+  isCaptionVisible?: boolean;
+  altText?: string;
+  figureClass?: string;
+}
+
+const ZoomableImage = ({
+  src,
+  width,
+  height,
+  altText = 'Obrázok',
+  caption,
+  mediaSource,
+  isCaptionVisible,
+  figureClass,
+}: ZoomableImageProps) => {
+  const [isZoomed, setIsZoomed] = React.useState(false);
+  const layoutId = src.replace(/^.*[\\/]/, '').replace(/\.[^/.]+$/, '');
+
+  const handleEsc = React.useCallback(
+    (event: KeyboardEvent) => event.key === 'Escape' && setIsZoomed(false),
+    [],
+  );
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', handleEsc, false);
+    return () => {
+      document.removeEventListener('keydown', handleEsc, false);
+    };
+  }, [handleEsc]);
+
+  React.useEffect(() => {
+    document.documentElement.style.overflow = isZoomed ? 'hidden' : '';
+  }, [isZoomed]);
+
+  return (
+    <>
+      <motion.figure
+        layout
+        layoutId={layoutId}
+        className={`${figureClass} zoomable`}
+      >
+        <Image
+          src={src}
+          alt={altText}
+          width={width}
+          height={height}
+          onClick={() => setIsZoomed(true)}
+        />
+        {isCaptionVisible && <figcaption>{caption}</figcaption>}
+        <MediaSource mediaSource={mediaSource} />
+      </motion.figure>
+      <AnimatePresence>
+        {isZoomed && (
+          <motion.div
+            className='lightbox'
+            initial='hidden'
+            exit='hidden'
+            animate='visible'
+            whileInView='visible'
+            viewport={{ once: true }}
+            transition={{ duration: 0.2 }}
+            variants={{
+              visible: { opacity: 1 },
+              hidden: { opacity: 0 },
+            }}
+          >
+            <div
+              className='close-backdrop'
+              onClick={() => setIsZoomed(false)}
+            />
+            <motion.div layout layoutId={layoutId} className='lightbox-content'>
+              <Image src={src} alt={altText} width={width} height={height} />
+              <div>{caption}</div>
+              {mediaSource && <small>zdroj: {mediaSource}</small>}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+interface FigureImageProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
+  src: string;
+  width: number;
+  height: number;
+  caption: string | React.ReactNode;
+  mediaSource?: string;
+  isCaptionVisible?: boolean;
+  isZoomable?: boolean;
+  figureClass?: string;
+}
+
+export const FigureImage = ({
+  children,
+  src,
+  width,
+  height,
+  caption,
+  mediaSource,
+  isCaptionVisible = false,
+  isZoomable = false,
+  figureClass,
+  ...props
+}: FigureImageProps) => {
+  const [isDesktop, setIsDesktop] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsDesktop(window.matchMedia('(min-width: 768px), print').matches);
+    }
+  }, []);
+
+  const altText =
+    typeof caption === 'string'
+      ? caption
+      : renderToString(caption).replace(/<\/?[^>]+(>|$)/g, '') || '';
+
+  return (
+    <div
+      {...props}
+      className={`figure-paragraph${props.className ? ` ${props.className}` : ''}`}
+    >
+      {isZoomable && isDesktop ? (
+        <ZoomableImage
+          src={src}
+          width={width}
+          height={height}
+          altText={altText}
+          caption={caption}
+          mediaSource={mediaSource}
+          isCaptionVisible={isCaptionVisible}
+          figureClass={figureClass}
+        />
+      ) : (
+        <figure className={figureClass}>
+          <Image src={src} width={width} height={height} alt={altText} />
+          {isCaptionVisible && <figcaption>{caption}</figcaption>}
+          <MediaSource mediaSource={mediaSource} />
+        </figure>
+      )}
+      {children}
+    </div>
+  );
+};
