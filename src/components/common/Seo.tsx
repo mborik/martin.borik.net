@@ -20,7 +20,11 @@ export function Seo(props: SeoProps) {
     props.templateTitle && !meta.title
       ? `${props.templateTitle} | ${meta.siteName}`
       : meta.title;
-  meta['image'] = props.image ? `${meta.url}${props.image}` : meta.image;
+  meta['image'] = props.image
+    ? props.image.startsWith('http')
+      ? props.image
+      : `${meta.url}${props.image}`
+    : meta.image;
 
   const getMetaDateContent = (date: Date) => ({
     content: `${date.toISOString().slice(0, 23)}${date.toTimeString().slice(12, 17)}`,

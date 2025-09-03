@@ -132,8 +132,8 @@ export default function S01E01() {
         Podobne ako hamburgery, aj mikropočítače začali svoju históriu písať
         v&nbsp;Amerike. V&nbsp;roku 1976 takí dvaja neznámi bradatí hipsteri
         &ndash; Wozniak a&nbsp;Jobs &ndash; prišli s&nbsp;počítačom Apple I.
-        O&nbsp;rok na to prišla firma Commodore so sériou PET &ndash; nie fliaš!
-        Tak sa tie počítače volali.
+        O&nbsp;rok na to prišla firma Commodore so sériou PET &ndash; ale nie
+        fliaš! &ndash; tak sa tie počítače volali.
       </p>
       <FigureImage
         image={img_woz_jobs_pet}

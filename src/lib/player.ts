@@ -1,14 +1,21 @@
-import { Episode } from 'podparse';
+import { Episode as PodparseEpisode } from 'podparse';
 import getPodcastFromFeed from 'podparse';
 import { create } from 'zustand';
 
-import { config } from '@/lib/config';
+import { config } from './config';
+import { episodeDetailsAndLinks } from './episodeDetailsAndLinks';
 
 export const enum HOWLER_STATE {
   UNLOADED = 'unloaded',
   LOADING = 'loading',
   LOADED = 'loaded',
 }
+export type Episode = PodparseEpisode & {
+  shortId: number;
+  related: number[];
+  baseTitle: string;
+  slug: string;
+};
 type PlayerState = {
   currentEpisode: Episode | null;
   currentList: Episode[] | null;
@@ -91,7 +98,19 @@ export const usePlayerStore = create<PlayerState>((set) => ({
         fetch(config.podcastFeed)
           .then((response) => response.text())
           .then((podcastFeed) => {
-            const { episodes } = getPodcastFromFeed(podcastFeed);
+            const { episodes: episodesFromFeed } =
+              getPodcastFromFeed(podcastFeed);
+            const episodes = episodesFromFeed.map((episode) => {
+              const detailsAndLinks = episodeDetailsAndLinks.find(
+                (link) =>
+                  link.episode === episode.episode &&
+                  link.season === episode.season,
+              );
+              return {
+                ...episode,
+                ...detailsAndLinks,
+              };
+            });
             let propsToSet: any = {
               currentList: episodes,
               isInitialized: true,

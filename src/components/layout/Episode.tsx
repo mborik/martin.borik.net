@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Article } from './Article';
-import { Seo } from '@/components/common';
+import { Seo, Related } from '@/components/common';
 import { config } from '@/lib/config';
 import { usePlayerStore } from '@/lib/player';
 
@@ -48,6 +48,7 @@ export const Episode = ({
       <Seo
         type='article'
         title={`${config.siteName} #${episode.episode}: ${episode.title}`}
+        image={episode.image?.url}
         date={episode.date}
         description={episode.descPlainText}
         templateTitle={`${episode.title}`}
@@ -57,6 +58,7 @@ export const Episode = ({
           {config.siteName} #{episode.episode}
         </h1>
         {children}
+        <Related episode={episode} />
       </Article>
     </>
   );

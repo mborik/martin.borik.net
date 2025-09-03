@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import { Episode } from 'podparse';
 import { useState } from 'react';
 import { MdPause, MdPlayArrow } from 'react-icons/md';
 
 import { config } from '@/lib/config';
 import { formatTime } from '@/lib/formatTime';
-import { HOWLER_STATE, usePlayerStore } from '@/lib/player';
+import { Episode, HOWLER_STATE, usePlayerStore } from '@/lib/player';
 
 export const ListTable = () => {
   const { isInitialized, currentList } = usePlayerStore();
