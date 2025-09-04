@@ -76,7 +76,7 @@
   }
   html {
     @apply h-full p-0 m-0 font-sans scroll-smooth scroll-p-25;
-    @apply bg-background min-h-screen overflow-visible;
+    @apply screen:bg-background min-h-screen overflow-visible;
   }
   @media screen {
     html::not(.episode) {
@@ -162,7 +162,7 @@
   }
 
   .BackButton {
-    @apply fixed print:hidden top-32 left-0 z-20;
+    @apply fixed print:hidden top-24 lg:top-32 left-0 z-20;
 
     > button {
       @apply block p-4 pr-5 m-0 gap-2 backdrop-blur-xl shadow-lg;
@@ -172,8 +172,8 @@
   }
 
   .ScrollToTop {
-    @apply fixed print:hidden bottom-12 right-8 lg:right-16 z-20;
-    @apply block p-4 m-0 gap-2 backdrop-blur-xl shadow-lg;
+    @apply fixed bottom-6 lg:bottom-12 right-8 lg:right-16 z-20;
+    @apply print:hidden screen:block p-4 m-0 gap-2 backdrop-blur-xl shadow-lg;
     @apply text-white select-none bg-background-900 hover:bg-background-800 focus:bg-background-800;
     @apply rounded-full;
   }
@@ -209,14 +209,16 @@
   }
 
   section#article {
-    @apply h-full min-h-screen flex flex-col gap-8 screen:py-20 p-8 md:p-16 lg:p-32;
+    @apply max-w-6xl h-full min-h-screen mx-auto;
+    @apply flex flex-col gap-8 p-6 md:p-8 lg:p-16;
 
     article {
-      @apply flex flex-col gap-4 max-w-6xl mx-auto;
+      @apply relative w-full flex flex-col gap-4;
       @apply text-base md:text-lg;
 
       h1 {
-        @apply text-4xl font-bold pt-12 pb-8 screen:opacity-0 print:pt-0;
+        @apply text-3xl md:text-4xl font-bold pb-12 pt-8 md:pt-4;
+        @apply print:text-4xl print:pt-0 print:pb-4;
       }
       h2 {
         @apply text-3xl font-bold pt-8 pb-6;
@@ -224,94 +226,104 @@
       h3 {
         @apply text-2xl font-semibold pt-6 pb-4;
       }
-      p {
+      p, ul {
         @apply leading-8 text-justify indent-8;
 
         a {
-          @apply text-secondary-500 hover:text-secondary-400 active:text-secondary-300;
-          @apply hover:underline underline-offset-4;
+          @apply text-secondary-400 hover:text-secondary-300 active:text-secondary-200;
+          @apply font-medium hover:underline underline-offset-4;
+          @apply print:text-secondary-300;
         }
         b {
           @apply font-semibold;
         }
-
+      }
+      ul {
+        @apply list-disc list-inside text-left -mt-2 mb-4;
       }
 
-      figure {
-        @apply relative;
-
+      .figure-paragraph {
         > p:not(:last-child) {
           @apply mb-4;
         }
 
-        &:has(> figcaption) {
-          @apply mb-8;
-        }
-
-        img {
+        figure {
+          @apply relative w-full h-auto mb-4 p-2 border border-gray-300 shadow-2xl;
           background: white;
 
-          &:has(+ figcaption) {
-            padding-bottom: 2rem !important;
-            margin-bottom: -1rem !important;
+          &:has(> figcaption) {
+            @apply pb-8;
           }
-        }
-        img.right-15rem {
-          @apply float-right w-60 h-auto m-4 -mr-1 -mt-1 p-2 border border-gray-300 shadow-2xl;
-        }
-        img.right-20rem {
-          @apply float-right w-80 h-auto m-4 -mr-1 -mt-1 p-2 border border-gray-300 shadow-2xl;
-        }
-        img.left-20rem {
-          @apply float-left w-80 h-auto m-4 -ml-1 -mt-1 p-2 border border-gray-300 shadow-2xl;
-        }
-        img.full {
-          @apply w-full h-auto p-2 border border-gray-300 shadow-2xl;
-        }
 
-        figcaption {
-          @apply text-sm absolute -bottom-2 right-1 w-full px-3 text-right text-gray-900 italic;
-        }
-      }
-
-      footer {
-        @apply w-full h-auto p-4 border border-gray-300 shadow-2xl text-gray-800;
-        background: white;
-
-        a {
-          @apply text-primary-300 hover:text-primary-200 active:text-primary-100;
-          @apply hover:underline underline-offset-4;
-        }
-        h4 {
-          @apply text-lg font-semibold m-0 p-0 mb-2;
-        }
-        .next-episode {
-          @apply m-0 mb-4 flex flex-row gap-4;
-          .image {
-            @apply flex-shrink-0 block w-32 h-32 overflow-hidden border border-gray-300 shadow-2xl;
+          > img {
+            @apply w-full;
           }
-          aside {
-            font-size: 0.9rem;
-            @apply row-span-2 flex flex-col text-primary-200;
 
-            a {
-              @apply text-lg font-bold mb-2;
+          @media (min-width: 768px), print {
+            &.right-15rem {
+              @apply float-right w-60 m-4 -mr-1 -mt-1;
+            }
+            &.right-20rem {
+              @apply float-right w-80 m-4 -mr-1 -mt-1;
+            }
+            &.right-24rem {
+              @apply float-right w-96 m-4 -mr-1 -mt-1;
+            }
+            &.left-20rem {
+              @apply float-left w-80 m-4 -ml-1 -mt-1;
             }
           }
+
+          > figcaption {
+            @apply text-sm absolute bottom-1.5 right-0 w-full px-3 text-right text-gray-900 italic line-clamp-1;
+          }
         }
-        .related-episodes {
-          @apply py-2 flex flex-col gap-2;
-          ul {
-            @apply list-none flex flex-col gap-2;
-            li {
-              @apply flex flex-col border-l-2 pl-4;
-              @apply border-gray-300 hover:border-primary-400 text-gray-500 hover:text-primary-200;
-              a {
-                @apply block text-lg font-bold no-underline;
-              }
-              small {
-                @apply text-xs truncate;
-              }
+
+        &.dark figure {
+          @apply bg-background-100 border-none;
+        }
+      }
+    }
+    footer {
+      @apply print:hidden w-full h-auto p-4 border border-gray-300 shadow-2xl text-gray-800;
+      background: white;
+
+      a {
+        @apply text-primary-300 hover:text-primary-200 active:text-primary-100;
+        @apply hover:underline underline-offset-4;
+      }
+      h4 {
+        @apply text-lg font-semibold m-0 p-0 mb-2;
+      }
+      .next-episode {
+        @apply m-0 mb-4 flex flex-row gap-4;
+        .image {
+          @apply flex-shrink-0 block w-32 h-32 overflow-hidden border border-gray-300 shadow-2xl;
+        }
+        aside {
+          @apply row-span-2 flex flex-col;
+
+          > a {
+            @apply text-lg font-bold mb-2;
+          }
+          > div {
+            font-size: 0.9rem;
+            @apply line-clamp-3 text-primary-200;
+          }
+        }
+      }
+      .related-episodes {
+        @apply py-2 flex flex-col gap-2;
+        ul {
+          @apply list-none flex flex-col gap-2;
+          li {
+            @apply flex flex-col border-l-2 pl-4;
+            @apply border-gray-300 hover:border-primary-400 text-gray-500 hover:text-primary-200;
+            a {
+              @apply block text-lg font-bold no-underline truncate;
+            }
+            small {
+              @apply text-xs truncate;
             }
           }
         }

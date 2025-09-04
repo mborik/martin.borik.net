@@ -23,10 +23,12 @@ export const FigureImage = ({
       ? caption
       : renderToString(caption).replace(/<\/?[^>]+(>|$)/g, '') || '';
   return (
-    <figure {...props}>
-      <Image src={image} alt={altText} className={imgClass} />
-      {isCaptionVisible && <figcaption>{caption}</figcaption>}
+    <div {...props} className={`figure-paragraph ${props.className}`}>
+      <figure className={imgClass}>
+        <Image src={image} alt={altText} />
+        {isCaptionVisible && <figcaption>{caption}</figcaption>}
+      </figure>
       {children}
-    </figure>
+    </div>
   );
 };

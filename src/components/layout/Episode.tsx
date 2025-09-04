@@ -38,7 +38,6 @@ export const Episode = ({
     return {
       ...episode,
       date: new Date(episode.pubDate),
-      number: episode.episode,
       descPlainText: div.textContent || div.innerText,
     };
   }, [isInitialized, currentList]);
@@ -57,7 +56,7 @@ export const Episode = ({
         <h1>
           {config.siteName} #{episode.episode}
         </h1>
-        {children}
+        <article>{children}</article>
         <Related episode={episode} />
       </Article>
     </>
