@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { FigureImage } from '@/components/common';
+import { EpisodeLink, FigureImage } from '@/components/common';
 import { Episode } from '@/components/layout/Episode';
 
 import img_8bit_procesory from '/public/images/s01e01/8bit_procesory.jpg';
@@ -11,7 +11,7 @@ import img_woz_jobs_pet from '/public/images/s01e01/woz_jobs_pet.jpg';
 
 export default function S01E01() {
   return (
-    <Episode season={1} episode={1}>
+    <Episode episode={1}>
       <p>Ahojte všetci fanúšikovia technológií, hlavne tých informačných.</p>
       <p>
         Vitajte pri prvom diely podcastu Zapečené procesory, kde budeme cestovať
@@ -37,7 +37,7 @@ export default function S01E01() {
           tými historickými.
         </p>
         <p>
-          Okrem toho tvorím už 30 rokov elektronickú hudbu alebo pracujem so
+          Okrem toho tvorím už 20 rokov elektronickú hudbu alebo pracujem so
           zvukom všeobecne, a&nbsp;v&nbsp;súčasnosti sa zameriavam na hernú
           a&nbsp;filmovú tematickú hudbu. Dobre, ale dosť už o&nbsp;mne&hellip;
         </p>
@@ -45,7 +45,7 @@ export default function S01E01() {
       <p>
         Cieľom tohto podcastu bude vám priblížiť a&nbsp;objasniť pojmy alebo
         fakty z&nbsp;histórie výpočtovej techniky poučnou, ale aj zábavnou
-        formou, aby ste z&nbsp;toho nemali zapečené procesory.
+        formou, aby ste z&nbsp;toho nemali &bdquo;zapečené procesory&rdquo;.
       </p>
       <p>
         Pokúsim sa vás očariť kúzlom starých počítačov a&nbsp;priblížiť vám tak
@@ -57,7 +57,7 @@ export default function S01E01() {
         majú často svoje korene v&nbsp;minulosti.
       </p>
       <p>
-        Často si to ani neuvedomujeme, čo stálo za zrodom niektorých technológií
+        Často si ani neuvedomujeme, čo stálo za zrodom niektorých technológií
         a&nbsp;stretávame sa s&nbsp;nimi denne. A&nbsp;naopak, niektoré
         technológie niekedy žiaľbohu, a&nbsp;niekedy aj chvalabohu, že žiaľbohu
         zanikli, no aj dnes má svoje kúzlo sa o&nbsp;nich niečo zaujímavé
@@ -74,9 +74,10 @@ export default function S01E01() {
           v&nbsp;histórii výpočtovej techniky a&nbsp;preniesli tak tieto
           technológie z&nbsp;výskumných ústavov do domácností a&nbsp;škôl po
           celom svete. Bola to totiž skutočná revolúcia, lebo do tej doby boli
-          počítače v&nbsp;sálach výskumno-vývojových stredísk, a&nbsp;samozrejme
-          práca s&nbsp;nimi bola doménou výlučne pánov inžinierov v&nbsp;bielych
-          plášťoch a&nbsp;nik nekvalifikovaný sa k&nbsp;nim nemohol dostať.
+          počítače v&nbsp;sálach výskumno-vývojových stredísk,
+          a&nbsp;samozrejme, práca s&nbsp;nimi bola doménou výlučne pánov
+          inžinierov v&nbsp;bielych plášťoch a&nbsp;nik nekvalifikovaný sa
+          k&nbsp;nim nemohol dostať.
         </p>
         <p>
           Miniaturizácia a&nbsp;rozvoj vo výrobe integrovaných obvodov umožnili
@@ -85,9 +86,11 @@ export default function S01E01() {
           použitie do prenosných vedeckých kalkulačiek. Keď o&nbsp;rok nato
           prišiel Intel s&nbsp;8008-čkou, ich prvým 8-bitovým procesorom, bol to
           už prelomový bod dejín výpočtovej techniky. To však nakoplo ďalších
-          výrobcov ale aj Intel samotný a&nbsp;už o&nbsp;zopár rokov ste si na
-          trhu mohli vybrať medzi Intel 8080, Motorolou 6800, neskôr aj MOS 6502
-          alebo Z80 od spoločnosti Zilog.
+          výrobcov, ale aj Intel samotný a&nbsp;už o&nbsp;zopár rokov ste si na
+          trhu mohli vybrať medzi{' '}
+          <EpisodeLink episode={18}>Intel 8080</EpisodeLink>, Motorolou 6800,
+          neskôr aj MOS 6502 alebo{' '}
+          <EpisodeLink episode={18}>Z80 od spoločnosti Zilog</EpisodeLink>.
         </p>
       </FigureImage>
       <p>
@@ -115,7 +118,7 @@ export default function S01E01() {
         ich registre, čoby malé šuflíčky na uloženie informácie majú práve 8
         bitov. A&nbsp;8 bitov je jeden bajt. Procesor tak s&nbsp;týmto bajtom
         dokáže počítať, alebo presúvať ho z&nbsp;registra do registra.
-        A&nbsp;rovnako takýto bajt môže čítať <b>z</b>&nbsp;a&nbsp;zapisovať{' '}
+        A&nbsp;rovnako takýto bajt môže čítať <b>z</b>&nbsp;alebo zapisovať{' '}
         <b>do</b> operačnej pamäte alebo periférie &ndash; a&nbsp;to už hovoríme
         o&nbsp;dátovej zbernici, ktorú si môžete predstaviť ako dialnicu, po
         ktorej procesor posiela údaje iným častiam počítača.
@@ -123,9 +126,9 @@ export default function S01E01() {
       <p>
         Inak to však bolo pri adresovej zbernici, ktorou procesor komunikuje
         s&nbsp;pamäťou. Tá bola 16-bitová, aby bolo možné čítať a&nbsp;zapisovať
-        až 64 kilobajtov. Ak by táto zbernica bola iba 8-bitová, programy by
-        mohli mať iba 256 bajtov, takže preto sa to muselo rozšíriť a&nbsp;každá
-        adresa pamäte sa zapisovala dvoma bajtami.
+        až 64 kilobajtov. Pretože, ak by táto zbernica bola iba 8-bitová,
+        programy by mohli mať iba 256 bajtov, takže preto sa to muselo rozšíriť
+        a&nbsp;každá adresa pamäte sa zapisovala dvoma bajtami.
       </p>
       <h3>Záver</h3>
       <p>
@@ -150,16 +153,17 @@ export default function S01E01() {
         <p>
           To už sa budí aj starý kontinent a&nbsp;v&nbsp;Cambidgi začínajú briti
           písať svoju počítačovú históriu. To všekto vyvrcholí v&nbsp;úžasnom
-          roku 1982, v&nbsp;ktorom som sa narodil nie len ja, ale aj
-          Commodore&nbsp;64 a&nbsp;Sinclair ZX-Spectrum. Obom týmto platformám
-          je potrebné sa venovať samostatne a&nbsp;v&nbsp;niektorých ďalších
-          dieloch sa na nich určite zameriam.
+          roku 1982, v&nbsp;ktorom som sa narodil nie len ja, ale aj{' '}
+          <EpisodeLink episode={8}>Commodore&nbsp;64</EpisodeLink> a&nbsp;
+          <EpisodeLink episode={6}>Sinclair ZX&nbsp;Spectrum</EpisodeLink>. Obom
+          týmto platformám je potrebné sa venovať samostatne
+          a&nbsp;v&nbsp;niektorých ďalších dieloch sa na nich určite zameriam.
         </p>
         <p>
           Treba si tu dôrazne pripomenúť, že áno, v&nbsp;tom čase už existovali
           16-bitové pécečká od IBM a&nbsp;v&nbsp;nasledujúcich rokoch sa
-          objavovali ďalšie a&nbsp;ďalšie. No na tie ste potrebovali prívesný
-          vagón peňazí. Tieto malé 8-bitové zázraky vyhrali,{' '}
+          objavovali ďalšie a&nbsp;ďalšie platformy. No na tie ste potrebovali
+          prívesný vagón peňazí. Tieto malé 8-bitové zázraky vyhrali,{' '}
           <b>pretože boli lacné</b>. Ponúkli dobrý kompromis medzi cenou
           a&nbsp;výkonom, ktorý stačil na väčšinu aplikácií tej doby. Celá
           generácia sa na nich naučila programovať a&nbsp;umožnili deckám hrať

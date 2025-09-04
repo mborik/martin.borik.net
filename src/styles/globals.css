@@ -74,14 +74,12 @@
   * {
     @apply box-border;
   }
-  body,
   html {
     @apply h-full p-0 m-0 font-sans scroll-smooth scroll-p-25;
-    @apply min-h-screen overflow-visible;
+    @apply bg-background min-h-screen overflow-visible;
   }
   @media screen {
     html::not(.episode) {
-      @apply bg-background;
       background: radial-gradient(
         ellipse at center,
         var(--background-gradient-start) 0%,
@@ -233,6 +231,10 @@
           @apply text-secondary-500 hover:text-secondary-400 active:text-secondary-300;
           @apply hover:underline underline-offset-4;
         }
+        b {
+          @apply font-semibold;
+        }
+
       }
 
       figure {

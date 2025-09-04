@@ -6,7 +6,7 @@ import { config } from '@/lib/config';
 import { usePlayerStore } from '@/lib/player';
 
 type EpisodeProps = {
-  season: number;
+  season?: number;
   episode: number;
   children: React.ReactNode;
 };
