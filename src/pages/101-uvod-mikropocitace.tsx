@@ -109,7 +109,6 @@ export default function S01E01() {
         image={img_8bit_procesory}
         caption='8-bitové procesory: Intel 8080A, Zilog Z80, Motorola 6800, Motorola 6809 a MOS Technology 6502'
         isCaptionVisible
-        imgClass='full'
       />
       <h3>A prečo 8-bitové?</h3>
       <p>
@@ -142,11 +141,10 @@ export default function S01E01() {
         image={img_woz_jobs_pet}
         caption='Steve Wozniak a Steve Jobs s počítačom Apple I (1976)&emsp;|&emsp;Commodore PET (1977)'
         isCaptionVisible
-        imgClass='full'
       />
       <FigureImage
         image={img_c64_speccy}
-        caption='Commodore 64 a Sinclair ZX-Spectrum'
+        caption='Commodore 64 a Sinclair ZX Spectrum'
         isCaptionVisible
         imgClass='right-20rem'
       >

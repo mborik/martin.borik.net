@@ -13,7 +13,7 @@ export const episodeDetailsAndLinks = [
     episode: 2,
     season: 1,
     shortId: 102,
-    related: [103, 101, 105, 110, 111, 112, 114],
+    related: [103, 101, 105, 111, 112, 114, 122],
     baseTitle: 'Nástup éry 16-bitových počítačov',
     slug: '102-era-16-bitovych-pocitacov',
     description:
