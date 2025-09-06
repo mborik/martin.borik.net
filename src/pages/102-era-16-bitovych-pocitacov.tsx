@@ -1,7 +1,13 @@
+import dynamic from 'next/dynamic';
 import * as React from 'react';
 
-import { EpisodeLink, FigureImage } from '@/components/common';
+import { EpisodeLink } from '@/components/common';
 import { Episode } from '@/components/layout/Episode';
+
+const FigureImage = dynamic(
+  () => import('@/components/common').then((mod) => mod.FigureImage),
+  { ssr: false },
+);
 
 import img_amiga_500 from '/public/images/s01e02/amiga_500.jpg';
 import img_amiga_1000 from '/public/images/s01e02/amiga_1000.jpg';
@@ -44,8 +50,10 @@ export default function S01E02() {
       <FigureImage
         image={img_michael_dell}
         caption='Michael Dell a liaheň PC (1985)'
-        isCaptionVisible
+        mediaSource='Computer History Museum, kolorizované'
         imgClass='right-20rem'
+        isCaptionVisible
+        isZoomable
       >
         <h2>Čo bol prvý 16-bitový počítač?</h2>
         <p>
@@ -66,8 +74,10 @@ export default function S01E02() {
       <FigureImage
         image={img_ti99a}
         caption='Texas Instruments TI-99/4 (1979)'
-        isCaptionVisible
+        mediaSource='oldcomputers.net'
         imgClass='left-20rem'
+        isCaptionVisible
+        isZoomable
       >
         <p className='!indent-0 italic'>
           Tak aký bol teda naozaj prvý 16-bitový počítač?
@@ -92,14 +102,17 @@ export default function S01E02() {
       <FigureImage
         image={img_mc68k}
         caption='Motorola 68000'
+        mediaSource='CPCWiki'
         className='dark'
       />
       <h2>16-bity od Apple</h2>
       <FigureImage
         image={img_apple_lisa}
         caption='Apple Lisa (1983)'
-        isCaptionVisible
+        mediaSource='MacStories'
         imgClass='right-24rem'
+        isCaptionVisible
+        isZoomable
       >
         <p>
           Prvenstvo drží <b>Apple Lisa</b> &ndash; najrevolučnejší prepádak
@@ -138,6 +151,7 @@ export default function S01E02() {
       <FigureImage
         image={img_jobs_mac}
         caption='Steve Jobs a Apple Macintosh (1984)'
+        mediaSource='Jeffrey Aaronson, z knihy "Steve & i"'
         isCaptionVisible
         imgClass='left-20rem'
       >
@@ -190,8 +204,10 @@ export default function S01E02() {
       </p>
       <FigureImage
         image={img_amiga_1000}
-        caption='Commodore Amiga 1000 (1985) • foto: Blake Patterson, CC BY 2.0'
+        caption='Commodore Amiga 1000 (1985)'
+        mediaSource='Blake Patterson, CC BY 2.0'
         isCaptionVisible
+        isZoomable
       />
       <p>
         <b>Commodore Amiga 1000</b> prišla v&nbsp;lete 1985 a&nbsp;narozdiel od
@@ -224,8 +240,10 @@ export default function S01E02() {
       <FigureImage
         image={img_amiga_500}
         caption='Commodore Amiga 500 (1987)'
+        mediaSource='Christian Cawley, Gaming Retro UK'
+        imgClass='right-24rem opaque-ms'
         isCaptionVisible
-        imgClass='right-24rem'
+        isZoomable
       >
         <p>
           O dva roky neskôr potom prišla o&nbsp;čosi málo zjednodušená{' '}
@@ -261,8 +279,11 @@ export default function S01E02() {
       </p>
       <FigureImage
         image={img_atari_520st}
-        caption='Atari 520ST (1985) • foto: Felix Winkelnkemper, CC BY-SA 4.0'
+        caption='Atari 520ST (1985)'
+        mediaSource='Felix Winkelnkemper, CC BY-SA 4.0'
+        imgClass='opaque-ms'
         isCaptionVisible
+        isZoomable
       />
       <p>
         <b>Atari 520ST</b>, ako sa prvý model volal, začali predávať neoficiálne
@@ -277,8 +298,10 @@ export default function S01E02() {
       <FigureImage
         image={img_atari_1040st_detail}
         caption='detail vylepšených verzií Atari ST'
+        mediaSource='Fred Bellaiche, Quantum Bits'
         isCaptionVisible
-        imgClass='left-20rem'
+        imgClass='left-20rem opaque-ms'
+        isZoomable
       >
         <p>
           Rok nato prichádza model s&nbsp;1 megabajtom pamäte a&nbsp;o&nbsp;čosi
@@ -315,7 +338,10 @@ export default function S01E02() {
       </p>
       <FigureImage
         image={img_sinclair_ql}
-        caption='Sinclair QL (1984) • foto: timexsinclair.com'
+        caption='Sinclair QL (1984)'
+        mediaSource='Richard Kettlewell, CC BY-SA 2.5'
+        imgClass='opaque-ms'
+        isZoomable
       />
       <p>
         S&nbsp;veľkou pompou Sinclair oznámil začiatok predaja už v&nbsp;januári

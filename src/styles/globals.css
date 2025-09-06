@@ -212,14 +212,14 @@
     @apply max-w-6xl h-full min-h-screen mx-auto;
     @apply flex flex-col gap-8 p-6 md:p-8 lg:p-16;
 
+    h1 {
+      @apply text-3xl md:text-4xl font-bold pb-12 pt-8 md:pt-4;
+      @apply print:text-4xl print:pt-0 print:pb-4 text-ellipsis;
+    }
     article {
       @apply relative w-full flex flex-col gap-4;
       @apply text-base md:text-lg;
 
-      h1 {
-        @apply text-3xl md:text-4xl font-bold pb-12 pt-8 md:pt-4;
-        @apply print:text-4xl print:pt-0 print:pb-4;
-      }
       h2 {
         @apply text-3xl font-bold pt-8 pb-6;
       }
@@ -251,12 +251,53 @@
           @apply relative w-full h-auto mb-4 p-2 border border-gray-300 shadow-2xl;
           background: white;
 
-          &:has(> figcaption) {
-            @apply pb-8;
-          }
-
           > img {
             @apply w-full;
+          }
+          &.zoomable > img {
+            @apply cursor-zoom-in;
+          }
+          > figcaption {
+            @apply text-sm absolute bottom-1.5 right-0 w-full px-3 text-right text-gray-900 italic line-clamp-1;
+          }
+          > .media-source {
+            @apply absolute inline-block top-4 right-4 w-6 h-6 m-0 p-0 select-none z-1 cursor-pointer;
+            mix-blend-mode: hard-light;
+
+            .media-source-icon, .media-source-text {
+              @apply absolute bottom-0 right-0 h-6 border rounded-full;
+              font-size: 12px;
+              line-height: 22px;
+              background-color: hsla(0, 0%, 100%, .2);
+              border: 1px solid hsla(0, 0%, 100%, .15);
+              color: white;
+            }
+            .media-source-icon {
+              @apply hidden md:inline-block print:hidden;
+              @apply text-center font-extrabold w-6;
+            }
+            .media-source-text {
+              @apply inline-block md:hidden print:inline-block;
+              @apply px-2 font-light tracking-wider max-w-72 overflow-hidden text-ellipsis text-right text-nowrap w-auto z-1;
+            }
+            &:hover {
+              .media-source-icon {
+                @apply hidden pointer-events-none;
+              }
+              .media-source-text {
+                @apply inline-block pointer-events-auto;
+              }
+            }
+          }
+          &.opaque-ms .media-source {
+            @apply invert;
+          }
+
+          &:has(> figcaption) {
+            @apply pb-8;
+            .media-source {
+              @apply bottom-10;
+            }
           }
 
           @media (min-width: 768px), print {
@@ -273,14 +314,31 @@
               @apply float-left w-80 m-4 -ml-1 -mt-1;
             }
           }
-
-          > figcaption {
-            @apply text-sm absolute bottom-1.5 right-0 w-full px-3 text-right text-gray-900 italic line-clamp-1;
-          }
         }
 
         &.dark figure {
           @apply bg-background-100 border-none;
+        }
+
+        .lightbox {
+          @apply will-change-auto fixed top-0 left-0 w-full h-full cursor-pointer z-50;
+          background: white;
+
+          .close-backdrop {
+            @apply absolute top-0 left-0 w-screen h-screen z-10;
+          }
+          .lightbox-content {
+            @apply w-full h-full flex flex-col justify-center items-center gap-4 font-medium;
+
+            img {
+              @apply bg-transparent object-scale-down shadow-2xl;
+              max-width: 80vw;
+              max-height: 80vh;
+            }
+            small {
+              @apply font-light text-gray-600 -mt-4;
+            }
+          }
         }
       }
     }
