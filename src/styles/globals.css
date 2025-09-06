@@ -331,9 +331,9 @@
             @apply w-full h-full flex flex-col justify-center items-center gap-4 font-medium;
 
             img {
-              @apply bg-transparent object-scale-down shadow-2xl;
-              max-width: 80vw;
-              max-height: 80vh;
+              @apply bg-transparent object-scale-down;
+              max-width: 90vw;
+              max-height: 90vh;
             }
             small {
               @apply font-light text-gray-600 -mt-4;

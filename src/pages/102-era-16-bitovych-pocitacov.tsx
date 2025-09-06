@@ -142,10 +142,11 @@ export default function S01E02() {
           mrzutosti, ale v&nbsp;roku 1983, keď Lisa konečne vyšla, tak všetci
           sedeli na zadkoch s&nbsp;otvorenými ústami, lebo to bolo ako
           z&nbsp;inej planéty. Ľudstvo ani v&nbsp;roku 1983 nebolo na také niečo
-          pripravené. A&nbsp;inak jasné, nebolo pripravené ani na tú cenovku
-          $10.000, čo bol problém aj pre Americké podniky tej doby. Hlavne, keď
-          sa všade naokolo predávali IBM PC a&nbsp;ich klony ako teplé rožky
-          s&nbsp;úplne inými cenami a&nbsp;rastúcou softvérovou výbavou.
+          pripravené. A&nbsp;inak jasné, nebolo pripravené ani na tú cenovku:
+          &bdquo;$10.000&rdquo; (čo bol problém aj pre Americké podniky tej
+          doby). Hlavne, keď sa všade naokolo predávali IBM PC a&nbsp;ich klony
+          ako teplé rožky s&nbsp;úplne inými cenami a&nbsp;rastúcou softvérovou
+          výbavou.
         </p>
       </FigureImage>
       <FigureImage
@@ -231,7 +232,7 @@ export default function S01E02() {
         68000.
       </p>
       <p>
-        Dodávala sa s&nbsp;pamäťou 256 kilobajt, neskoršie modely mali až 1 MiB.
+        Dodávala sa s&nbsp;pamäťou 256 KiB, neskoršie modely mali až 1 MiB.
         Samozrejmosťou bola 3.5&quot; disketová mechanika, z&nbsp;ktorej sa
         zavádzal myšou ovládaný okenný systém Workbench, ktorý bol na začiatku
         predaja dosť poruchový. To celé ste si v&nbsp;tej dobe v&nbsp;balíku
@@ -304,12 +305,12 @@ export default function S01E02() {
         isZoomable
       >
         <p>
-          Rok nato prichádza model s&nbsp;1 megabajtom pamäte a&nbsp;o&nbsp;čosi
-          neskôr aj mierna zmena dizajnu a&nbsp;model <b>1040ST</b> so
-          zabudovanou disketovou mechanikou a&nbsp;zdrojom napájania. Bol to tak
-          prvý počítač s&nbsp;jedným megom pamäte a&nbsp;farebným grafickým
-          operačným systémom za menej ako 1&thinsp;000 dolárov &ndash; drží aj
-          zápis v&nbsp;Guinessovej knihe rekordov.
+          Rok nato prichádza model s&nbsp;1 MiB pamäte a&nbsp;o&nbsp;čosi neskôr
+          aj mierna zmena dizajnu a&nbsp;model <b>1040ST</b> so zabudovanou
+          disketovou mechanikou a&nbsp;zdrojom napájania. Bol to tak prvý
+          počítač s&nbsp;jedným megom pamäte a&nbsp;farebným grafickým operačným
+          systémom za menej ako 1&thinsp;000 dolárov &ndash; drží aj zápis
+          v&nbsp;Guinessovej knihe rekordov.
         </p>
         <p>
           Len za prvý rok sa všetkých modelov Atari ST predalo viac ako
@@ -340,7 +341,6 @@ export default function S01E02() {
         image={img_sinclair_ql}
         caption='Sinclair QL (1984)'
         mediaSource='Richard Kettlewell, CC BY-SA 2.5'
-        imgClass='opaque-ms'
         isZoomable
       />
       <p>
@@ -366,8 +366,13 @@ export default function S01E02() {
         Mohlo by sa zdať, že hovoríme o&nbsp;neúspechu, ale za ten krátky čas,
         1,5 roka celkovej existencie na trhu sa predalo užasných 150&thinsp;000
         kusov týchto počítačov. Ani to však nestačilo a&nbsp;prispelo ku krachu
-        Sinclair Research Ltd. Všetky detaily skvele opísal môj vážený hosť
-        Martin Kukač v&nbsp;<EpisodeLink episode={22}>epizóde 22</EpisodeLink>.
+        Sinclair Research Ltd.
+        <br />
+        Všetky detaily skvele opísal môj hosť Martin Kukač v&nbsp;
+        <EpisodeLink episode={22}>
+          22. epizóde: Život a dielo Cliva Sinclaira
+        </EpisodeLink>
+        .
       </p>
     </Episode>
   );

@@ -44,6 +44,10 @@ const ZoomableImage = ({
     };
   }, [handleEsc]);
 
+  React.useEffect(() => {
+    document.documentElement.style.overflow = isZoomed ? 'hidden' : '';
+  }, [isZoomed]);
+
   return (
     <>
       <motion.figure

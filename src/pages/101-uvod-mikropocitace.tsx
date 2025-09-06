@@ -1,7 +1,13 @@
+import dynamic from 'next/dynamic';
 import * as React from 'react';
 
-import { EpisodeLink, FigureImage } from '@/components/common';
+import { EpisodeLink } from '@/components/common';
 import { Episode } from '@/components/layout/Episode';
+
+const FigureImage = dynamic(
+  () => import('@/components/common').then((mod) => mod.FigureImage),
+  { ssr: false },
+);
 
 import img_8bit_procesory from '/public/images/s01e01/8bit_procesory.jpg';
 import img_biele_plaste from '/public/images/s01e01/biele_plaste.jpg';
@@ -67,6 +73,7 @@ export default function S01E01() {
       <FigureImage
         image={img_biele_plaste}
         caption='Páni inžinieri v bielych plášťoch'
+        mediaSource='Stockcake [AI]'
         imgClass='left-20rem'
       >
         <p>
@@ -108,6 +115,8 @@ export default function S01E01() {
       <FigureImage
         image={img_8bit_procesory}
         caption='8-bitové procesory: Intel 8080A, Zilog Z80, Motorola 6800, Motorola 6809 a MOS Technology 6502'
+        mediaSource="Big Mess o' Wires"
+        imgClass='opaque-ms'
         isCaptionVisible
       />
       <h3>A prečo 8-bitové?</h3>
@@ -140,19 +149,23 @@ export default function S01E01() {
       <FigureImage
         image={img_woz_jobs_pet}
         caption='Steve Wozniak a Steve Jobs s počítačom Apple I (1976)&emsp;|&emsp;Commodore PET (1977)'
+        mediaSource='Apple Computer Inc. | Rama & Museé Bolo, CC BY-SA 2.0'
         isCaptionVisible
+        isZoomable
       />
       <FigureImage
         image={img_c64_speccy}
         caption='Commodore 64 a Sinclair ZX Spectrum'
+        mediaSource='Evan-Amos, Bill Bertram, CC BY-SA 2.0'
+        imgClass='right-20rem opaque-ms'
         isCaptionVisible
-        imgClass='right-20rem'
+        isZoomable
       >
         <p>
-          To už sa budí aj starý kontinent a&nbsp;v&nbsp;Cambidgi začínajú briti
-          písať svoju počítačovú históriu. To všekto vyvrcholí v&nbsp;úžasnom
-          roku 1982, v&nbsp;ktorom som sa narodil nie len ja, ale aj{' '}
-          <EpisodeLink episode={8}>Commodore&nbsp;64</EpisodeLink> a&nbsp;
+          To už sa budí aj starý kontinent a&nbsp;v&nbsp;Cambridge začínajú
+          briti písať svoju počítačovú históriu. To všekto vyvrcholí
+          v&nbsp;úžasnom roku 1982, v&nbsp;ktorom som sa narodil nie len ja, ale
+          aj <EpisodeLink episode={8}>Commodore&nbsp;64</EpisodeLink> a&nbsp;
           <EpisodeLink episode={6}>Sinclair ZX&nbsp;Spectrum</EpisodeLink>. Obom
           týmto platformám je potrebné sa venovať samostatne
           a&nbsp;v&nbsp;niektorých ďalších dieloch sa na nich určite zameriam.
