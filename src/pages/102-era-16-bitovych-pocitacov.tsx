@@ -61,7 +61,7 @@ export default function S01E02() {
         <p>
           Inak a&nbsp;o&nbsp;rok nato, v roku 1985 Michael Dell otvára svoju
           prvú liaheň na skladané &bdquo;pécečká&rdquo;. Áno,{' '}
-          <b>spoločnosť Dell</b> oslávila v roku 2025 svoje 40. výročie!
+          <b>spoločnosť Dell</b> oslávila v roku 2024 svoje 40. výročie!
         </p>
       </FigureImage>
       <FigureImage
@@ -124,7 +124,7 @@ export default function S01E02() {
           </li>
           <li> zabudovaný kancelársky balík</li>
           <li>
-            objektovo orientované programovanie vlastných aplikácii
+            objektovo orientované programovanie vlastných aplikácií
             a&nbsp;pomocných skriptov
           </li>
         </ul>

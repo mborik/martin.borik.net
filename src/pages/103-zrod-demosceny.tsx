@@ -247,7 +247,7 @@ export default function S01E03() {
         Ešte musím spomenúť aj <b>Demobit</b>, ktorý sa prvýkrát konal
         v&nbsp;roku 1995 a&nbsp;bola to prvá veľká multiplatformová demopárty na
         našom území. Tieto prvé ročníky majú dodnes punc legendárnosti. Žiaľ,
-        koná sa tak nepravidelne, naposledy niekedy v roku 20219, že je veľmi
+        koná sa tak nepravidelne, naposledy niekedy v roku 2019, že je veľmi
         ťažké veriť a&nbsp;dúfať, že sa ešte niekedy vráti a&nbsp;bude mať
         nejakú pravidelnosť, ktorá je z&nbsp;môjho pohľadu dôležitá.
       </p>

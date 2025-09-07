@@ -13,7 +13,7 @@ export default function S01E01() {
     <EpisodeWrapper episode={1}>
       <p>Ahojte všetci fanúšikovia technológií, hlavne tých informačných.</p>
       <p>
-        Vitajte pri prvom diely podcastu Zapečené procesory, kde budeme cestovať
+        Vitajte pri prvom diele podcastu Zapečené procesory, kde budeme cestovať
         časom informačných technológií a&nbsp;rozprávať si príbehy tých, ktoré
         zmenili svet.
       </p>
@@ -58,7 +58,7 @@ export default function S01E01() {
       <p>
         Často si ani neuvedomujeme, čo stálo za zrodom niektorých technológií
         a&nbsp;stretávame sa s&nbsp;nimi denne. A&nbsp;naopak, niektoré
-        technológie niekedy žiaľbohu, a&nbsp;niekedy aj chvalabohu, že žiaľbohu
+        technológie niekedy žiaľbohu, a&nbsp;niekedy aj chvalabohu
         zanikli, no aj dnes má svoje kúzlo sa o&nbsp;nich niečo zaujímavé
         dozvedieť.
       </p>
