@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { useMediaQuery } from 'react-responsive';
 
 const MediaSource = ({ mediaSource }: { mediaSource?: string }) =>
   mediaSource && (
@@ -115,8 +114,14 @@ export const FigureImage = ({
   imgClass,
   ...props
 }: FigureImageProps) => {
-  const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
-  const isPrint = useMediaQuery({ print: true });
+  const [isDesktop, setIsDesktop] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsDesktop(window.matchMedia('(min-width: 768px), print').matches);
+    }
+  }, []);
+
   const altText =
     typeof caption === 'string'
       ? caption
@@ -127,7 +132,7 @@ export const FigureImage = ({
       {...props}
       className={`figure-paragraph${props.className ? ` ${props.className}` : ''}`}
     >
-      {isZoomable && isDesktop && !isPrint ? (
+      {isZoomable && isDesktop ? (
         <ZoomableImage
           image={image}
           altText={altText}

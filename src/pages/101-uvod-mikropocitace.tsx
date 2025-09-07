@@ -1,13 +1,6 @@
-import dynamic from 'next/dynamic';
 import * as React from 'react';
 
-import { EpisodeLink } from '@/components/common';
-import { Episode } from '@/components/layout/Episode';
-
-const FigureImage = dynamic(
-  () => import('@/components/common').then((mod) => mod.FigureImage),
-  { ssr: false },
-);
+import { EpisodeLink, EpisodeWrapper, FigureImage } from '@/components/common';
 
 import img_8bit_procesory from '/public/images/s01e01/8bit_procesory.jpg';
 import img_biele_plaste from '/public/images/s01e01/biele_plaste.jpg';
@@ -17,7 +10,7 @@ import img_woz_jobs_pet from '/public/images/s01e01/woz_jobs_pet.jpg';
 
 export default function S01E01() {
   return (
-    <Episode episode={1}>
+    <EpisodeWrapper episode={1}>
       <p>Ahojte všetci fanúšikovia technológií, hlavne tých informačných.</p>
       <p>
         Vitajte pri prvom diely podcastu Zapečené procesory, kde budeme cestovať
@@ -181,6 +174,6 @@ export default function S01E01() {
           sa doma videohry.
         </p>
       </FigureImage>
-    </Episode>
+    </EpisodeWrapper>
   );
 }

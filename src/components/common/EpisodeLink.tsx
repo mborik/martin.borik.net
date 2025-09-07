@@ -4,15 +4,15 @@ import { usePlayerStore } from '@/lib/player';
 import Link from 'next/link';
 
 type EpisodeProps = {
+  children: React.ReactNode;
   season?: number;
   episode: number;
-  children: React.ReactNode;
 };
 
 export const EpisodeLink = ({
+  children,
   season: SEASON = 1,
   episode: EPISODE,
-  children,
 }: EpisodeProps) => {
   const { currentList, isInitialized } = usePlayerStore();
 

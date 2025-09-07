@@ -34,7 +34,6 @@
     "react-icons": "^5.5.0",
     "react-lazy-load-image-component": "^1.5.5",
     "react-range": "^1.10.0",
-    "react-responsive": "^10.0.1",
     "react-swipeable": "^7.0.2",
     "zustand": "^5.0.3"
   },

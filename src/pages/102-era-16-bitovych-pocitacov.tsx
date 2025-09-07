@@ -1,13 +1,6 @@
-import dynamic from 'next/dynamic';
 import * as React from 'react';
 
-import { EpisodeLink } from '@/components/common';
-import { Episode } from '@/components/layout/Episode';
-
-const FigureImage = dynamic(
-  () => import('@/components/common').then((mod) => mod.FigureImage),
-  { ssr: false },
-);
+import { EpisodeLink, EpisodeWrapper, FigureImage } from '@/components/common';
 
 import img_amiga_500 from '/public/images/s01e02/amiga_500.jpg';
 import img_amiga_1000 from '/public/images/s01e02/amiga_1000.jpg';
@@ -22,7 +15,7 @@ import img_ti99a from '/public/images/s01e02/ti99a.jpg';
 
 export default function S01E02() {
   return (
-    <Episode episode={2}>
+    <EpisodeWrapper episode={2}>
       <p>
         Ako sme minule hovorili, mikropočítače na prelome 70. a&nbsp;80. rokov
         zohrali kľúčovú úlohu v&nbsp;histórii výpočtovej techniky
@@ -294,7 +287,7 @@ export default function S01E02() {
         si systém potom mohli zavádzať. V&nbsp;ďalších výrobných šaržách však
         operačný systém TOS začali integrovať do ROM a&nbsp;žiadne otravné
         zavádzanie systému z&nbsp;diskety nebolo potrebné. Vlastníkov prvých
-        šarží muselo porážať. 😀
+        šarží muselo &bdquo;porážať&rdquo;. 😀
       </p>
       <FigureImage
         image={img_atari_1040st_detail}
@@ -374,6 +367,6 @@ export default function S01E02() {
         </EpisodeLink>
         .
       </p>
-    </Episode>
+    </EpisodeWrapper>
   );
 }
