@@ -20,7 +20,7 @@ export default function S01E01() {
       <FigureImage
         image={img_mbr}
         caption='Martin Bórik'
-        imgClass='right-15rem'
+        figureClass='right-15rem'
       >
         <p>
           Volám sa Martin Bórik a&nbsp;budem vašim sprievodcom v&nbsp;tomto
@@ -67,7 +67,7 @@ export default function S01E01() {
         image={img_biele_plaste}
         caption='Páni inžinieri v bielych plášťoch'
         mediaSource='Stockcake [AI]'
-        imgClass='left-20rem'
+        figureClass='left-20rem'
       >
         <p>
           Mikropočítače na prelome 70. a&nbsp;80. rokov zohrali kľúčovú úlohu
@@ -109,7 +109,7 @@ export default function S01E01() {
         image={img_8bit_procesory}
         caption='8-bitové procesory: Intel 8080A, Zilog Z80, Motorola 6800, Motorola 6809 a MOS Technology 6502'
         mediaSource="Big Mess o' Wires"
-        imgClass='opaque-ms'
+        figureClass='opaque-ms'
         isCaptionVisible
       />
       <h3>A prečo 8-bitové?</h3>
@@ -150,7 +150,7 @@ export default function S01E01() {
         image={img_c64_speccy}
         caption='Commodore 64 a Sinclair ZX Spectrum'
         mediaSource='Evan-Amos, Bill Bertram, CC BY-SA 2.0'
-        imgClass='right-20rem opaque-ms'
+        figureClass='right-20rem opaque-ms'
         isCaptionVisible
         isZoomable
       >

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { usePlayerStore } from '@/lib/player';
 import Link from 'next/link';
 
-type EpisodeProps = {
+type EpisodeLinkProps = {
   children: React.ReactNode;
   season?: number;
   episode: number;
@@ -13,7 +13,7 @@ export const EpisodeLink = ({
   children,
   season: SEASON = 1,
   episode: EPISODE,
-}: EpisodeProps) => {
+}: EpisodeLinkProps) => {
   const { currentList, isInitialized } = usePlayerStore();
 
   const episode: any = React.useMemo(() => {

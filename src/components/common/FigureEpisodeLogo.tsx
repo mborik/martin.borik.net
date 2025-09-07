@@ -6,14 +6,14 @@ interface FigureEpisodeLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   season?: number;
   episode: number;
-  imgClass?: string;
+  figureClass?: string;
 }
 
 export const FigureEpisodeLogo = ({
   children,
   season: SEASON = 1,
   episode: EPISODE,
-  imgClass,
+  figureClass,
   ...props
 }: FigureEpisodeLogoProps) => {
   const { currentList, isInitialized } = usePlayerStore();
@@ -31,7 +31,7 @@ export const FigureEpisodeLogo = ({
       {...props}
       className={`figure-paragraph${props.className ? ` ${props.className}` : ''}`}
     >
-      <figure className={imgClass}>
+      <figure className={figureClass}>
         <Image
           src={episode.image?.url}
           width={320}

@@ -44,7 +44,7 @@ export default function S01E02() {
         image={img_michael_dell}
         caption='Michael Dell a liaheň PC (1985)'
         mediaSource='Computer History Museum, kolorizované'
-        imgClass='right-20rem'
+        figureClass='right-20rem'
         isCaptionVisible
         isZoomable
       >
@@ -68,7 +68,7 @@ export default function S01E02() {
         image={img_ti99a}
         caption='Texas Instruments TI-99/4 (1979)'
         mediaSource='oldcomputers.net'
-        imgClass='left-20rem'
+        figureClass='left-20rem'
         isCaptionVisible
         isZoomable
       >
@@ -103,7 +103,7 @@ export default function S01E02() {
         image={img_apple_lisa}
         caption='Apple Lisa (1983)'
         mediaSource='MacStories'
-        imgClass='right-24rem'
+        figureClass='right-24rem'
         isCaptionVisible
         isZoomable
       >
@@ -147,7 +147,7 @@ export default function S01E02() {
         caption='Steve Jobs a Apple Macintosh (1984)'
         mediaSource='Jeffrey Aaronson, z knihy "Steve & i"'
         isCaptionVisible
-        imgClass='left-20rem'
+        figureClass='left-20rem'
       >
         <p>
           Steva Jobsa to ale neodradilo a&nbsp;už o&nbsp;pol roka na to,
@@ -235,7 +235,7 @@ export default function S01E02() {
         image={img_amiga_500}
         caption='Commodore Amiga 500 (1987)'
         mediaSource='Christian Cawley, Gaming Retro UK'
-        imgClass='right-24rem opaque-ms'
+        figureClass='right-24rem opaque-ms'
         isCaptionVisible
         isZoomable
       >
@@ -275,7 +275,7 @@ export default function S01E02() {
         image={img_atari_520st}
         caption='Atari 520ST (1985)'
         mediaSource='Felix Winkelnkemper, CC BY-SA 4.0'
-        imgClass='opaque-ms'
+        figureClass='opaque-ms'
         isCaptionVisible
         isZoomable
       />
@@ -294,7 +294,7 @@ export default function S01E02() {
         caption='detail vylepšených verzií Atari ST'
         mediaSource='Fred Bellaiche, Quantum Bits'
         isCaptionVisible
-        imgClass='left-20rem opaque-ms'
+        figureClass='left-20rem opaque-ms'
         isZoomable
       >
         <p>

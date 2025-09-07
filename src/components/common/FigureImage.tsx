@@ -17,7 +17,7 @@ interface ZoomableImageProps {
   mediaSource?: string;
   isCaptionVisible?: boolean;
   altText?: string;
-  imgClass?: string;
+  figureClass?: string;
 }
 
 const ZoomableImage = ({
@@ -26,7 +26,7 @@ const ZoomableImage = ({
   caption,
   mediaSource,
   isCaptionVisible,
-  imgClass,
+  figureClass,
 }: ZoomableImageProps) => {
   const [isZoomed, setIsZoomed] = React.useState(false);
   const layoutId = image.src.replace(/^.*[\\/]/, '').replace(/\.[^/.]+$/, '');
@@ -52,7 +52,7 @@ const ZoomableImage = ({
       <motion.figure
         layout
         layoutId={layoutId}
-        className={`${imgClass} zoomable`}
+        className={`${figureClass} zoomable`}
       >
         <Image
           src={image}
@@ -101,7 +101,7 @@ interface FigureImageProps extends React.HTMLAttributes<HTMLDivElement> {
   mediaSource?: string;
   isCaptionVisible?: boolean;
   isZoomable?: boolean;
-  imgClass?: string;
+  figureClass?: string;
 }
 
 export const FigureImage = ({
@@ -111,7 +111,7 @@ export const FigureImage = ({
   mediaSource,
   isCaptionVisible = false,
   isZoomable = false,
-  imgClass,
+  figureClass,
   ...props
 }: FigureImageProps) => {
   const [isDesktop, setIsDesktop] = React.useState(false);
@@ -139,10 +139,10 @@ export const FigureImage = ({
           caption={caption}
           mediaSource={mediaSource}
           isCaptionVisible={isCaptionVisible}
-          imgClass={imgClass}
+          figureClass={figureClass}
         />
       ) : (
-        <figure className={imgClass}>
+        <figure className={figureClass}>
           <Image src={image} alt={altText} blurDataURL={image.blurDataURL} />
           {isCaptionVisible && <figcaption>{caption}</figcaption>}
           <MediaSource mediaSource={mediaSource} />

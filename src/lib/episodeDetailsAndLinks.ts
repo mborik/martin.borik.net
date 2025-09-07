@@ -23,7 +23,7 @@ export const episodeDetailsAndLinks = [
     episode: 3,
     season: 1,
     shortId: 103,
-    related: [104, 101, 102, 107, 109, 112, 131],
+    related: [104, 101, 102, 105, 109, 112, 131],
     baseTitle: 'Zrod demoscény',
     slug: '103-zrod-demosceny',
     description:

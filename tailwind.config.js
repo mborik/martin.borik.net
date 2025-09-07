@@ -59,6 +59,7 @@ module.exports = {
       animation: {},
       zIndex: { 1: '1' },
       screens: {
+        lg: '1160px',
         print: { raw: 'print' },
         screen: { raw: 'screen' },
       },
