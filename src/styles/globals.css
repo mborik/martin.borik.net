@@ -163,12 +163,13 @@
   }
 
   .BackButton {
-    @apply fixed left-0 z-20 print:hidden top-24 lg:top-32;
+    @apply fixed left-0 z-20 print:hidden top-24 lg:top-32 ;
 
     > button {
       @apply block gap-2 p-4 pr-5 m-0 shadow-lg backdrop-blur-xl;
       @apply text-white select-none bg-background-900 hover:bg-background-800 focus:bg-background-800;
       @apply rounded-tl-none rounded-bl-none rounded-3xl;
+      @apply transition-all duration-100 ease-in-out;
     }
   }
 
@@ -176,7 +177,7 @@
     @apply fixed z-20 bottom-6 lg:bottom-12 right-8 lg:right-16;
     @apply gap-2 p-4 m-0 shadow-lg print:hidden screen:block backdrop-blur-xl;
     @apply text-white select-none bg-background-900 hover:bg-background-800 focus:bg-background-800;
-    @apply rounded-full;
+    @apply rounded-full transition-all duration-100 ease-in-out;
   }
 
   section#podcast {
@@ -473,24 +474,6 @@
         background-size: contain;
         z-index: -1;
       }
-
-      .skeleton {
-        @apply relative w-full h-auto;
-
-        > img {
-          @apply -z-1 !opacity-0;
-
-          + .skeleton-overlay {
-            @apply absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse flex justify-center items-center;
-
-            &::after {
-              content: '';
-              @apply block w-16 h-16 opacity-40 bg-center bg-no-repeat overflow-visible;
-              background-image: url('/res/img_loading.svg');
-            }
-          }
-        }
-      }
     }
   }
 
@@ -599,7 +582,10 @@
         @apply flex items-center gap-5;
       }
       .table-row-td-col2-div1-image {
-        @apply hidden md:block rounded-lg;
+        @apply hidden md:block;
+        > img {
+          @apply rounded-md opacity-100 transition-opacity ease-in-out duration-500;
+        }
       }
       .table-row-td-col2-div1-trackcell {
         @apply absolute inset-0 z-30 m-auto ml-3 md:ml-auto cursor-pointer;
@@ -630,6 +616,24 @@
       }
       td.table-row-td-col3 {
         @apply hidden md:block whitespace-nowrap p-4 text-xs font-light text-white-400 tabular-nums;
+      }
+    }
+  }
+
+  .skeleton {
+    @apply relative w-full h-auto;
+
+    > img {
+      @apply -z-1 !opacity-0;
+
+      + .skeleton-overlay {
+        @apply absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse flex justify-center items-center;
+
+        &::after {
+          content: '';
+          @apply block w-16 h-16 opacity-40 bg-center bg-no-repeat overflow-visible;
+          background-image: url('/res/img_loading.svg');
+        }
       }
     }
   }

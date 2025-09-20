@@ -1,22 +1,19 @@
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 
-interface BackButonProps {
+interface BackButtonProps {
   children?: React.ReactNode;
   href?: string;
   section?: string;
 }
 
-export const BackButon: React.FC<BackButonProps> = ({
+export const BackButton: React.FC<BackButtonProps> = ({
   children,
   href,
   section,
 }) => {
-  const hrefData = {
-    pathname: href ?? '/',
-    ...(section && { hash: `#${section}` }),
-  };
+  const router = useRouter();
   return (
     <motion.div
       className='BackButton'
@@ -30,11 +27,14 @@ export const BackButon: React.FC<BackButonProps> = ({
         hidden: { opacity: 0, y: -100 },
       }}
     >
-      <button type='button'>
-        <Link href={hrefData}>
-          <span className='sr-only'>Go back</span>
-          {children}
-        </Link>
+      <button
+        type='button'
+        onClick={() =>
+          router.push(`${href ?? '/'}${section ? `#${section}` : ''}`)
+        }
+      >
+        <span className='sr-only'>Naspäť</span>
+        {children}
       </button>
     </motion.div>
   );

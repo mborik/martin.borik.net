@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import { BackButon, ScrollToTop } from '@/components/common';
+import { BackButton, ScrollToTop } from '@/components/common';
 import { ArrowLeft, ChevronUp } from '@/components/common/icons';
 
 export const Article = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <BackButon href='/'>
+      <BackButton href='/'>
         <ArrowLeft className='size-8 flex-none' aria-hidden='true' />
-      </BackButon>
+      </BackButton>
       <section id='article'>
         <ScrollToTop smooth>
           <ChevronUp className='size-8 flex-none' />

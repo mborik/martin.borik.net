@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import React from 'react';
 import { MdPause, MdPlayArrow } from 'react-icons/md';
 
 import { config } from '@/lib/config';
@@ -50,6 +51,7 @@ const TableBody = ({ list }: { list: Episode[] }) => {
 const TableRow = ({ track }: { track: Episode }) => {
   const router = useRouter();
   const { isPlaying, currentEpisode, isLoaded } = usePlayerStore();
+  const [isSkeleton, setIsSkeleton] = React.useState(true);
 
   const { episode: episodeNumber, title, image, duration } = track;
   const fmtDuration = formatTime(duration);
@@ -67,13 +69,19 @@ const TableRow = ({ track }: { track: Episode }) => {
       <td className='table-row-td-col2'>
         <div className='table-row-td-col2-div1'>
           <div className='relative'>
-            <Image
-              src={image?.url || config.thumbnail}
-              width={64}
-              height={64}
-              className='table-row-td-col2-div1-image'
-              alt={title}
-            />
+            <div
+              className={`table-row-td-col2-div1-image${isSkeleton ? ' skeleton' : ''}`}
+            >
+              <Image
+                className=''
+                src={image?.url || config.thumbnail}
+                alt={title}
+                width={64}
+                height={64}
+                onLoad={() => setIsSkeleton(false)}
+              />
+              {isSkeleton && <div className='skeleton-overlay' />}
+            </div>
 
             <div
               className={`${
