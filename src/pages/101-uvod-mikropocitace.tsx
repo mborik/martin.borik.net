@@ -1,6 +1,11 @@
 import * as React from 'react';
 
-import { EpisodeLink, EpisodeWrapper, FigureImage } from '@/components/common';
+import {
+  EpisodeLink,
+  EpisodeWrapper,
+  FigureImage,
+  Heading,
+} from '@/components/common';
 
 export default function S01E01() {
   return (
@@ -58,7 +63,9 @@ export default function S01E01() {
         zanikli, no aj dnes má svoje kúzlo sa o&nbsp;nich niečo zaujímavé
         dozvedieť.
       </p>
-      <h2>Mikropočítače 80. rokov 20. storočia</h2>
+      <Heading as='h2' id='uvod'>
+        Mikropočítače 80. rokov 20. storočia
+      </Heading>
       <FigureImage
         src='/res/s01e01/biele_plaste.jpg'
         caption='Páni inžinieri v bielych plášťoch'
@@ -112,7 +119,7 @@ export default function S01E01() {
         width={2515}
         height={960}
       />
-      <h3>A prečo 8-bitové?</h3>
+      <Heading id='8-bitove'>A prečo 8-bitové?</Heading>
       <p>
         Ešte si urobíme malú odbočku k&nbsp;tomu, prečo počítače a&nbsp;teda
         hlavne procesory tejto éry voláme 8-bitové. Je to jednoducho preto, že
@@ -131,7 +138,7 @@ export default function S01E01() {
         programy by mohli mať iba 256 bajtov, takže preto sa to muselo rozšíriť
         a&nbsp;každá adresa pamäte sa zapisovala dvoma bajtami.
       </p>
-      <h3>Záver</h3>
+      <Heading id='zaver'>Záver</Heading>
       <p>
         Podobne ako hamburgery, aj mikropočítače začali svoju históriu písať
         v&nbsp;Amerike. V&nbsp;roku 1976 takí dvaja neznámi bradatí hipsteri

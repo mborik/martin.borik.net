@@ -6,6 +6,7 @@ import {
   FigureEpisodeLogo,
   FigureImage,
   FigureYouTube,
+  Heading,
 } from '@/components/common';
 
 export default function S01E03() {
@@ -37,14 +38,14 @@ export default function S01E03() {
         Celkovo bolo chápanie autorského zákona u&nbsp;nás akési&hellip;
         &bdquo;voľnejšie&ldquo;. Komerčný zahraničný softvér sa u&nbsp;nás
         nemohol predávať a&nbsp;ani sa nemali vydavatelia ako domáhať odmien za
-        jeho predaj, alebo vyrovania za jeho odsudzenie. A&nbsp;tak sa
+        jeho predaj, alebo vyrovania za jeho odcudzenie. A&nbsp;tak sa
         prirodzene pokútne dovážal, respektíve pašoval a&nbsp;veselo kopíroval
-        z&nbsp;kazety na kazetu, neskôr z&nbsp;diskety na disketu. Sme dobe pred
-        internetom, takže to často to fungovalo aj ako poštová služba. Vy ste
-        niekomu poštou poslali kazetu či disketu a&nbsp;známku na spätné
-        odoslanie, vybrali si softvéry z&nbsp;katalógu a&nbsp;domov vám prišlo
-        vaše (možno aj nepoškodené) úložné médium plné nakradnutých hier či
-        programov.
+        z&nbsp;kazety na kazetu, neskôr z&nbsp;diskety na disketu. Sme
+        v&nbsp;dobe pred internetom, takže to často fungovalo aj ako poštová
+        služba. Vy ste niekomu poštou poslali kazetu či disketu a&nbsp;známku na
+        spätné odoslanie, vybrali si softvéry z&nbsp;katalógu a&nbsp;domov vám
+        prišlo vaše (možno aj nepoškodené) úložné médium plné nakradnutých hier
+        či programov.
       </p>
       <FigureImage
         src='/res/s01e03/copy_theft.jpg'
@@ -76,12 +77,12 @@ export default function S01E03() {
           <var>x</var>, musí existovať iný programátor <var>q</var>, ktorý aj
           takto komplexnú ochranu prelomí. Tento proces prelamovania ochrany
           softvéru sa začal nazývať &lsquo;cracking&rsquo; a&nbsp;jednotliví
-          &lsquo;crackeri&rsquo; sa uzavárali do &lsquo;cracker groups&rsquo;.
+          &lsquo;crackeri&rsquo; sa uzatvárali do &lsquo;cracker groups&rsquo;.
         </p>
       </FigureImage>
-      <h3>Prelamovanie softvéru</h3>
+      <Heading id='prelamovanie-softveru'>Prelamovanie softvéru</Heading>
       <p>
-        Keď každé prelomenie sa stalo záležitosťou prestíže, tak začali tieto
+        Keď sa každé prelomenie stalo záležitosťou prestíže, tak začali tieto
         svoje prelomenia vydávať aj s&nbsp;takzvaným &lsquo;cracktrom&rsquo;.
         Introm, alebo úvodníkom, ktoré popisovalo, čo je to za produkt, kto za
         ním stojí a&nbsp;kto prelomil jeho ochranu. Krátko nato to začalo byť
@@ -124,7 +125,7 @@ export default function S01E03() {
           získať ďalší a&nbsp;ďalší lup.
         </p>
       </FigureYouTube>
-      <h3>Demo a demoparty</h3>
+      <Heading id='demo-a-demoparty'>Demo a demoparty</Heading>
       <p>
         Nastupuje doba 16-bitov, no stále hovoríme o&nbsp;dobe pred internetom,
         takže sa tieto cracknuté programy naďalej šíria poštou, ale hlavne
@@ -154,7 +155,7 @@ export default function S01E03() {
         height={700}
         isCaptionVisible
       />
-      <h3>Čo je demoscéna?</h3>
+      <Heading id='co-je-demoscena'>Čo je demoscéna?</Heading>
       <p>
         <b>Demoscéna je nezávislá</b>, možno až <b>undergroundová subkultúra</b>
         , ktorá síce vzišla zo softvérového pirátstva, ale jej primárnou
@@ -192,17 +193,19 @@ export default function S01E03() {
         <li>slideshow</li>
         <li>wild</li>
       </ul>
-      <h3>90. roky a návrat nemŕtvych!</h3>
+      <Heading id='90-roky-a-navrat-nemrtvych'>
+        90. roky a návrat nemŕtvych!
+      </Heading>
       <p>
         Zaujímavá vec sa stala v&nbsp;90. rokoch na už vtedy postarších
         8-bitových platformách. Inšpiráciou 16-bitmi sa zrodila demoscéna aj na
         týchto 8-bitových zázrakoch a&nbsp;trvá samozrejme dodnes. Tvorcovia za
         tie roky posunuli hranice možného až ďaleko za hranice toho, čo by
         človek očakával od týchto škatuliek. Dnes, keď si pozriete najnovšie
-        demo, ťažko dokážete uveriť tomu, že to beží na tej tom istom, na čom
-        decká v&nbsp;80. rokoch{' '}
+        demo, ťažko dokážete uveriť tomu, že to beží na tom istom, na čom decká
+        v&nbsp;80. rokoch{' '}
         <i>
-          naháňali po obrazovke krížik krúžkom a&nbsp;vyhýbal sa výkričníkom
+          naháňali po obrazovke krížik krúžkom a&nbsp;vyhýbali sa výkričníkom
         </i>
         .
       </p>
@@ -250,7 +253,7 @@ export default function S01E03() {
         ťažké veriť a&nbsp;dúfať, že sa ešte niekedy vráti a&nbsp;bude mať
         nejakú pravidelnosť, ktorá je z&nbsp;môjho pohľadu dôležitá.
       </p>
-      <h3>Dnešné demoparties</h3>
+      <Heading id='dnesne-demoparties'>Dnešné demoparties</Heading>
       <p>
         V zahraničí je týchto demoparties samozrejme omnoho viac. Kompletný
         prehľad získate na výbornej databáze demoscény{' '}
@@ -290,7 +293,9 @@ export default function S01E03() {
           isCaptionVisible
         />
       </FigureYouTube>
-      <h3>Demoscéna vs. herný biznis</h3>
+      <Heading id='demoscena-vs-herny-biznis'>
+        Demoscéna vs. herný biznis
+      </Heading>
       <p>
         Demoscéna vychovala mnoho profesionálov vo svojom odbore. Dizajnéri,
         vývojári, grafici či hudobníci z&nbsp;doby pred 30 rokmi, sú dnes veľké
@@ -313,7 +318,9 @@ export default function S01E03() {
         , je tu plný YouTube rôznych tutorialov, a&nbsp;väčšina diem alebo
         demotoolov je open-source &ndash; &bdquo;stačí iba začať&ldquo;. 😉
       </p>
-      <h3>Vymieranie 8-bitovej demoscény</h3>
+      <Heading id='vymieranie-8-bitovej-demosceny'>
+        Vymieranie 8-bitovej demoscény
+      </Heading>
       <p>
         Žiaľ, smutnejšie to je na 8-bitovej demoscéne, ktorá z&nbsp;môjho
         pohľadu vymiera. Súčasní scéneri sú starí bardi, ktorí už majú rodiny

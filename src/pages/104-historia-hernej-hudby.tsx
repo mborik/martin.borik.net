@@ -7,6 +7,7 @@ import {
   FigureAudio,
   FigureImage,
   FigureYouTube,
+  Heading,
 } from '@/components/common';
 
 export default function S01E04() {
@@ -42,7 +43,7 @@ export default function S01E04() {
           napätia, respektíve logickou nulou a&nbsp;jednotkou.
         </p>
       </FigureImage>
-      <h3>Hudba na jednom bite</h3>
+      <Heading id='hudba-na-jednom-bite'>Hudba na jednom bite</Heading>
       <p>
         Rezonanciou rýchlych obdĺžnikových zákmitov, teda striedaním núl
         a&nbsp;jedičiek, sa vytvára zvuk, no a&nbsp;frekvencia týchto zákmitov
@@ -56,7 +57,7 @@ export default function S01E04() {
       />
       <p>
         Ak sa z&nbsp;tónov mala stať hudba, bolo nutné to naprogramovať. Zvuková
-        rutina, ľudovo prezývaná aj <i>&bdquo;hradlo&rdquo;</i> mala za úlohu
+        rutina, ľudovo prezývaná aj <i>&bdquo;hradlo&rdquo;</i>, mala za úlohu
         vytvárať zákmity z&nbsp;núl a&nbsp;jednotiek v&nbsp;potrebnej frekvencii
         a&nbsp;tú meniť podľa toho, aké tóny nasledujú. Asi prvá komerčne
         úspešná hra, ktorá beeper využívala nie len na zvuky v&nbsp;hre, ale
@@ -77,13 +78,13 @@ export default function S01E04() {
         </p>
       </FigureAudio>
       <p>
-        V nasledujúcich rokoch však hudobníci, teda vlastne programátori hudieb
-        prichádzali so stále pokročilejšími hradlami. Odrazu boli schopní
-        vytvoriť iba na rýchlom striedaní jednotiek a&nbsp;núl imerziu viacerých
-        tónov naraz, ich utišovanie, alebo dokonca ich moduláciu. Takže iba dva
-        roky od Manic Minera bol fenomenálny hudobník <b>Tim Follin</b> schopný
-        do hry Vectron naprogramovať hradlo a&nbsp;napísať hudbu, ktorá znela
-        takto&hellip;
+        V nasledujúcich rokoch však hudobníci &ndash; teda vlastne programátori
+        hudieb &ndash; prichádzali so stále pokročilejšími hradlami. Odrazu boli
+        schopní vytvoriť iba na rýchlom striedaní jednotiek a&nbsp;núl imerziu
+        viacerých tónov naraz, ich utišovanie, alebo dokonca ich moduláciu.
+        Takže iba dva roky od Manic Minera bol fenomenálny hudobník{' '}
+        <b>Tim Follin</b> schopný do hry Vectron naprogramovať hradlo
+        a&nbsp;napísať hudbu, ktorá znela takto&hellip;
       </p>
       <FigureYouTube
         youtubeCode='m4sJ6S0SLUs?si=HDNQbZlhDyCA8mG3'
@@ -111,7 +112,7 @@ export default function S01E04() {
           a&nbsp;nevýrazná.
         </p>
       </FigureYouTube>
-      <h3>PSG &ndash; Programmable Sound Generators</h3>
+      <Heading id='psg'>PSG &ndash; Programmable Sound Generators</Heading>
       <p>
         Ďalším milníkom v&nbsp;počítačovej hudbe boli{' '}
         <b>programovateľné zvukové generátory</b>, známe pod skratkou PSG. To už
@@ -142,7 +143,7 @@ export default function S01E04() {
           technický a&nbsp;popisoval iba to, aké hodnoty v&nbsp;daných
           registroch očakáva a&nbsp;akú časť obvodu to ovplyvňuje. To ale
           nehovorilo nič o&nbsp;tom, aký zvuk môžeme očakávať. Trvalo ešte
-          niekoľko rokov, kým autori prišli na všetky možnosti ako sa dá tvoriť
+          niekoľko rokov, kým autori prišli na všetky možnosti, ako sa dá tvoriť
           a&nbsp;tvarovať zvuk daného čipu. Vlastne to nikdy neskončilo, lebo
           ako sme si minule hovorili v&nbsp;časti o&nbsp;demoscéne, autori sa až
           dodnes predbiehajú v&nbsp;tom, aké zvuky z&nbsp;týchto čipov vydolujú.
@@ -150,7 +151,9 @@ export default function S01E04() {
           pôvodní výrobcovia týchto zvukových čipov istotne nerátali.
         </p>
       </FigureImage>
-      <h4>POKEY</h4>
+      <Heading as='h4' id='pokey'>
+        POKEY
+      </Heading>
       <p>
         Každá z&nbsp;troch hlavných 8-bitových platforiem používala špecifický
         čip, čím sa vlastne zadefinoval zvuk každej z&nbsp;nich. Séria
@@ -181,7 +184,9 @@ export default function S01E04() {
         <EpisodeLink episode={26}>#26: Hudba 8-bitových Atari</EpisodeLink>
         &hellip;
       </p>
-      <h4>SID</h4>
+      <Heading as='h4' id='sid'>
+        SID
+      </Heading>
       <p>
         Commodore 64 prišiel na trh so zabudovaným &bdquo;
         <b>Sound Interface Device</b>&rdquo;, čiže skrátene SID. Bol to veľmi
@@ -219,12 +224,14 @@ export default function S01E04() {
           figureClass='right-32rem lg:!-ml-4'
         />
       </FigureAudio>
-      <h4>AY-3-8912</h4>
+      <Heading as='h4' id='ay-3-8912'>
+        AY-3-8912
+      </Heading>
       <p>
         ZX&nbsp;Spectrum 128 zas v&nbsp;roku 1986 vyšlo s&nbsp;integrovaným
         čipom AY-3-8912 od spoločnosti General Instrument, opäť asi kvôli cene,
         lebo už v&nbsp;tom čase mal tento staručký čip náhradu v&nbsp;podobe
-        Yamahy YM2149F, ktorú, ak si pamätáte predsa malo osadené Atari ST už
+        Yamahy YM2149F, ktorú, ak si pamätáte, predsa malo osadené Atari ST už
         rok predtým. Každopádne, neštudované ucho nepozná rozdiel vo zvuku medzi
         &bdquo;AYpsilonkou&ldquo; a&nbsp;&bdquo;YMkom&ldquo;. Tieto čipy mali
         asi naväčšie zastúpenie a&nbsp;objavili sa na množstve platforiem. Okrem
@@ -288,7 +295,9 @@ export default function S01E04() {
         SIDFX) a&nbsp;TurboSound na ZX&nbsp;Spectre sú dnes už bežnými
         rozšíreniami.
       </blockquote>
-      <h4>TI SN76489</h4>
+      <Heading as='h4' id='ti-sn76489'>
+        TI SN76489
+      </Heading>
       <FigureAudio
         src='/res/s01e04/tobikomi_stellar_core.mp3'
         caption='Tobikomi - Stellar Core (2022)'
@@ -308,11 +317,13 @@ export default function S01E04() {
           Sharp&nbsp;MZ-800, alebo Sord&nbsp;M5.
         </p>
       </FigureAudio>
-      <h4>Philips SAA1099</h4>
+      <Heading as='h4' id='philips-saa1099'>
+        Philips SAA1099
+      </Heading>
       <p>
         V druhej polovici 80. rokov sa ešte objavil čip SAA1099 od spoločnosti
         Philips. Ten, okrem toho, že ho používali Creative Labs vo svojích
-        prvých Sound Blasteroch sa objavil aj v&nbsp;8-bitovom počítači Sam
+        prvých Sound Blasteroch, sa objavil aj v&nbsp;8-bitovom počítači Sam
         Coupé. To bol taký nabúšený osembit, ktorý mal úžasne revolučné
         vlastnosti, ale skrátka: prišiel neskoro a&nbsp;neuspel
         v&nbsp;konkurencii 16-bitov. Sam Coupé si zasúži väčší priestor
@@ -356,7 +367,7 @@ export default function S01E04() {
           figureClass='right-32rem lg:!-ml-4'
         />
       </FigureAudio>
-      <h3>Záver</h3>
+      <Heading id='zaver'>Záver</Heading>
       <p>
         Tak ste to počuli! Mojim cieľom bolo vám predstaviť to, ako zneli,
         a&nbsp;ako znejú &bdquo;osembity&rdquo;. Do dnešnej doby tieto malé

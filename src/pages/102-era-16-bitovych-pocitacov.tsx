@@ -1,6 +1,11 @@
 import * as React from 'react';
 
-import { EpisodeLink, EpisodeWrapper, FigureImage } from '@/components/common';
+import {
+  EpisodeLink,
+  EpisodeWrapper,
+  FigureImage,
+  Heading,
+} from '@/components/common';
 
 export default function S01E02() {
   return (
@@ -16,18 +21,18 @@ export default function S01E02() {
         Ten rozvoj 8-bitových počítačov samozrejme neustal, pokračoval ďalej
         a&nbsp;následný technický vývoj priniesol nové procesory &ndash;
         tentoraz už <b>16-bitové</b>. To znamenalo, že dokázali počítať
-        s&nbsp;násobne väčšími číslami čo výrazne uľahčovalo operácie procesora
+        s&nbsp;násobne väčšími číslami, čo výrazne uľahčovalo operácie procesora
         a&nbsp;prenosy medzi ním a&nbsp;okolím. Často mali aj dômyselnejšiu
-        inštrukčnú sadu čo tiež zvyšovalo ich možnosti. Neskôr sa dokonca začali
-        pripájať ku matematickým koprocesorom, ktoré už rátali s&nbsp;číslami
-        s&nbsp;pohyblivou desatinnou čiarkou.
+        inštrukčnú sadu, čo tiež zvyšovalo ich možnosti. Neskôr sa dokonca
+        začali pripájať ku matematickým koprocesorom, ktoré už rátali
+        s&nbsp;číslami s&nbsp;pohyblivou desatinnou čiarkou.
       </p>
       <p>
-        Takto vylepšené procesory však mali obrovský náskok pre 8-bitmi nie len
+        Takto vylepšené procesory však mali obrovský náskok pred 8-bitmi nie len
         výpočtovým výkonom. Zvládali totiž manažovať viac pamäte, omnoho väčšie
         grafické rozlíšenia a&nbsp;režimy, a&nbsp;niektoré platformy priniesli
         aj nové zvukové možnosti. Bolo samozrejmosťou, že periférne zariadenia,
-        ako aj grafické či zvukové procesory mali priamy prístup do pamäte
+        ako aj grafické či zvukové procesory, mali priamy prístup do pamäte
         a&nbsp;procesor sa tak nezaťažoval zložitým lopatovaním dát.
       </p>
       <FigureImage
@@ -40,20 +45,23 @@ export default function S01E02() {
         isCaptionVisible
         isZoomable
       >
-        <h3>Čo bol prvý 16-bitový počítač?</h3>
+        <Heading id='prvy-16-bitovy-pocitac'>
+          Čo bol prvý 16-bitový počítač?
+        </Heading>
         <p>
-          Často sa zjednodušene hovorí, že prvým 16-bitom bolo <b>IBM PC</b>,
-          ktoré sa predávalo od roku 1981, ale nie je tomu celkom tak. Bol totiž
+          Často sa nesprávne hovorí, že prvým 16-bitom bolo <b>IBM PC</b>, ktoré
+          sa predávalo od roku 1981, ale nie je tomu celkom tak. Bol totiž
           osadený procesorom Intel 8088, čo bol taký hybrid medzi 8-bitom
           a&nbsp;16-bitom, ktorý IBM použilo iba preto, že im firma Intel dala
           výhodnú cenovú ponuku (a&nbsp;mali toho asi plné sklady). Poriadny
-          16-bit bolo až IBM PC AT, ľudovo nazývaná &bdquo;dvaosemšestka&rdquo;,
-          ktorá prišla o&nbsp;tri roky neskôr, v&nbsp;roku 1984.
+          16-bit bolo až IBM PC AT, ľudovo nazývaná{' '}
+          <i>&bdquo;dvaosemšestka&rdquo;</i>, ktorá prišla o&nbsp;tri roky
+          neskôr, v&nbsp;roku 1984.
         </p>
         <p>
-          Inak a&nbsp;o&nbsp;rok nato, v roku 1985 Michael Dell otvára svoju
-          prvú liaheň na skladané &bdquo;pécečká&rdquo;. Áno,{' '}
-          <b>spoločnosť Dell</b> oslávila v roku 2024 svoje 40. výročie!
+          Inak, a&nbsp;hneď v tomto roku Michael Dell otvára svoju prvú liaheň
+          na skladané &bdquo;pécečká&rdquo;. Áno, <b>spoločnosť Dell</b>{' '}
+          oslávila v roku 2024 svoje 40. výročie!
         </p>
       </FigureImage>
       <FigureImage
@@ -94,7 +102,7 @@ export default function S01E02() {
         width={1280}
         height={500}
       />
-      <h3>16-bity od Apple</h3>
+      <Heading id='16-bity-od-apple'>16-bity od Apple</Heading>
       <FigureImage
         src='/res/s01e02/apple_lisa.jpg'
         caption='Apple Lisa (1983)'
@@ -189,11 +197,11 @@ export default function S01E02() {
         Všetky tieto počítače však boli ako kancelárske krysy: ticho, možno
         občas pípli&hellip;
       </p>
-      <h3>Amiga!</h3>
+      <Heading id='amiga'>Amiga!</Heading>
       <p>
-        V tom čase však uzrela svetlo sveta platforma, ktorá naopak, o&nbsp;sebe
-        dala pomerne hlasno znať a&nbsp;jej ozvenu počuť až dodnes. Detailne sa
-        o&nbsp;nej zhováram s&nbsp;mojim hosťom{' '}
+        V tom čase však uzrela svetlo sveta platforma, ktorá, naopak,
+        o&nbsp;sebe dala pomerne hlasno znať a&nbsp;jej ozvenu počuť až dodnes.
+        Detailne sa o&nbsp;nej zhováram s&nbsp;mojim hosťom{' '}
         <EpisodeLink episode={12}>v&nbsp;dvanástej epizóde</EpisodeLink>.
       </p>
       <FigureImage
@@ -257,7 +265,7 @@ export default function S01E02() {
           sa položili základy <EpisodeLink episode={3}>demoscény!</EpisodeLink>
         </p>
       </FigureImage>
-      <h3>Atari ST</h3>
+      <Heading id='atari-st'>Atari ST</Heading>
       <p>
         Ešte pred Amigou prišla na svet ďalšia 16-bitová legenda &ndash; Atari
         ST. Mala rovnaký procesor, ale už 512 KiB pamäte, grafické rozlíšenie
@@ -322,15 +330,15 @@ export default function S01E02() {
       </FigureImage>
       <p>
         Detailne o&nbsp;všetkých modeloch Atari ST a&nbsp;o&nbsp;pokračovateľovi
-        STčka, <b>Atari Falcon</b> som sa zhováral s&nbsp;Mirom Kropáčkom
+        STčka, <b>Atari Falcon</b>, som sa zhováral s&nbsp;Mirom Kropáčkom
         v&nbsp;epizóde{' '}
         <EpisodeLink episode={11}>Viacbitové modely značky Atari</EpisodeLink>.
       </p>
-      <h3>Sinclair a 16-bitov?</h3>
+      <Heading id='sinclair-a-16-bitov'>Sinclair a 16-bitov?</Heading>
       <p>
         Toto všetko sa dialo za veľkou mlákou, ale čo starý kontinent? Sir Clive
         Sinclair nechcel zaspať na vavrínoch a&nbsp;už pred vydaním ZX-Spectra,
-        pri ktorom bol inak veľmi sklamaný tým, že sa stal, jeho slovami
+        pri ktorom bol inak veľmi sklamaný tým, že sa stal, jeho slovami,
         &bdquo;hračkou pre deti&rdquo;, začal pracovať na novej mašine, ktorú
         smeroval viac do profesionálnej sféry, aj keď so stále ľudovo nízkou
         cenovkou. Dal tomu aj honosný názov Quantum Leap. Počítač mal krásny
@@ -367,7 +375,7 @@ export default function S01E02() {
       </p>
       <p>
         Mohlo by sa zdať, že hovoríme o&nbsp;neúspechu, ale za ten krátky čas,
-        1,5 roka celkovej existencie na trhu sa predalo užasných 150&thinsp;000
+        1,5 roka celkovej existencie na trhu, sa predalo užasných 150&thinsp;000
         kusov týchto počítačov. Ani to však nestačilo a&nbsp;prispelo ku krachu
         Sinclair Research Ltd.
         <br />

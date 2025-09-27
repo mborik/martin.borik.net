@@ -8,6 +8,7 @@ import {
   FigureEpisodeLogo,
   FigureImage,
   FigureYouTube,
+  Heading,
 } from '@/components/common';
 
 export default function S01E07() {
@@ -20,10 +21,10 @@ export default function S01E07() {
           počítačoch. V&nbsp;predošlej časti tejto série, v&nbsp;epizóde #5 sme
           si hovorili o&nbsp;novej kapitole zvuku počítačov a&nbsp;príchode
           hudobných programov, takzvaných trackeroch, ktoré poznačili celú túto
-          éru. Táto nová vlna však, ako mávnutie motýlích krídel spôsobila
+          éru. Táto nová vlna však, ako mávnutie motýlích krídel, spôsobila
           výbuch kreativity aj tam, kde to už nikto nečakal&hellip;
         </p>
-        <h3>Návrat nemŕtvych</h3>
+        <Heading id='navrat-nemrtvych'>Návrat nemŕtvych</Heading>
         <p>
           Na prelome 80. a&nbsp;90. rokov zažili 8-bitové platformy
           znovuzrodenie a&nbsp;nakoplo to tvorbu hier, ale aj demoscénu. Treba
@@ -67,7 +68,9 @@ export default function S01E07() {
           hranice toho, čo bolo dovtedy považované za možné a&nbsp;prekonávali
           dovtedy videné.
         </p>
-        <h3>Na začiatku bol Soundtracker</h3>
+        <Heading id='na-zaciatku-bol-soundtracker'>
+          Na začiatku bol Soundtracker
+        </Heading>
         <FigureImage
           src='/res/s01e07/bzyk_soundtracker.png'
           caption='Bzyk of Pentagram - Soundtracker [1992]'
@@ -104,7 +107,9 @@ export default function S01E07() {
           vrátane prípadného jemného rozladenia od základného tónu. To spolu
           vytvorí charakter zvuku a&nbsp;jeho doznev priradením základného tónu.
         </p>
-        <h4>Tvoríme zvuky na AY-3-8910</h4>
+        <Heading as='h4' id='tvorime-zvuky-na-ay-3-8910'>
+          Tvoríme zvuky na AY-3-8910
+        </Heading>
         <FigureImage
           src='/res/s01e07/sample_snare.png'
           caption='sample: "snare"'
@@ -169,7 +174,9 @@ export default function S01E07() {
           pokročilých aj ovládanie obálky, tak autor hudby má tieto vlastnosti
           plne pod svojou kontrolou a&nbsp;dá sa z&nbsp;to veľa vyťažiť.
         </p>
-        <h3>Zrod 8-bitovej demoscény</h3>
+        <Heading id='zrod-8-bitovej-demosceny'>
+          Zrod 8-bitovej demoscény
+        </Heading>
         <p>
           Vráťme sa ale k&nbsp;Soundtrackeru a&nbsp;jeho výnamu. Bzyk ako člen
           demoscény na odprezentovanie hudobných možností trackera vytvoril demo
@@ -188,8 +195,10 @@ export default function S01E07() {
           demá, ale už tu bolo niečo inak: Obsahovali totiž autorskú, pôvodnú
           hudbu.
         </p>
-        <h3>Poľská úderka 🇵🇱</h3>
-        <h4>Agent-X</h4>
+        <Heading id='polska-uderka'>Poľská úderka {flag_pl()}</Heading>
+        <Heading as='h4' id='agent-x'>
+          Agent-X
+        </Heading>
         <p>
           Kraľovali tomu hlavne poľské skupiny, ako napríklad The Jokers, Exodus
           či Pentagram &ndash; a&nbsp;tieto skupiny spája meno jedného
@@ -209,7 +218,9 @@ export default function S01E07() {
             neprebádanú vlastnosť čipu AY: <b>hardvérové obálky</b>.
           </p>
         </FigureAudio>
-        <h4>Ziutek</h4>
+        <Heading as='h4' id='ziutek'>
+          Ziutek
+        </Heading>
         <FigureAudio
           src='/res/s01e07/ziutek_lyra3.mp3'
           caption='Ziutek (Andrzej Siuda) - Lyra II part 3 [1991]'
@@ -231,7 +242,9 @@ export default function S01E07() {
           Kde to ďalej žilo, bolo, ako minule Martin spomínal, Rusko,
           o&nbsp;ktorom však hovoriť nechcem. 😒
         </p>
-        <h3>Zlaté české ručičky 🇨🇿</h3>
+        <Heading as='h3' id='zlate-ceske-rucicky'>
+          Zlaté české ručičky {flag_cz()}
+        </Heading>
         <p>
           Vráťme sa radšej domov, pretože v&nbsp;90. rokoch začala
           v&nbsp;Československu zlatá éra ZX&nbsp;Spectra &ndash;
@@ -239,7 +252,9 @@ export default function S01E07() {
           venovali&hellip; no a&nbsp;samozrejme hudobníkov! Tých
           najvýznamnejších vám teraz predstavím:
         </p>
-        <h4>Fuxoft</h4>
+        <Heading as='h4' id='fuxoft'>
+          Fuxoft
+        </Heading>
         <p>
           Ešte predtým, ako prišli trackery tu zažiaril hudobník, ktorý trackery
           nikdy nepotreboval. Už koncom 80. rokov si totiž napísal vlastnú
@@ -266,7 +281,9 @@ export default function S01E07() {
             <b>František Fuka</b> alias <b>Fuxoft</b>:
           </p>
         </FigureAudio>
-        <h4>Qjeta</h4>
+        <Heading as='h4' id='qjeta'>
+          Qjeta
+        </Heading>
         <FigureAudio
           src='/res/s01e07/qjeta_agent_x_inspiration.mp3'
           caption='Qjeta - Agent-X Inspiration [1993]'
@@ -280,7 +297,9 @@ export default function S01E07() {
             <b>Petr Krevňák</b> alias <b>Qjeta</b>.
           </p>
         </FigureAudio>
-        <h4>Scalex</h4>
+        <Heading as='h4' id='scalex'>
+          Scalex
+        </Heading>
         <FigureAudio
           src='/res/s01e07/scalex_ala_benn_daglish.mp3'
           caption="Scalex - A'la Benn Daglish [1994]"
@@ -289,11 +308,11 @@ export default function S01E07() {
         >
           <p>
             Nemôžem nespomenúť hudobníka, ktorý je asi najviac spätý so
-            spoločnosťou Proxima, ktorá v&nbsp;Čechách okrem toho, že vydávala
-            skvelý časopis ZX-Magazín vybudovala vlastne to, čomu dnes hovoríme
-            software-house. Združovala a&nbsp;prepájala výnimočných tvorcov
-            a&nbsp;vydávala ich hry a&nbsp;systémové programy pod svojou
-            &bdquo;hlavičkou&rdquo;.Scalex
+            spoločnosťou <b>Proxima</b>, ktorá v&nbsp;Čechách okrem toho, že
+            vydávala skvelý časopis ZX-Magazín, vybudovala vlastne to, čomu dnes
+            hovoríme software-house. Združovala a&nbsp;prepájala výnimočných
+            tvorcov a&nbsp;vydávala ich hry a&nbsp;systémové programy pod svojou
+            &bdquo;hlavičkou&rdquo;.
             <br />
             No áno! <b>Miroslav Hlavička</b> alias <b>Scalex</b> umožnil ozvučiť
             väčšinu týchto hier svojou chytľavou muzikou.
@@ -327,7 +346,9 @@ export default function S01E07() {
             území&hellip;
           </p>
         </FigureImage>
-        <h4>Lukáš Vlček</h4>
+        <Heading as='h4' id='lukas-vlcek'>
+          Lukáš Vlček
+        </Heading>
         <FigureAudio
           src='/res/s01e07/luk_delayed4.mp3'
           caption='Luk (Lukáš Vlček) - demo "Delayed", 4. časť [1995]'
@@ -340,7 +361,9 @@ export default function S01E07() {
             nemusel hanbiť ani Agent-X!
           </p>
         </FigureAudio>
-        <h4>X-Agon</h4>
+        <Heading as='h4' id='x-agon'>
+          X-Agon
+        </Heading>
         <FigureAudio
           src='/res/s01e07/xagon_razor.mp3'
           caption='X-Agon (Vít Hotárek) - Over the fields [1994]'
@@ -360,7 +383,9 @@ export default function S01E07() {
             originálu výrazne vylepšil a urobil dynamickejšou.
           </p>
         </FigureAudio>
-        <h4>TDM</h4>
+        <Heading as='h4' id='tdm'>
+          TDM
+        </Heading>
         <FigureAudio
           src='/res/s01e07/tdm_neverstory.mp3'
           caption='TDM - NeverStory [2005]'
@@ -373,7 +398,9 @@ export default function S01E07() {
             a&nbsp;tanečnej rytmike.
           </p>
         </FigureAudio>
-        <h4>Aki</h4>
+        <Heading as='h4' id='aki'>
+          Aki
+        </Heading>
         <FigureYouTube
           youtubeCode='PGOzEPjuQn0?si=CvOZucQ5Fug0BopY'
           caption='Aki (Ella Šenovská) - Návstěvníci [2002]'
@@ -401,17 +428,21 @@ export default function S01E07() {
             <b>SQ-Tracker</b>.
           </p>
         </FigureYouTube>
-        <h3>Made in Slovakia 🇸🇰</h3>
+        <Heading as='h3' id='made-in-slovakia'>
+          Made in Slovakia {flag_sk()}
+        </Heading>
         <p>
           Mojim slovenským poslucháčom teraz isto vŕta v&nbsp;hlave, prečo tu
           nespomínam žiadnych tvorcov zo Slovenska. My azda nemáme našich
           hudobníkov? No máme! Slovenských a&nbsp;žiadnych iných!
         </p>
-        <h4>Noro</h4>
+        <Heading as='h4' id='noro'>
+          Noro
+        </Heading>
         <FigureAudio
           src='/res/s01e07/noro_demobit.mp3'
           caption='Noro Grellneth - Demobit [1995]'
-          figureClass='right-24rem !-mt-4'
+          figureClass='right-20rem !-mt-4'
           className='mb-8'
         >
           <p>
@@ -424,7 +455,9 @@ export default function S01E07() {
             ostatné &bdquo;aypsilonkoviny&rdquo;.
           </p>
         </FigureAudio>
-        <h4>Tren</h4>
+        <Heading as='h4' id='tren'>
+          Tren
+        </Heading>
         <FigureAudio
           src='/res/s01e07/tren_space_debris.mp3'
           caption='Tren (Zsolt Trencsenyi) - Space Debris [1997]'
@@ -444,7 +477,9 @@ export default function S01E07() {
             &bdquo;prerábka&rdquo; tohto legendárneho modulu.
           </p>
         </FigureAudio>
-        <h4>Baze</h4>
+        <Heading as='h4' id='baze'>
+          Baze
+        </Heading>
         <FigureYouTube
           youtubeCode='5JvQTy5oEWM?si=Z7zVM5EBX8-mBKrA&amp;start=30'
           caption='demo Insane skupiny 3SC (remake)'
@@ -466,7 +501,9 @@ export default function S01E07() {
             &bdquo;Insane&rdquo;.
           </p>
         </FigureYouTube>
-        <h4>z00m</h4>
+        <Heading as='h4' id='z00m'>
+          z00m
+        </Heading>
         <FigureAudio
           src='/res/s01e07/z00m_x_files.mp3'
           caption='z00m - X-Files Theme (Sleepy Remix) [2003]'
@@ -501,7 +538,9 @@ export default function S01E07() {
             </p>
           </FigureImage>
         </FigureAudio>
-        <h3>Záver</h3>
+        <Heading as='h3' id='zaver'>
+          Záver
+        </Heading>
         <p>
           Dnes to bola epizóda opäť veľmi bohatá na ukážky. Asi tuším, že ľudia
           so scény mi určite budú vyčítať, že som nespomenul toho, či onoho
@@ -515,5 +554,74 @@ export default function S01E07() {
         </p>
       </FigureEpisodeLogo>
     </EpisodeWrapper>
+  );
+}
+
+function flag_pl({ className }: { className?: string } = {}) {
+  return (
+    <svg
+      viewBox='0 0 36 36'
+      xmlns='http://www.w3.org/2000/svg'
+      aria-hidden='true'
+      className={className ?? 'icon'}
+    >
+      <path fill='#EEE' d='M32 5H4a4 4 0 0 0-4 4v9h36V9a4 4 0 0 0-4-4z' />
+      <path fill='#DC143C' d='M0 27a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4v-9H0v9z' />
+    </svg>
+  );
+}
+
+function flag_cz({ className }: { className?: string } = {}) {
+  return (
+    <svg
+      viewBox='0 0 36 36'
+      xmlns='http://www.w3.org/2000/svg'
+      aria-hidden='true'
+      className={className ?? 'icon'}
+    >
+      <path
+        fill='#D7141A'
+        d='M1.38 29.97A3.8 3.8 0 0 0 4 31h28c2.2 0 4-1.8 4-4.5V18H17.5L1.38 29.97z'
+      />
+      <path
+        fill='#EEE'
+        d='M32 5H4a3.98 3.98 0 0 0-2.65 1L17.5 18H36V9a4 4 0 0 0-4-4z'
+      />
+      <path
+        fill='#11457E'
+        d='M1.38 29.97 17.5 18 1.35 6A3.98 3.98 0 0 0 0 9v17.5c0 1.48.54 2.68 1.38 3.47z'
+      />
+    </svg>
+  );
+}
+
+function flag_sk({ className }: { className?: string } = {}) {
+  return (
+    <svg
+      viewBox='0 0 36 36'
+      xmlns='http://www.w3.org/2000/svg'
+      aria-hidden='true'
+      className={className ?? 'icon'}
+    >
+      <path fill='#EE2024' d='M36 27v-4H0v4a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4z' />
+      <path fill='#EEE' d='M36 23H0V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v14z' />
+      <path fill='#0A4EA2' d='M0 13h36v10H0z' />
+      <path
+        fill='#FFF'
+        d='M11.84 25.09c-1.13-.65-3.64-2.28-4.56-4.49-.92-2.23-.72-5.42-.48-9.12l.06-.94h11.96l.06.94c.24 3.7.45 6.9-.48 9.12-.91 2.21-3.42 3.84-4.55 4.49l-1 .57-1.01-.57z'
+      />
+      <path
+        fill='#EE2024'
+        d='M17.89 11.54H7.79c-.23 3.7-.41 6.68.41 8.68 1.03 2.46 4.52 4.22 4.64 4.27v.01c.12-.06 3.62-1.82 4.64-4.28.83-2 .65-4.97.4-8.68z'
+      />
+      <path
+        fill='#FFF'
+        d='M15.87 16.1s-1.4.14-2.64.17a13.05 13.05 0 0 1 0-1.28c.98.06 1.65.24 1.65.24.25 0 .45-.2.45-.44v-.6c0-.26-.2-.46-.45-.46 0 0-.74.13-1.57.18.07-.78.16-1.43.16-1.43 0-.25-.2-.45-.45-.45h-.6c-.25 0-.45.2-.45.45 0 0 .1.66.17 1.44a13.36 13.36 0 0 1-1.58-.19c-.25 0-.45.2-.45.45v.6c0 .25.2.45.45.45 0 0 .64-.2 1.67-.25a11.02 11.02 0 0 1 0 1.3c-1.24-.04-2.69-.17-2.69-.17-.24 0-.44.2-.44.45v.6c0 .25.2.45.44.45 0 0 1.32-.1 2.64-.13l-.21 3.32c0 .25.2.45.45.45h.6c.25 0 .45-.2.45-.45l-.19-3.31c1.28.03 2.58.12 2.58.12.25 0 .45-.2.45-.45v-.6c0-.25-.2-.45-.45-.45z'
+      />
+      <path
+        fill='#0A4EA2'
+        d='M17.08 20.96c-.5-1.08-1.9-1.39-2.57-.06-.44-1.6-1.68-1.6-1.68-1.6s-1.24 0-1.68 1.6c-.66-1.32-2.04-1.02-2.56.04 1.32 2.07 4.14 3.5 4.25 3.56.11-.06 2.92-1.48 4.24-3.54z'
+      />
+    </svg>
   );
 }

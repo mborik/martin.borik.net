@@ -7,6 +7,7 @@ import {
   FigureAudio,
   FigureImage,
   FigureYouTube,
+  Heading,
 } from '@/components/common';
 
 export default function S01E05() {
@@ -32,7 +33,9 @@ export default function S01E05() {
         height={469}
         isZoomable
       >
-        <h4>Trocha teórie na úvod</h4>
+        <Heading as='h4' id='teoria'>
+          Trocha teórie na úvod
+        </Heading>
         <p>
           Pulzno-kódová modulácia je{' '}
           <b>metóda prevodu analógového zvukového signálu na digitálny</b>. Deje
@@ -56,7 +59,7 @@ export default function S01E05() {
         </p>
       </FigureImage>
       <p>Dobre, teórie na úvod už hádam stačilo&hellip;</p>
-      <h3>PCM na počítačoch</h3>
+      <Heading id='pcm-na-pocitacoch'>PCM na počítačoch</Heading>
       <p>
         Natíska sa otázka, že prečo sa tento spôsob tvorby zvuku a&nbsp;hudby
         objavil v&nbsp;plnej miere až s&nbsp;príchodom 16-bitov? Na to je veľmi
@@ -80,9 +83,9 @@ export default function S01E05() {
         figureClass='left-20rem'
       >
         <p>
-          Inak aj tá vzorkovacia frekvencia a&nbsp;rozlíšenie boli tak nízke, že
-          výsledná kvalita bola otrasná a&nbsp;človek musel pri počúvaní silno
-          zapojiť predstavivosť. 🙂
+          Inak, aj tá vzorkovacia frekvencia a&nbsp;rozlíšenie boli tak nízke,
+          že výsledná kvalita bola otrasná a&nbsp;človek musel pri počúvaní
+          silno zapojiť predstavivosť. 🙂
         </p>
         <p>
           Asi aj sami počujete, že toto nie je niečo, čo by sme radi počúvali.
@@ -91,11 +94,13 @@ export default function S01E05() {
           prakticky nevyužiteľné.
         </p>
       </FigureAudio>
-      <h3>Paula, dcéra kráľovnej Amigy</h3>
+      <Heading as='h4' id='paula'>
+        Paula, dcéra kráľovnej Amigy
+      </Heading>
       <p>
         Ako som už spomínal{' '}
         <EpisodeLink episode={2}>v&nbsp;druhej epizóde</EpisodeLink>, zlom vo
-        vnímaní zvuku, jeho kvalite ale aj samotnej tvorbe hudby na počítači
+        vnímaní zvuku, jeho kvalite, ale aj samotnej tvorbe hudby na počítači,
         dátujeme do druhej polovice 80. rokov, keď sa objavili prvé Amigy. Ich
         zvukový čip <b>Paula</b> mal 4 zvukové kanály (dva znejúce naľavo, dva
         zas napravo). Každý kanál umožňoval prehrávať na rozličnej vzorkovacej
@@ -148,7 +153,7 @@ export default function S01E05() {
         vyhral a&nbsp;takýmto spôsobom vyludzujú zvuk všetky dnešné počítače,
         mobily, smart hodinky, či dokonca aj váš robotický vysavač. 😉
       </blockquote>
-      <h3>Hudobné trackery</h3>
+      <Heading id='hudobne-trackery'>Hudobné trackery</Heading>
       <p>
         S týmto milníkom na poli počítačovej hudby súvisí aj príchod novej
         hviezdy, ktorá umožnila tisícom nových tvorcov začať ich dráhu hudobníka
@@ -159,8 +164,8 @@ export default function S01E05() {
         Táto nová vlna softvérových hudobných editorov prišla s&nbsp;vizuálnou
         podobou programovania hudby vertikálnym zápisom, ktorý si môžete
         predstaviť ako Excel. Každý stĺpec znamená jeden zvukový kanál, ten
-        plynie po riadkoch určenou rýchlosťou a&nbsp;v&nbsp;danom čase určujete
-        aký zvuk má byť zahraný akým tónom, hlasitosťou či inými efektami
+        plynie po riadkoch určenou rýchlosťou a&nbsp;v&nbsp;danom čase určujete,
+        aký zvuk má byť zahraný, akým tónom, hlasitosťou či inými efektami
         a&nbsp;ich parametrami.
       </p>
       <FigureImage
@@ -203,7 +208,7 @@ export default function S01E05() {
           >
             <p>
               Tento Soundmonitor totiž poskytol všetkým a&nbsp;bol otlačený
-              v&nbsp;spomínanom časopise ako výpis programu, ktorí ste si mohli
+              v&nbsp;spomínanom časopise ako výpis programu, ktorý ste si mohli
               opísať a&nbsp;uložiť.
             </p>
             <p>
@@ -228,7 +233,9 @@ export default function S01E05() {
           </FigureImage>
         </FigureImage>
       </FigureImage>
-      <h3>Úsvit a pád: The Ultimate Soundtracker</h3>
+      <Heading id='the-ultimate-soundtracker'>
+        Úsvit a pád: The Ultimate Soundtracker
+      </Heading>
       <p>
         Vráťme sa ale k&nbsp;trackerom. Práve programom Soundmonitor sa totiž
         inšpiroval <b>Karsten Obarski</b>, keď vytváral prvý hudobný tracker na
@@ -277,13 +284,15 @@ export default function S01E05() {
           </p>
         </FigureImage>
       </FigureImage>
-      <h4>Komerčný neúspech</h4>
+      <Heading as='h4' id='soundtracker-komercny-neuspech'>
+        Komerčný neúspech
+      </Heading>
       <p>
         Príbeh Ultimate Soundtrackera je vlastne veľmi smutným príbehom
         komerčného neúspechu, ktorý viedol ku vzostupu trackerov z&nbsp;pera
         crackerskej komunity. Soundtracker nemal po vydaní veľmi dobré recenzie
         a&nbsp;hudobníci, ktorí boli v&nbsp;tom čase zvyknutí skôr na notové
-        programy ho považovali za nelogický, obtiažny alebo jednoducho čudný.
+        programy, ho považovali za nelogický, obtiažny alebo jednoducho čudný.
         Ten program si to i&nbsp;sám veľmi neuľahčoval chybovosťou, obmedzenými
         možnosťami a&nbsp;akýmsi striktným vyhradzovaním kanálov.
       </p>
@@ -311,7 +320,9 @@ export default function S01E05() {
         isCaptionVisible
         isZoomable
       />
-      <h4>Dedičstvo</h4>
+      <Heading as='h4' id='soundtracker-dedictvo'>
+        Dedičstvo
+      </Heading>
       <p>
         Obarskeho Soundtrackeru sa ale nedá uprieť to, že zadefinoval tento typ
         hudobného editora a&nbsp;práve tu vznikol formát súboru, ktorý dnes
@@ -323,9 +334,9 @@ export default function S01E05() {
       </p>
       <p>
         Ďalšia vec, ktorá sa Obarskemu nedá uprieť je to, že svojou kolekciou
-        samplov, ktoré dodával ku Soundtrackeru na dlhé roky ovplyvnil zvuk hier
-        a&nbsp;diem na Amige, keďže väčšina čerpala z&nbsp;jeho zvukovej banky
-        a&nbsp;málokto mal možnosť nahrávať si vlastné sample.
+        samplov, ktoré dodával ku Soundtrackeru, na dlhé roky ovplyvnil zvuk
+        hier a&nbsp;diem na Amige, keďže väčšina čerpala z&nbsp;jeho zvukovej
+        banky a&nbsp;málokto mal možnosť nahrávať si vlastné sample.
       </p>
       <FigureYouTube
         youtubeCode='thnXzUFJnfQ?si=nQxjfrrxNrR9M1RX'
@@ -347,7 +358,7 @@ export default function S01E05() {
           className='flex w-auto clear-left'
         />
       </FigureYouTube>
-      <h3>PC ♥︎ trackery</h3>
+      <Heading id='pc-trackery'>PC ♥︎ trackery</Heading>
       <p>
         Keď sa v&nbsp;prvej polovici 90. rokov zlepšil stav multimédií aj na PC
         príchodom nových grafických, no v&nbsp;našom prípade hlavne zvukových
@@ -421,7 +432,7 @@ export default function S01E05() {
           byť pre scénu ako z&nbsp;paralelného vesmíru.
         </p>
       </FigureYouTube>
-      <h3>Od hier po demoscénu</h3>
+      <Heading id='od-hier-po-demoscenu'>Od hier po demoscénu</Heading>
       <p>
         Tieto trackery boli od začiatku hojne využívané v&nbsp;Amigáckych hrách,
         ale aj na konci 90. rokov sa na pécéčkách používali na tvorbu
