@@ -6,6 +6,7 @@ export * from './FigureAudio';
 export * from './FigureEpisodeLogo';
 export * from './FigureImage';
 export * from './FigureYouTube';
+export * from './Heading';
 export * from './Related';
 export * from './ScrollToTop';
 export * from './Seo';

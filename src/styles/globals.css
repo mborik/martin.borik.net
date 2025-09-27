@@ -103,6 +103,24 @@
   h5,
   h6 {
     @apply font-semibold text-white font-primary;
+
+    &[id] {
+      > a {
+        @apply flex absolute left-0 m-1 pr-8 w-12;
+        @apply invisible ml-2 opacity-0 translate-x-0 transition-all duration-200 ease-in-out;
+        @apply text-gray-400 hover:text-primary-400;
+
+        &.copied {
+          @apply !opacity-0 !-translate-x-16;
+        }
+      }
+      &:hover a {
+        @apply visible opacity-100 -translate-x-8;
+      }
+    }
+    > svg.icon {
+      @apply inline h-4 w-4 mx-1;
+    }
   }
   h1,
   h2 {
@@ -110,41 +128,9 @@
   }
   h3 {
     @apply text-3xl;
-
-    &.gradient {
-      background: linear-gradient(
-        -90deg,
-        var(--button-gradient-start) 0%,
-        var(--button-gradient-end) 100%
-      );
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-    }
-    &.gradient2 {
-      background: linear-gradient(
-        -90deg,
-        var(--secondary-600) 0%,
-        var(--accent-800) 100%
-      );
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-    }
   }
   h4 {
     @apply text-2xl;
-
-    &.gradient {
-      background: linear-gradient(
-        90deg,
-        var(--button-gradient-start) 0%,
-        var(--button-gradient-end) 100%
-      );
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-fill-color: transparent;
-    }
   }
 
   .LayoutWrapper {

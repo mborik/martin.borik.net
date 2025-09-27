@@ -28,6 +28,22 @@ export const EpisodeWrapper = ({
   React.useEffect(() => {
     isInitialized == null && init();
     document.documentElement.className = 'episode';
+    if (typeof window !== 'undefined') {
+      window.setTimeout(() => {
+        const hash = window.location.hash;
+        if (!hash || window.scrollY > 128) return;
+        const element = window.document.querySelector(hash);
+        if (!element) return;
+        const { top: scrollY } = element.getBoundingClientRect();
+        window.scrollTo({
+          top: scrollY - 128,
+          behavior: 'smooth',
+        });
+      }, 128);
+    }
+    return () => {
+      document.documentElement.className = '';
+    };
   }, []);
 
   const episode = React.useMemo<EpisodeData | void>(() => {
