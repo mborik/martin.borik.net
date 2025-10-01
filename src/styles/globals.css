@@ -214,8 +214,8 @@
       h4 {
         @apply pt-4 pb-4 text-xl font-semibold;
       }
-      p, ul {
-        @apply leading-8 text-justify indent-8;
+      p, ul, blockquote {
+        @apply leading-8 text-justify indent-8 p-0;
 
         a {
           @apply text-secondary-400 hover:text-secondary-300 active:text-secondary-200;
@@ -239,7 +239,18 @@
         }
       }
       blockquote {
-        @apply px-4 py-2 ml-8 text-xl italic font-medium leading-8 text-justify border-l-2 border-gray-300 indent-0;
+        @apply py-2 font-medium indent-0;
+
+        &:not(.question) {
+          @apply px-4 ml-8 text-xl leading-8 italic border-l-2 border-gray-300;
+        }
+        &.question {
+          font-size: 1.15rem;
+          &::before {
+            content: '>';
+            @apply inline-flex w-8 text-primary-400 text-left;
+          }
+        }
       }
       ul {
         @apply mb-4 -mt-2 text-left list-disc list-inside;
