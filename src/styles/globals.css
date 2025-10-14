@@ -257,6 +257,8 @@
       }
 
       .figure-paragraph {
+        @apply flex flex-col md:block;
+
         > p:not(:last-child) {
           @apply mb-4;
         }
@@ -324,11 +326,24 @@
             }
           }
 
+          + *:not(.figure-paragraph) {
+            order: -1;
+          }
+
           @media (min-width: 768px), print {
+            + *:not(.figure-paragraph) {
+              order: unset;
+            }
             &.left-10rem {
               @apply float-left m-4 -mt-1 -ml-1 w-40;
               .media-source-text {
                 @apply max-w-36;
+              }
+            }
+            &.left-15rem {
+              @apply float-left m-4 -mt-1 -ml-1 w-60;
+              .media-source-text {
+                @apply max-w-52;
               }
             }
             &.left-20rem {

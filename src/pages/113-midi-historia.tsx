@@ -80,8 +80,8 @@ export default function S01E13() {
       </p>
       <blockquote>
         A&nbsp;toto je zlomový moment technologických dejín, pretože to, čo
-        nasledovalo sa dá považovať za prvé open-source konzorcium a&nbsp;prvá
-        technológia s&nbsp;otvorenými zdrojmi a&nbsp;špecifikáciou.
+        nasledovalo sa dá považovať za prvé open-source konzorcium a&nbsp;prvú
+        technológiu s&nbsp;otvorenými zdrojmi a&nbsp;špecifikáciou.
       </blockquote>
       <p>
         Smith začal o&nbsp;tomto koncepte presviedčať ďalšie americké

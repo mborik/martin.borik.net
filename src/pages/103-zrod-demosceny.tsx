@@ -36,7 +36,7 @@ export default function S01E03() {
         Na našom území to bolo vlastne prirodzené. Kedže sme boli krajina za
         Železnou oponou, na softvér sa u&nbsp;nás nevzťahoval autorský zákon.
         Celkovo bolo chápanie autorského zákona u&nbsp;nás akési&hellip;
-        &bdquo;voľnejšie&ldquo;. Komerčný zahraničný softvér sa u&nbsp;nás
+        &bdquo;voľnejšie&rdquo;. Komerčný zahraničný softvér sa u&nbsp;nás
         nemohol predávať a&nbsp;ani sa nemali vydavatelia ako domáhať odmien za
         jeho predaj, alebo vyrovania za jeho odcudzenie. A&nbsp;tak sa
         prirodzene pokútne dovážal, respektíve pašoval a&nbsp;veselo kopíroval
@@ -179,7 +179,7 @@ export default function S01E03() {
         Takisto býva samostatná skupina comp pre každú platformu. A&nbsp;ďalej,
         každý účastník demoscény je &bdquo;scener&rdquo;. Scéneri sa organizujú
         do &bdquo;groups&rdquo; a&nbsp;navštevujú &bdquo;parties&rdquo;. Na
-        party sa prihlasujú prody do jednotivých comp a&nbsp;vtedy sa
+        party sa prihlasujú prody do jednotlivých comp a&nbsp;vtedy sa
         z&nbsp;nich stanú &bdquo;entries&rdquo;.
       </p>
       <p>

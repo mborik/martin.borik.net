@@ -1,12 +1,9 @@
-/* eslint-disable unused-imports/no-unused-imports */
 import * as React from 'react';
 
 import {
   EpisodeLink,
   EpisodeWrapper,
   ExternalLink,
-  FigureAudio,
-  FigureEpisodeLogo,
   FigureImage,
   FigureYouTube,
   Heading,
@@ -95,7 +92,7 @@ export default function S01E06() {
         <FigureImage
           src='/res/s01e06/calculators.jpg'
           caption='Hewlett-Packard HP-35 vs. Sinclair Executive (1972)'
-          mediaSource='hewlettpackardhistory.com; Wikimedia Commons, CC BY-SA 3.0'
+          mediaSource='hewlettpackardhistory.com; MaltaGC, CC BY-SA 3.0'
           figureClass='left-24rem'
           width={800}
           height={640}
@@ -242,7 +239,7 @@ export default function S01E06() {
       <FigureImage
         src='/res/s01e06/zx81.jpg'
         caption='Sinclair ZX81 (1981)'
-        mediaSource='Evan Amos, Wikimedia Commons, CC BY-SA 3.0'
+        mediaSource='Evan Amos, CC BY-SA 3.0'
         figureClass='right-20rem opaque-ms'
         width={1500}
         height={1100}
@@ -268,7 +265,7 @@ export default function S01E06() {
       <FigureImage
         src='/res/s01e06/gumak.jpg'
         caption='Sinclair ZX Spectrum (1982)'
-        mediaSource='Bill Bertram, Wikimedia Commons, CC BY-SA 2.0'
+        mediaSource='Bill Bertram, CC BY-SA 2.0'
         figureClass='left-20rem opaque-ms'
         className='clear-both'
         width={1820}
@@ -504,7 +501,7 @@ export default function S01E06() {
       <FigureImage
         src='/res/s01e06/spectrum_128_2.jpg'
         caption='ZX Spectrum 128 +2 (1986)'
-        mediaSource='Wikimedia Commons, public domain'
+        mediaSource='Stuart Brady, public domain'
         figureClass='left-24rem !-mt-2 opaque-ms'
         width={1840}
         height={700}

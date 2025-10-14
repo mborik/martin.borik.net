@@ -73,7 +73,7 @@ export const episodeDetailsAndLinks = [
     episode: 8,
     season: 1,
     shortId: 108,
-    related: [109, 101, 104, 106, 107, 110, 112],
+    related: [109, 101, 104, 106, 110, 111, 112],
     baseTitle: 'Commodore 64',
     slug: '108-commodore-64',
     description:

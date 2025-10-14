@@ -565,7 +565,7 @@ function flag_pl({ className }: { className?: string } = {}) {
       aria-hidden='true'
       className={className ?? 'icon'}
     >
-      <path fill='#EEE' d='M32 5H4a4 4 0 0 0-4 4v9h36V9a4 4 0 0 0-4-4z' />
+      <path fill='#FFF' d='M32 5H4a4 4 0 0 0-4 4v9h36V9a4 4 0 0 0-4-4z' />
       <path fill='#DC143C' d='M0 27a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4v-9H0v9z' />
     </svg>
   );
@@ -584,7 +584,7 @@ function flag_cz({ className }: { className?: string } = {}) {
         d='M1.38 29.97A3.8 3.8 0 0 0 4 31h28c2.2 0 4-1.8 4-4.5V18H17.5L1.38 29.97z'
       />
       <path
-        fill='#EEE'
+        fill='#FFF'
         d='M32 5H4a3.98 3.98 0 0 0-2.65 1L17.5 18H36V9a4 4 0 0 0-4-4z'
       />
       <path
@@ -604,7 +604,7 @@ function flag_sk({ className }: { className?: string } = {}) {
       className={className ?? 'icon'}
     >
       <path fill='#EE2024' d='M36 27v-4H0v4a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4z' />
-      <path fill='#EEE' d='M36 23H0V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v14z' />
+      <path fill='#FFF' d='M36 23H0V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v14z' />
       <path fill='#0A4EA2' d='M0 13h36v10H0z' />
       <path
         fill='#FFF'

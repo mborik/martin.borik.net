@@ -27,7 +27,7 @@ export default function S01E05() {
       <FigureImage
         src='/res/s01e05/pcm_quantization.jpg'
         caption='princíp kvantizácie zvukovej vzorky pri pulzo-kódovej modulácii'
-        mediaSource='Wikimedia Commons, CC BY-SA 3.0'
+        mediaSource='CC BY-SA 3.0, Wikimedia Commons'
         figureClass='right-24rem opaque-ms'
         width={625}
         height={469}
@@ -39,7 +39,7 @@ export default function S01E05() {
         <p>
           Pulzno-kódová modulácia je{' '}
           <b>metóda prevodu analógového zvukového signálu na digitálny</b>. Deje
-          sa to tak, že sa intentiza analógového zvukového signálu odčítava
+          sa to tak, že sa intenzita analógového zvukového signálu odčítava
           v&nbsp;každom jeho bode danej vzorkovacej frekvencie, pričom táto
           intenzita je rozdelená do istého počtu úrovní hlasitostí, čiže odborne{' '}
           <b>&bdquo;kvantovaná&rdquo;</b>. Hodnota nameranej úrovne hlasitosti
