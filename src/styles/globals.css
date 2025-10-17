@@ -334,6 +334,7 @@
             + *:not(.figure-paragraph) {
               order: unset;
             }
+
             &.left-10rem {
               @apply float-left m-4 -mt-1 -ml-1 w-40;
               .media-source-text {
@@ -364,6 +365,12 @@
                 @apply max-w-36;
               }
             }
+            &.right-13rem {
+              @apply float-right m-4 -mt-1 -mr-1 w-52;
+              .media-source-text {
+                @apply max-w-48;
+              }
+            }
             &.right-15rem {
               @apply float-right m-4 -mt-1 -mr-1 w-60;
               .media-source-text {
@@ -391,6 +398,10 @@
               @apply float-right m-4 -mt-1 -mr-1 w-128;
             }
           }
+        }
+
+        &.embedded-media figure {
+          @apply print:hidden;
         }
 
         &.dark > figure {

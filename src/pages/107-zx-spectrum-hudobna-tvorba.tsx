@@ -91,7 +91,7 @@ export default function S01E07() {
           <FigureAudio
             src='/res/s01e07/soundtracker_demo.mp3'
             caption='Bzyk - Stracker (demosong)'
-            className='flex w-auto clear-left'
+            className='!flex w-auto clear-left'
           />
         </FigureImage>
         <p>
@@ -113,7 +113,7 @@ export default function S01E07() {
         <FigureImage
           src='/res/s01e07/sample_snare.png'
           caption='sample: "snare"'
-          figureClass='right-15rem !w-52'
+          figureClass='right-13rem'
           width={210}
           height={320}
           isCaptionVisible
@@ -142,7 +142,7 @@ export default function S01E07() {
           <FigureAudio
             src='/res/s01e07/sample_demo.mp3'
             caption='ukážka samplov "kick" a "snare" vytvorených na AY-3-8910'
-            className='flex w-auto'
+            className='!flex w-auto'
           />
         </FigureImage>
         <p className='clear-both'>
@@ -165,7 +165,7 @@ export default function S01E07() {
           <FigureAudio
             src='/res/s01e07/ornament_demo.mp3'
             caption='ukážka "ornamentov", teda arpeggií, ktorými sa vytvára dojem akordov'
-            className='flex w-auto'
+            className='!flex w-auto'
           />
         </FigureImage>
         <p className='clear-both'>
@@ -303,7 +303,7 @@ export default function S01E07() {
         <FigureAudio
           src='/res/s01e07/scalex_ala_benn_daglish.mp3'
           caption="Scalex - A'la Benn Daglish [1994]"
-          figureClass='right-20rem !-mt-8'
+          figureClass='right-20rem md:!-mt-6'
           className='mb-8'
         >
           <p>
@@ -442,7 +442,7 @@ export default function S01E07() {
         <FigureAudio
           src='/res/s01e07/noro_demobit.mp3'
           caption='Noro Grellneth - Demobit [1995]'
-          figureClass='right-20rem !-mt-4'
+          figureClass='right-20rem md:!-mt-4'
           className='mb-8'
         >
           <p>

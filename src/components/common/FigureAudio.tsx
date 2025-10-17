@@ -14,17 +14,28 @@ export const FigureAudio = ({
   figureClass,
   ...props
 }: FigureAudioProps) => {
+  const handlePlay = (event: React.SyntheticEvent<HTMLAudioElement>) => {
+    const audioNodes = document.getElementsByTagName('audio');
+    for (let i = 0; i < audioNodes.length; i++) {
+      if (audioNodes[i] !== event.currentTarget && !audioNodes[i].paused) {
+        audioNodes[i].pause();
+        audioNodes[i].currentTime = 0;
+      }
+    }
+  };
+
   return (
     <div
       {...props}
-      className={`figure-paragraph${props.className ? ` ${props.className}` : ''}`}
+      className={`figure-paragraph embedded-media${props.className ? ` ${props.className}` : ''}`}
     >
-      <figure className={`${figureClass || ''} print:hidden`}>
+      <figure className={figureClass || ''}>
         <audio
+          onPlay={handlePlay}
           controls
           controlsList='nodownload nofullscreen'
           src={src}
-        ></audio>
+        />
         {caption && <figcaption>{caption}</figcaption>}
       </figure>
       {children}

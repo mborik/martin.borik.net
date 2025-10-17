@@ -201,7 +201,7 @@ export default function S01E05() {
             src='/res/s01e05/soundmonitor.png'
             caption='Soundmonitor'
             mediaSource='namelessalgorithm.com'
-            figureClass='right-20rem lg:!-mt-4'
+            figureClass='right-20rem md:!-mt-4'
             className='dark'
             width={320}
             height={200}
@@ -218,7 +218,7 @@ export default function S01E05() {
             <FigureAudio
               src='/res/s01e05/chris_huelsbeck_shades.mp3'
               caption='Chris Hűlsbeck - Shades (1986)'
-              className='flex w-auto clear-right'
+              className='!flex w-auto clear-right'
             />
             <p>
               Chris Huelsbeck sa neskôr stal celosvetovo známy svojimi hernými
@@ -268,7 +268,7 @@ export default function S01E05() {
           <FigureAudio
             src='/res/s01e05/ultimate_soundtracker_demo.mp3'
             caption='Karsten Obarski - Amegas (1987)'
-            className='flex w-auto clear-right'
+            className='!flex w-auto clear-right'
           />
           <p>
             V balení ste našli dve diskety, na prvej samotný tracker a&nbsp;na
@@ -355,7 +355,7 @@ export default function S01E05() {
         <FigureAudio
           src='/res/s01e05/captain_space_debris.mp3'
           caption='Markus "Captain" Kaarlonen - Space Debris (1991)'
-          className='flex w-auto clear-left'
+          className='!flex w-auto clear-left'
         />
       </FigureYouTube>
       <Heading id='pc-trackery'>PC ♥︎ trackery</Heading>

@@ -19,9 +19,9 @@ export const FigureYouTube = ({
   return (
     <div
       {...props}
-      className={`figure-paragraph${props.className ? ` ${props.className}` : ''}`}
+      className={`figure-paragraph embedded-media${props.className ? ` ${props.className}` : ''}`}
     >
-      <figure className={`${figureClass || ''} print:hidden`}>
+      <figure className={figureClass || ''}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${youtubeCode}&amp;controls=1&amp;hd=1`}
           title={caption}
