@@ -27,8 +27,8 @@ export const EpisodeWrapper = ({
 
   React.useEffect(() => {
     isInitialized == null && init();
-    document.documentElement.className = 'episode';
     if (typeof window !== 'undefined') {
+      window.document.documentElement.className = 'episode';
       window.setTimeout(() => {
         const hash = window.location.hash;
         if (!hash || window.scrollY > 128) return;
@@ -40,25 +40,31 @@ export const EpisodeWrapper = ({
           behavior: 'smooth',
         });
       }, 128);
+      return () => {
+        window.document.documentElement.className = '';
+      };
     }
-    return () => {
-      document.documentElement.className = '';
-    };
   }, []);
 
-  const episode = React.useMemo<EpisodeData | void>(() => {
+  let episode = React.useMemo<EpisodeData | void>(() => {
     if (!isInitialized || !currentList?.length) return;
     const currentEpisode = currentList?.find(
       (ep) => ep.season === SEASON && ep.episode === EPISODE,
     );
     if (!currentEpisode) return;
-    const div = document.createElement('div');
-    div.innerHTML = currentEpisode.description;
+    let descPlainText = '';
+    if (typeof window !== 'undefined') {
+      const div = window.document.createElement('div');
+      div.innerHTML = currentEpisode.description;
+      descPlainText = div.textContent || div.innerText;
+    } else {
+      descPlainText = currentEpisode.description.replace(/<[^>]*>?/gm, '');
+    }
     return {
       ...currentEpisode,
       date: new Date(currentEpisode.pubDate),
-      descPlainText: div.textContent || div.innerText,
       title: currentEpisode.baseTitle,
+      descPlainText,
     };
   }, [isInitialized, currentList]);
 
@@ -86,7 +92,5 @@ export const EpisodeWrapper = ({
         <Related episode={episode} />
       </Article>
     </>
-  ) : (
-    <></>
-  );
+  ) : null;
 };

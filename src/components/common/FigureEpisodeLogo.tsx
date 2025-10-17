@@ -46,7 +46,5 @@ export const FigureEpisodeLogo = ({
       </figure>
       {children}
     </div>
-  ) : (
-    <></>
-  );
+  ) : null;
 };

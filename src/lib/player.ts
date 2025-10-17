@@ -4,6 +4,7 @@ import { create } from 'zustand';
 
 import { config } from './config';
 import { episodeDetailsAndLinks } from './episodeDetailsAndLinks';
+import cachedFeedData from '../ssr/podcast-feed-cache';
 
 export const enum HOWLER_STATE {
   UNLOADED = 'unloaded',
@@ -37,6 +38,70 @@ type PlayerState = {
   setLoaded: (_isLoaded: HOWLER_STATE) => void;
   stop: () => void;
   init: () => void;
+};
+
+export type FetchPodcastResponse = {
+  currentList: Episode[];
+  isInitialized: boolean;
+};
+export const fetchPodcast = async (): Promise<FetchPodcastResponse> => {
+  const response = await fetch(config.podcastFeed);
+  const podcastFeed = await response.text();
+  const { episodes: episodesFromFeed } = getPodcastFromFeed(podcastFeed);
+  const episodes = episodesFromFeed.map((episode) => {
+    const detailsAndLinks = episodeDetailsAndLinks.find(
+      (link) =>
+        link.episode === episode.episode && link.season === episode.season,
+    );
+    return {
+      ...episode,
+      ...detailsAndLinks,
+    } as Episode;
+  });
+  episodes.sort((a, b) => {
+    if (a.shortId > b.shortId) return 1;
+    if (a.shortId < b.shortId) return -1;
+    return 0;
+  });
+  return {
+    currentList: episodes,
+    isInitialized: true,
+  };
+};
+
+const enrichDataWithLocalStorage = (input: FetchPodcastResponse) => {
+  if (
+    typeof window !== 'undefined' &&
+    window.localStorage &&
+    input.currentList
+  ) {
+    const lastPlayedEpisode = window.localStorage.getItem('current-episode');
+    const lastNumberOfEpisodes =
+      parseInt(window.localStorage.getItem('number-of-episodes') as string) ||
+      0;
+    const { currentList: episodes } = input;
+    if (episodes.length > 0) {
+      // enforce to play latest episode if there are some new ones
+      if (lastNumberOfEpisodes > 1 && lastNumberOfEpisodes < episodes.length) {
+        return {
+          ...input,
+          currentEpisode: episodes[0],
+          isPlaying: false,
+        };
+        // else select last played episode
+      } else if (lastPlayedEpisode) {
+        const lastPlayed = episodes.find((ep) => ep.guid === lastPlayedEpisode);
+        if (lastPlayed) {
+          return {
+            ...input,
+            currentEpisode: lastPlayed,
+            isPlaying: false,
+          };
+        }
+      }
+    }
+  }
+  return input;
 };
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
@@ -122,68 +187,13 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   init: () => {
     set((state) => {
       if (state.isInitialized === null) {
-        fetch(config.podcastFeed)
-          .then((response) => response.text())
-          .then((podcastFeed) => {
-            const { episodes: episodesFromFeed } =
-              getPodcastFromFeed(podcastFeed);
-            const episodes = episodesFromFeed.map((episode) => {
-              const detailsAndLinks = episodeDetailsAndLinks.find(
-                (link) =>
-                  link.episode === episode.episode &&
-                  link.season === episode.season,
-              );
-              return {
-                ...episode,
-                ...detailsAndLinks,
-              } as Episode;
-            });
-            episodes.sort((a, b) => {
-              if (a.shortId > b.shortId) return 1;
-              if (a.shortId < b.shortId) return -1;
-              return 0;
-            });
-            let propsToSet: any = {
-              currentList: episodes,
-              isInitialized: true,
-            };
-            if (localStorage) {
-              const lastPlayedEpisode = localStorage.getItem('current-episode');
-              const lastNumberOfEpisodes =
-                parseInt(
-                  localStorage.getItem('number-of-episodes') as string,
-                ) || 0;
-              if (episodes.length > 0) {
-                // enforce to play latest episode if there are some new ones
-                if (
-                  lastNumberOfEpisodes > 1 &&
-                  lastNumberOfEpisodes < episodes.length
-                ) {
-                  propsToSet = {
-                    ...propsToSet,
-                    currentEpisode: episodes[0],
-                    isPlaying: false,
-                  };
-                  // else select last played episode
-                } else if (lastPlayedEpisode) {
-                  const lastPlayed = episodes.find(
-                    (ep) => ep.guid === lastPlayedEpisode,
-                  );
-                  if (lastPlayed) {
-                    propsToSet = {
-                      ...propsToSet,
-                      currentEpisode: lastPlayed,
-                      isPlaying: false,
-                    };
-                  }
-                }
-              }
-            }
-            set(() => propsToSet);
-          });
+        fetchPodcast().then((propsToSet) => {
+          set(() => enrichDataWithLocalStorage(propsToSet));
+        });
         return { isInitialized: false };
       }
       return state;
     });
   },
+  ...(cachedFeedData as any),
 }));
