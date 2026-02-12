@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import React from 'react';
 import { MdPause, MdPlayArrow } from 'react-icons/md';
 
@@ -39,9 +38,10 @@ const TableHead = () => {
 };
 
 const TableBody = ({ list }: { list: Episode[] }) => {
+  const revertedList = [...list].reverse();
   return (
     <tbody>
-      {list.map((track) => (
+      {revertedList.map((track) => (
         <TableRow key={track.guid} track={track} />
       ))}
     </tbody>
@@ -49,16 +49,21 @@ const TableBody = ({ list }: { list: Episode[] }) => {
 };
 
 const TableRow = ({ track }: { track: Episode }) => {
-  const router = useRouter();
-  const { isPlaying, currentEpisode, isLoaded } = usePlayerStore();
+  // const router = useRouter();
+  const { isPlaying, currentEpisode, isLoaded, setCurrentEpisode } =
+    usePlayerStore();
   const [isSkeleton, setIsSkeleton] = React.useState(true);
+  const isCurrent = track.guid === currentEpisode?.guid;
 
   const { episode: episodeNumber, title, image, duration } = track;
   const fmtDuration = formatTime(duration);
 
   return (
     <tr
-      onClick={() => track?.slug && router.push(`/${track.slug}`)}
+      onClick={() => {
+        if (!(isPlaying && isCurrent)) setCurrentEpisode(track, true);
+      }}
+      // onClick={() => track?.slug && router.push(`/${track.slug}`)}
       className={`table-row group ${
         currentEpisode?.guid === track.guid
           ? 'bg-accent-glow'

@@ -61,15 +61,20 @@ export const Podcast = () => {
             <SocialYouTube />
           </a>
         </div>
-        <h6 className='text-base'>
-          Tu nájdete textové prepisy a&nbsp;záznamy všetkých epizód:
-        </h6>
-        <ListTable />
+        <div className='credits'>
+          <strong>Podcast vzniká aj vďaka mojim spolupracovníkom:</strong>
+          <br />
+          <b>zvuk:</b> Robo Gajarský, <b>fact-checking:</b>{' '}
+          Martin&nbsp;&quot;Logout&quot;&nbsp;Kukač,
+          Ella&nbsp;&quot;Aki&quot;&nbsp;Šenovská,
+          Eduard&nbsp;&quot;Ventyl&quot;&nbsp;Drusa a&nbsp;Roman Bórik.
+        </div>
         <KofiButton
           color='#e84e57'
           title=' Podporte podcast'
           kofiID='J3J714IUF2'
         />
+        <ListTable />
       </div>
     </section>
   );

@@ -15,6 +15,7 @@ export type Episode = PodparseEpisode & {
   shortId: number;
   related: number[];
   baseTitle: string;
+  hasArticle?: boolean;
   slug: string;
 };
 type PlayerState = {
@@ -55,6 +56,9 @@ export const fetchPodcast = async (): Promise<FetchPodcastResponse> => {
     );
     return {
       ...episode,
+      shortId: parseInt(
+        `${episode.season}${('0' + episode.episode).slice(-2)}`,
+      ),
       ...detailsAndLinks,
     } as Episode;
   });
@@ -105,9 +109,10 @@ const enrichDataWithLocalStorage = (input: FetchPodcastResponse) => {
 };
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
+  currentList: null,
+  ...(cachedFeedData as any),
   currentEpisode: null,
   viewedEpisode: null,
-  currentList: null,
   isPlaying: false,
   isMute: false,
   isInitialized: null,
@@ -195,5 +200,4 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
       return state;
     });
   },
-  ...(cachedFeedData as any),
 }));

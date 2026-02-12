@@ -5,6 +5,7 @@ export const episodeDetailsAndLinks = [
     shortId: 101,
     related: [102, 103, 104, 106, 108, 110, 118],
     baseTitle: 'Mikropočítače 80. rokov 20. storočia',
+    hasArticle: true,
     slug: '101-uvod-mikropocitace',
     description:
       'Mikropočítače na prelome 70. a 80. rokov zohrali kľúčovú úlohu v histórii výpočtovej techniky a preniesli tak tieto technológie z výskumných ústavov do domácností a škôl po celom svete.',
@@ -15,6 +16,7 @@ export const episodeDetailsAndLinks = [
     shortId: 102,
     related: [103, 101, 105, 111, 112, 114, 122],
     baseTitle: 'Nástup éry 16-bitových počítačov',
+    hasArticle: true,
     slug: '102-era-16-bitovych-pocitacov',
     description:
       'Technický vývoj priniesol nové procesory, tentoraz už 16-bitové. Takto vylepšené procesory však mali obrovský náskok pre 8-bitmi nie len výpočtovým výkonom. Zvládali totiž manažovať viac pamäte, omnoho väčšie grafické rozlíšenia a režimy, niektoré platformy priniesli aj nové zvukové možnosti.',
@@ -25,6 +27,7 @@ export const episodeDetailsAndLinks = [
     shortId: 103,
     related: [104, 101, 102, 105, 109, 112, 131],
     baseTitle: 'Zrod demoscény',
+    hasArticle: true,
     slug: '103-zrod-demosceny',
     description:
       'O zrode demoscény, o dôvodoch jej vzniku, aký má demoscéna význam a čo k nej ľudí dodnes priťahuje.',
@@ -35,6 +38,7 @@ export const episodeDetailsAndLinks = [
     shortId: 104,
     related: [105, 101, 103, 107, 109, 126, 132],
     baseTitle: 'História hernej hudby od éry 8-bitových počítačov',
+    hasArticle: true,
     slug: '104-historia-hernej-hudby',
     description:
       'Prvý diel zo série, kde sa dozvieme niečo z histórie tvorby hudby na počítačoch od 80. rokov až dodnes. Dnes vyrazíme hlboko do minulosti, do éry 8-bitových počítačov a na množstve ukážok budete počuť ako zneli.',
@@ -45,6 +49,7 @@ export const episodeDetailsAndLinks = [
     shortId: 105,
     related: [106, 102, 103, 104, 107, 112, 115],
     baseTitle: 'Keď hernej hudbe vládol sampling',
+    hasArticle: true,
     slug: '105-ked-vladol-sampling',
     description:
       'Druhý diel zo série o počítačovej hudbe bude o tom, ako to znelo na prelome 80. a 90. rokov, ktorým vládla pulzno-kódová modulácia a sampling. Vysvetlíme si tiež, ako sa zrodili hudobné trackery a ako ovplyvnili celú generáciu tvorcov a prispeli ku vzniku demoscény.',
@@ -55,6 +60,7 @@ export const episodeDetailsAndLinks = [
     shortId: 106,
     related: [107, 101, 104, 118, 122, 123, 124],
     baseTitle: 'ZX-Spectrum',
+    hasArticle: true,
     slug: '106-zx-spectrum',
     description:
       'O histórii spoločnosti Sinclair, vzniku počítača ZX-Spectrum a význame tejto legendy som sa rozprával naživo na akcii ByteFest 2024, kde bol mojim prvým podcastovým hosťom Martin Kukač alias Logout.',
@@ -65,6 +71,7 @@ export const episodeDetailsAndLinks = [
     shortId: 107,
     related: [108, 103, 104, 106, 109, 123, 126],
     baseTitle: 'Ako trackery nakopli ZX Spectrum',
+    hasArticle: true,
     slug: '107-zx-spectrum-hudobna-tvorba',
     description:
       'Tretí diel zo série o počítačovej hudbe bude o tom, ako vďaka trackerom zažili osembitové platformy na prelome 80. a 90. rokov znovuzrodenie a nakoplo to tvorbu hier, ale aj demoscénu. Tentoraz sa budeme venovať ZX Spectru.',
@@ -75,6 +82,7 @@ export const episodeDetailsAndLinks = [
     shortId: 108,
     related: [109, 101, 104, 106, 110, 111, 112],
     baseTitle: 'Commodore 64',
+    hasArticle: true,
     slug: '108-commodore-64',
     description:
       'O histórii vzniku a významu počítača Commodore 64, najpredávanejšieho počítača všetkých čias. Môj druhý podcastový hosť bol Tomáš Svoboda alias Sillicon.',
@@ -85,6 +93,7 @@ export const episodeDetailsAndLinks = [
     shortId: 109,
     related: [110, 101, 104, 107, 108, 112, 114],
     baseTitle: 'Hudobná tvorba na Commodore 64',
+    hasArticle: true,
     slug: '109-commodore-64-hudobna-tvorba',
     description:
       'Štvrtý diel zo série o počítačovej hudbe sa venuje špecificky Commodre 64 a možnostiam zvukového čipu SID, o čom vám bude hovoriť môj vážený hosť Petr Chlud alias PCH.',
@@ -125,6 +134,7 @@ export const episodeDetailsAndLinks = [
     shortId: 113,
     related: [114, 104, 105, 107, 109, 115, 126],
     baseTitle: 'Ako sa zrodilo MIDI',
+    hasArticle: true,
     slug: '113-midi-historia',
     description:
       'Ďalší diel zo série o počítačovej hudbe bude o MIDI, jeho zrode a význame. Vypočujeme si, ako to znelo na začiatku 90. rokov.',
@@ -318,5 +328,15 @@ export const episodeDetailsAndLinks = [
     slug: '132-fm-synteza',
     description:
       'FM syntéza, alebo syntéza na báze frekvenčnej modulácie je výkonná metóda vytvárania zvukov a je to krásny príklad toho, ako sa veda a umenie dokázali spojiť. Vznikla z akademického výskumu, prerazila v elektronickej hudbe a syntetizátoroch, ale zahviezdila aj v počítačových zvukových kartách, kedy výrazne ovplyvnila to, ako sme vnímali hernú hudbu.',
+  },
+  {
+    episode: 33,
+    season: 2,
+    shortId: 233,
+    related: [102, 111, 112, 114, 118, 128, 129],
+    baseTitle: 'Motorola 68000',
+    slug: '233-motorola-68000',
+    description:
+      'Motorola 68000, familiárne nazývaná "68k" bola kultúrnym fenoménom. Poháňala revolučný Apple Macintosh, ktorý naučil svet používať myš, bola srdcom Commodore Amiga, ktorá priniesla do domácností multimédiá, v Atari ST, ktoré hudobníkom umožnilo ovládnuť MIDI nástroje a rozpútala vojnu herných konzol v útrobách Sega Genesis.',
   },
 ];

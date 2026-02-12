@@ -107,12 +107,14 @@ export const Player = ({
           )
         ) : (
           <>
-            <button
-              onClick={() => episode?.slug && router.push(`/${episode.slug}`)}
-              title='Prejsť na stránku epizódy'
-            >
-              <AiOutlineRead className='bigger-icon' />
-            </button>
+            {episode?.hasArticle && (
+              <button
+                onClick={() => episode?.slug && router.push(`/${episode.slug}`)}
+                title='Prejsť na stránku epizódy'
+              >
+                <AiOutlineRead className='bigger-icon' />
+              </button>
+            )}
             <button onClick={playPrevEpisode} title='Predošlá epizóda'>
               <AiFillBackward className='bigger-icon' />
             </button>

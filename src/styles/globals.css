@@ -149,7 +149,7 @@
   }
 
   .BackButton {
-    @apply fixed left-0 z-20 print:hidden top-24 lg:top-32 ;
+    @apply fixed left-0 z-20 print:hidden top-24 lg:top-32;
 
     > button {
       @apply block gap-2 p-4 pr-5 m-0 shadow-lg backdrop-blur-xl;
@@ -173,13 +173,22 @@
       @apply flex flex-col items-center justify-center gap-4 my-16;
       @apply text-center break-words;
 
-      h4>br {
+      h4 > br {
         @media (max-width: 490px) {
           display: none;
         }
       }
       .socials {
         @apply flex flex-row gap-4 my-4;
+      }
+      .credits {
+        @apply text-sm mb-4;
+
+        @media (min-width: 32rem) {
+          font-size: 1rem;
+          line-height: 1.5;
+          width: 32rem;
+        }
       }
     }
 
@@ -214,7 +223,9 @@
       h4 {
         @apply pt-4 pb-4 text-xl font-semibold;
       }
-      p, ul, blockquote {
+      p,
+      ul,
+      blockquote {
         @apply leading-8 text-justify indent-8 p-0;
 
         a {
@@ -275,7 +286,8 @@
           }
           > audio {
             @apply w-full;
-            &::-webkit-media-controls-enclosure, &::-webkit-media-controls-panel {
+            &::-webkit-media-controls-enclosure,
+            &::-webkit-media-controls-panel {
               background: transparent;
               border-radius: 0;
             }
@@ -290,12 +302,13 @@
             @apply absolute inline-block w-6 h-6 p-0 m-0 cursor-pointer select-none top-4 right-4 z-1;
             mix-blend-mode: hard-light;
 
-            .media-source-icon, .media-source-text {
+            .media-source-icon,
+            .media-source-text {
               @apply absolute bottom-0 right-0 h-6 border rounded-full;
               font-size: 12px;
               line-height: 22px;
-              background-color: hsla(0, 0%, 100%, .2);
-              border: 1px solid hsla(0, 0%, 100%, .15);
+              background-color: hsla(0, 0%, 100%, 0.2);
+              border: 1px solid hsla(0, 0%, 100%, 0.15);
               color: white;
             }
             .media-source-icon {
@@ -508,7 +521,7 @@
       rgba(240, 242, 244, 0) 100%
     );
 
-    transition: .5s ease;
+    transition: 0.5s ease;
     transform: translateY(-100%);
 
     &.active {
@@ -524,7 +537,7 @@
       .player-header-volumebar {
         @apply flex w-1/4 md:w-60 min-w-32 items-center justify-around gap-2;
 
-        button>.icon {
+        button > .icon {
           @apply h-5 w-5 text-white-100;
         }
       }
@@ -548,7 +561,8 @@
           @apply hidden md:block flex-initial;
         }
       }
-      .play-button, .action-button {
+      .play-button,
+      .action-button {
         > .icon {
           @apply h-6 w-6 text-gray-900;
         }
@@ -567,13 +581,13 @@
 
   .list-table {
     @apply flex h-auto flex-col overflow-y-auto text-gray-400;
-    @apply -mt-8 mb-8;
+    @apply mb-8;
 
     > table {
       @apply h-full w-full table-auto;
     }
     thead {
-      @apply border-b border-black/10 text-gray-50/40;
+      @apply border-b border-black/10 text-gray-400;
       th {
         @apply py-4 text-left text-sm font-medium;
 
@@ -593,7 +607,7 @@
 
       tr.table-row {
         @apply w-full border-b border-black/10 transition duration-300 ease-in-out;
-        cursor: alias;
+        cursor: /* alias */ pointer /* endalias */;
       }
       td.table-row-td-col1 {
         @apply hidden whitespace-nowrap p-4 text-sm font-light text-white-200 md:block md:pt-8;
