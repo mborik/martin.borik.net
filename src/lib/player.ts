@@ -89,7 +89,7 @@ const enrichDataWithLocalStorage = (input: FetchPodcastResponse) => {
       if (lastNumberOfEpisodes > 1 && lastNumberOfEpisodes < episodes.length) {
         return {
           ...input,
-          currentEpisode: episodes[0],
+          currentEpisode: episodes[episodes.length + 1],
           isPlaying: false,
         };
         // else select last played episode

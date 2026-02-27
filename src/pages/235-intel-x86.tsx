@@ -2,14 +2,14 @@ import * as React from 'react';
 
 import { EpisodeWrapper, FigureEpisodeLogo } from '@/components/common';
 
-export default function S02E33() {
+export default function S02E35() {
   return (
-    <EpisodeWrapper season={2} episode={33}>
-      <FigureEpisodeLogo season={2} episode={33} figureClass='right-20rem'>
+    <EpisodeWrapper season={2} episode={35}>
+      <FigureEpisodeLogo season={2} episode={35} figureClass='right-20rem'>
         <h2>
-          Motorola 68000
+          Intel x86
           <br />
-          <small>architektúra, ktorá predbehla dobu</small>
+          <small>Mikroprocesorová architektúra zrodená z paniky</small>
         </h2>
         <p>⚠️ V príprave&hellip;</p>
       </FigureEpisodeLogo>

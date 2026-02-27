@@ -323,7 +323,7 @@ export const episodeDetailsAndLinks = [
     episode: 32,
     season: 1,
     shortId: 132,
-    related: [101, 104, 105, 111, 113, 114, 115],
+    related: [233, 104, 105, 111, 113, 114, 115],
     baseTitle: 'Zázrak zvaný FM syntéza',
     slug: '132-fm-synteza',
     description:
@@ -333,10 +333,30 @@ export const episodeDetailsAndLinks = [
     episode: 33,
     season: 2,
     shortId: 233,
-    related: [102, 111, 112, 114, 118, 128, 129],
+    related: [234, 102, 111, 112, 114, 118, 128],
     baseTitle: 'Motorola 68000',
     slug: '233-motorola-68000',
     description:
       'Motorola 68000, familiárne nazývaná "68k" bola kultúrnym fenoménom. Poháňala revolučný Apple Macintosh, ktorý naučil svet používať myš, bola srdcom Commodore Amiga, ktorá priniesla do domácností multimédiá, v Atari ST, ktoré hudobníkom umožnilo ovládnuť MIDI nástroje a rozpútala vojnu herných konzol v útrobách Sega Genesis.',
+  },
+  {
+    episode: 34,
+    season: 2,
+    shortId: 234,
+    related: [235, 102, 114, 116, 117, 128, 233],
+    baseTitle: 'Macintosh, NeXT a macOS',
+    slug: '234-macintosh-next-macos',
+    description:
+      'História operačného systému, ktorý zmenil spôsob, akým kreatívci používajú počítače. Od klasického Mac OS na procesoroch Motorola a technologicky náročný prechod na PowerPC, následne bol v roku 1985 Steve Jobs vyštvaný z Apple, aby z trucpodniku vytvoril systém NeXTSTEP, ktorý predbehol dobu o celé dekády a stal záchranným kolesom pre upadajúci Apple, pretransformoval sa na Mac OS X a dodnes žije v srdci každého moderného Macu, iPhonu či iPadu.',
+  },
+  {
+    episode: 35,
+    season: 2,
+    shortId: 235,
+    related: [236, 102, 117, 118, 119, 127, 233],
+    baseTitle: 'Intel x86',
+    slug: '235-intel-x86',
+    description:
+      'Príbeh procesorovej rady Intel x86. Zrodili sa z paniky, ako núdzové riešenie pod časovým tlakom, no vďaka pragmatickým rozhodnutiam pri vzniku IBM PC ovládli svet počítačov. Prejdeme viac ako 40-ročnou históriou plnou marketingových trikov, chýb a neúprosných súbojov s rivalom AMD. Zistíte, prečo v technologickom priemysle často víťazí spätná kompatibilita nad technickou dokonalosťou a ako tieto procesory prežili dodnes.',
   },
 ];

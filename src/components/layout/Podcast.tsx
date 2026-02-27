@@ -61,6 +61,26 @@ export const Podcast = () => {
             <SocialYouTube />
           </a>
         </div>
+        <KofiButton
+          color='#e84e57'
+          title=' Podporte na Ko-Fi'
+          kofiID='J3J714IUF2'
+        />
+        <div className='LinkBtn'>
+          <a
+            title='herohero.co/zapeceneprocesory'
+            href='https://herohero.co/zapeceneprocesory'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <Image
+              src='/res/herohero.png'
+              alt='herohero.co/zapeceneprocesory'
+              width={180}
+              height={38}
+            />
+          </a>
+        </div>
         <div className='credits'>
           <strong>Podcast vzniká aj vďaka mojim spolupracovníkom:</strong>
           <br />
@@ -69,11 +89,6 @@ export const Podcast = () => {
           Ella&nbsp;&quot;Aki&quot;&nbsp;Šenovská,
           Eduard&nbsp;&quot;Ventyl&quot;&nbsp;Drusa a&nbsp;Roman Bórik.
         </div>
-        <KofiButton
-          color='#e84e57'
-          title=' Podporte podcast'
-          kofiID='J3J714IUF2'
-        />
         <ListTable />
       </div>
     </section>
